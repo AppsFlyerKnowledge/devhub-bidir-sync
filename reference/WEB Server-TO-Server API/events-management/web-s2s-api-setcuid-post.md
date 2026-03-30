@@ -1,6 +1,6 @@
 ---
 title: Associate Customer User ID with AF User ID
-excerpt: >-
+excerpt: >
   On associating a CUID with a visitor to your website. For example, any time
   you match the web `afUserId` with your customer user ID. Doing so enables PBA
   to match data from various sources. 
