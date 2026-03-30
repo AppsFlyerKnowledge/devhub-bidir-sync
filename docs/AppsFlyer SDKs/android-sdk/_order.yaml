@@ -2,9 +2,9 @@
 - integrate-android-sdk
 - testing-android
 - in-app-events-android
-- conversion-data-android
 - push-notifications-android
 - uninstall-measurement-android
+- conversion-data-android
 - oaid
 - ad-revenue-1
 - purchase-validation-android
