@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 > 📘 **Note**
 >
 > We recommend using our [SDK wizard integration tool](https://dev.appsflyer.com/hc/docs/manual-testing-android) for testing
