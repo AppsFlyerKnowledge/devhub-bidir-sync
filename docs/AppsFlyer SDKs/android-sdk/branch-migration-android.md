@@ -12,6 +12,7 @@ metadata:
 next:
   description: ''
 ---
+
 # What is Branch Migration Navigator?
 
 The Branch Migration Navigator is a tool designed to support a gradual and informed migration from Branch to AppsFlyer. It enables AppsFlyer to collect traffic signals from Branch through a lightweight module integrated into the app.
