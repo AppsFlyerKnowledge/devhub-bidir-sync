@@ -6,10 +6,10 @@
 - integration-testing
 - in-app-events-sdk
 - push-notifications
+- uninstall-measurement
 - conversion-data
 - ad-revenue
 - purchase-and-subscription-validation
-- uninstall-measurement
 - send-consent-for-dma-compliance
 - preserve-user-privacy-1
 - purchase-connector
