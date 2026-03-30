@@ -1,0 +1,15 @@
+---
+title: Connect audience to existing partners
+excerpt: ''
+api:
+  file: audience-external-api.json
+  operationId: put_audience-audience-id-connections
+deprecated: false
+hidden: false
+metadata:
+  title: ''
+  description: ''
+  robots: noindex
+next:
+  description: ''
+---
