@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 [![Maven Central](https://img.shields.io/nexus/r/com.appsflyer/af-security-plugin?server=https%3A%2F%2Foss.sonatype.org)](https://repo1.maven.org/maven2/com/appsflyer/af-security-plugin/)
 
 ## Overview
