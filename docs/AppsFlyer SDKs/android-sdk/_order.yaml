@@ -8,9 +8,9 @@
 - ad-revenue-1
 - uninstall-measurement-android
 - purchase-validation-android
-- preserve-user-privacy-android
 - oaid
 - android-send-consent-for-dma-compliance
+- preserve-user-privacy-android
 - purchase-validation
 - android-release-notes
 - branch-migration-ios
