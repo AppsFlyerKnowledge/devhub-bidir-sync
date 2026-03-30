@@ -9,9 +9,9 @@
 - uninstall-measurement-android
 - oaid
 - purchase-validation-android
-- android-send-consent-for-dma-compliance
 - preserve-user-privacy-android
 - purchase-validation
+- android-send-consent-for-dma-compliance
 - android-release-notes
 - branch-migration-ios
 - branch-migration-android
