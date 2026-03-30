@@ -1,6 +1,5 @@
 - install-android-sdk
 - integrate-android-sdk
-- uninstall-measurement-android
 - in-app-events-android
 - testing-android
 - conversion-data-android
@@ -8,6 +7,7 @@
 - push-notifications-android
 - preserve-user-privacy
 - oaid
+- uninstall-measurement-android
 - purchase-validation-android
 - preserve-user-privacy-android
 - branch-migration-ios
