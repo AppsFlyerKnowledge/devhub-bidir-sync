@@ -2,8 +2,8 @@
 - install-ios-sdk
 - integrate-ios-sdk
 - testing-ios
-- in-app-events-ios
 - push-notifications-ios
+- in-app-events-ios
 - conversion-data-ios
 - uninstall-measurement-ios
 - preserve-user-privacy-ios
