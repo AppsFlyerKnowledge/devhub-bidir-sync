@@ -3,3 +3,4 @@
 - update-config
 - circuit-breaker
 - add-excluded-app
+- remove-excluded-app
