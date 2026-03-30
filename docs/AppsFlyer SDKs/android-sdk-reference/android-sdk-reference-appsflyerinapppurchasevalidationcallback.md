@@ -59,3 +59,4 @@ Triggered upon failed purchase validation.
 
 **Returns**
 `void`
+
