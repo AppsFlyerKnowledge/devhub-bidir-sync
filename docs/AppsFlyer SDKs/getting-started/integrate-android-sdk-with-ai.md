@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 Offload much of the AppsFlyer Android SDK integration work to AppsFlyer’s SDK MCP server by using an AI-powered coding tool, such as OpenAI Codex, Git Hub Co-Pilot, or Cursor.
 
 ## Step 1: Get ready
