@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 ## Overview
 
 The AppsFlyer ROI360 purchase connector is used to validate and report in-app purchase and subscription revenue events. It’s part of the ROI360 in-app purchase and subscription revenue measurement solution.
