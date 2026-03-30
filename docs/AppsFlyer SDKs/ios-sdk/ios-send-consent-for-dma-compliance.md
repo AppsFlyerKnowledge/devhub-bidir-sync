@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 For a general introduction to DMA consent data, see [here](https://dev.appsflyer.com/hc/docs/send-consent-for-dma-compliance).
 
 The SDK offers two alternative methods for gathering consent data:
