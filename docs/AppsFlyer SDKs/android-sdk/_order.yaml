@@ -10,10 +10,10 @@
 - uninstall-measurement-android
 - purchase-validation-android
 - preserve-user-privacy-android
-- branch-migration-ios
 - android-send-consent-for-dma-compliance
 - android-release-notes
 - purchase-validation
 - branch-migration-android
 - android-legacy-security-plugin
 - android-security-plugin
+- branch-migration-ios
