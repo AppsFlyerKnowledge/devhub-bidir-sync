@@ -33,3 +33,4 @@
 - Server-to-server events API (for mobile)
 - '[Legacy] Server-to-server events API (for mobile)'
 - SKAN aggregated performance report API
+- SKAN aggregated postback by arrival date API
