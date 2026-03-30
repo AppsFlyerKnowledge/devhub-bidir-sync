@@ -1,6 +1,6 @@
 ---
 title: Get roles
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

@@ -1,6 +1,6 @@
 ---
 title: Create bulk users
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

@@ -1,6 +1,6 @@
 ---
 title: Delete users
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

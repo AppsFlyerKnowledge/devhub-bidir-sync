@@ -1,6 +1,6 @@
 ---
 title: Get users
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
