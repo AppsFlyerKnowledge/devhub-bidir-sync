@@ -3,3 +3,4 @@
 - create-opendsr-request
 - get-opendsr-request-status
 - cancel-opendsr-request
+- download-report
