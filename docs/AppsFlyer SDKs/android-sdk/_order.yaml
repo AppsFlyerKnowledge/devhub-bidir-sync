@@ -6,9 +6,9 @@
 - in-app-events-android
 - conversion-data-android
 - ad-revenue-1
-- purchase-validation-android
 - preserve-user-privacy
 - oaid
+- purchase-validation-android
 - android-send-consent-for-dma-compliance
 - preserve-user-privacy-android
 - branch-migration-ios
