@@ -1,0 +1,126 @@
+---
+title: Unity Steam
+excerpt: ''
+deprecated: false
+hidden: false
+metadata:
+  title: ''
+  description: ''
+  robots: noindex
+next:
+  description: ''
+---
+> Link to repository  
+> [GitHub](https://github.com/AppsFlyerSDK/appsflyer-unity-steam-sample-app)
+
+# AppsFlyer Unity Steam SDK integration
+
+AppsFlyer empowers gaming marketers to make better decisions by providing powerful tools to perform cross-platform attribution.
+
+Game attribution requires the game to integrate the AppsFlyer SDK that records first opens, consecutive sessions, and in-app events. For example, purchase events.
+We recommend you use this sample app as a reference for integrating the AppsFlyer SDK into your Unity Steam game.
+
+<hr/>
+
+**Prerequisites**:
+
+- Unity Engine.
+- [Steamworks SDK](https://steamworks.github.io/) integrated within your Unity project.
+- Steam client installed with an active user. Note: It must be running for testing.
+
+<hr/>
+
+## AppsflyerSteamModule - Interface
+
+`AppsflyerSteamModule.cs`, included in the scenes folder, contains the required code and logic to connect to AppsFlyer servers and report events.
+
+### `AppsflyerSteamModule(string appid, string devkey)`
+
+This method receives your API key and app ID and initializes the AppsFlyer Module.
+
+**Usage**:
+
+```
+AppsflyerSteamModule afm = new AppsflyerSteamModule("STEAM_APP_ID", "DEV_KEY");
+```
+
+**Arguments**:
+
+- `STEAM_APP_ID`: Found in the [SteamDB](https://steamdb.info/apps/).
+- `DEV_KEY`: Get from the marketer or [AppsFlyer HQ](https://support.appsflyer.com/hc/en-us/articles/211719806-App-settings-#general-app-settings).
+
+### `public void Start(bool skipFirst = false)`
+
+This method sends first open and session requests to AppsFlyer.
+
+**Usage**:
+
+```
+// without the flag
+afm.Start();
+
+// with the flag
+bool skipFirst = [SOME_CONDITION];
+afm.Start(skipFirst);
+```
+
+### `public void LogEvent(string event_name, string event_values)`
+
+This method receives an event name and JSON object and sends in-app events to AppsFlyer.
+
+**Usage**:
+
+```
+//set event name
+string event_name = "af_purchase";
+//set json string
+string event_values = "{\"af_currency\":\"USD\",\"af_price\":6.66,\"af_revenue\":24.12}";
+afm.LogEvent(event_name, event_values);
+```
+
+### `bool isInstallOlderThanDate(string datestring)`
+
+This method receives a date string and returns true if the game folder creation date is older than the date string. The date string format is: "2023-January-01T23:12:34+00:00"
+
+```
+// the creation date in this example is "2023-January-23T08:30:00+00:00"
+
+// will return false
+bool dateBefore = AppsflyerSteamModule()->isInstallOlderThanDate("2023-January-01T23:12:34+00:00");
+
+// will return true
+bool dateAfter = AppsflyerSteamModule()->isInstallOlderThanDate("2023-April-10T23:12:34+00:00");
+```
+
+## Running the sample app
+
+1. Open Unity hub and open the project.
+2. Add Steamworks to your Unity project. Follow the [Steamworks SDK instructions](https://steamworks.github.io/) and add it through your package manager.
+3. Use the sample code in `SteamScript.cs` and update it with your `DEV_KEY` and `APP_ID`.
+4. Add the `SteamManager` and` SteamScript` to an empty game object (or use the one in the scenes folder).  
+   ![Request-OK](https://files.readme.io/7a002a6-small-SteamGameObject.PNG)
+5. Launch the sample app via the Unity editor and check that your debug log shows the following message:  
+   ![Request-OK](https://files.readme.io/1f7dcf0-small-202OK.PNG)
+6. After 24 hours, the dashboard updates and shows organic and non-organic installs and in-app events.
+
+## Implementing AppsFlyer in your Steam game
+
+### Setup
+
+1. Add Steamworks to your Unity project. Follow the [Steamworks SDK instructions](https://steamworks.github.io/) and add it through your package manager.
+2. Add `SteamManager.cs` to a game object.
+3. Add the script from `Assets/Scenes/AppsflyerSteamModule.cs` to your app.
+4. Use the sample code in `Assets/Scenes/SteamScript.cs` and update it with your `DEV_KEY` and `APP_ID`.
+5. Initialize the SDK.
+
+```
+AppsflyerSteamModule afm = new AppsflyerSteamModule("DEV_KEY", "STEAM_APP_ID");
+```
+
+6. [Start](#public-void-startbool-skipfirst--false) the AppsFlyer integration.
+7. Report [in-app events](#public-void-logeventstring-event_name-string-event_values).
+
+## Deleting Steam cloud saves (resetting the attribution)
+
+1. [Disable Steam cloud](https://help.steampowered.com/en/faqs/view/68D2-35AB-09A9-7678#enabling).
+2. [Delete the local files](https://help.steampowered.com/en/faqs/view/68D2-35AB-09A9-7678#where).
