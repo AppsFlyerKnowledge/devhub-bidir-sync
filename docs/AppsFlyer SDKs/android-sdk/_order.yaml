@@ -12,8 +12,8 @@
 - preserve-user-privacy-android
 - android-send-consent-for-dma-compliance
 - android-release-notes
-- android-legacy-security-plugin
 - branch-migration-ios
 - android-security-plugin
 - purchase-validation
 - branch-migration-android
+- android-legacy-security-plugin
