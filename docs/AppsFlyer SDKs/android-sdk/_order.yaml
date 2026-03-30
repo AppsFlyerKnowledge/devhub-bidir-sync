@@ -5,11 +5,11 @@
 - uninstall-measurement-android
 - in-app-events-android
 - conversion-data-android
-- oaid
 - ad-revenue-1
 - purchase-validation-android
 - preserve-user-privacy
 - preserve-user-privacy-android
+- oaid
 - android-send-consent-for-dma-compliance
 - branch-migration-ios
 - android-release-notes
