@@ -1,0 +1,26 @@
+---
+title: Conversion data
+excerpt: ''
+deprecated: false
+hidden: false
+metadata:
+  title: ''
+  description: ''
+  robots: noindex
+next:
+  description: ''
+---
+Conversion data describes the channel(s) through which users got to your app.
+
+The SDKs let you access this data in real-time for every app session. Once the data is available, you can:
+ * Customize your app's logic and flow based on the returned data
+ * Send the data to your servers for further processing
+
+## Conversion data SDK guides
+The following guides detail how to retrieve and process conversion data on various platforms.
+
+[block:html]
+{
+  "html": "<div class=\"button-container\">\n  <a class=\"button android\" href=\"https://dev.appsflyer.com/hc/docs/conversion-data-android\">Android SDK</a>\n  <a class=\"button ios\" href=\"https://dev.appsflyer.com/hc/docs/conversion-data-ios\">iOS SDK</a>\n  <a class=\"button unity\" href=\"https://dev.appsflyer.com/hc/docs/conversion-data-unity\">Unity plugin</a>\n</div>\n\n<style>\n  .button-container {\n  \tdisplay: flex;\n  }\n  .button {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 150px;\n\t  border-radius: 6px;\n    padding: 8px;\n    margin-right: 4px;\n\t}\n  \n  .button:before {\n  \tmargin-right: 4px;\n  }\n\n  .button.android {\n    border: solid 2px #3DDC84;\n  }\n\n  .button.ios {\n  \tborder-radius: 6px;\n    padding: 8px;\n    border: solid 2px #7D7D7D;\n  }\n  \n   .button.unity {\n    border: solid 2px #3DDC84;\n    border-color: var(--project-primary-color);\n  }\n\n\n  .ios:before {\n        content: url(\"https://files.readme.io/19fdc72-apple-icon.svg\");\n  }\n\n  .android:before {\n        content: url(\"https://files.readme.io/d7dc5a3-android-icon.svg\");\n  }\n\n.unity:before {\n    content: url(\"https://files.readme.io/59acdf6-unity-icon.svg\");\n}\n\n.reactnative:before {\n   content: url(\"https://files.readme.io/3e1288d-reactnative-icon.svg\");\n}\n\n.flutter:before {\n    content: url(\"https://files.readme.io/1f70175-flutter-icon.svg\");\n}\n</style>"
+}
+[/block]
