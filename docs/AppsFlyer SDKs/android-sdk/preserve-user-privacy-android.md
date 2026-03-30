@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 # Preserve user privacy
 
 For a general introduction to privacy-preserving methods in the AppsFlyer SDK, see [Preserving user privacy](https://dev.appsflyer.com/hc/docs/preserve-user-privacy-1) (under Getting started).
