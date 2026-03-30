@@ -6,8 +6,8 @@
 - integration-testing
 - in-app-events-sdk
 - push-notifications
-- ad-revenue
 - uninstall-measurement
+- ad-revenue
 - conversion-data
 - purchase-and-subscription-validation
 - send-consent-for-dma-compliance
