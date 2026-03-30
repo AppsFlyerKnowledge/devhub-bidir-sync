@@ -5,3 +5,4 @@
 - cancel-opendsr-request
 - download-report
 - create-batch-opendsr-requests
+- get-batch-status
