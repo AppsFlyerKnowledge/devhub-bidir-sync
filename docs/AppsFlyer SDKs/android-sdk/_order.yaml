@@ -9,9 +9,9 @@
 - preserve-user-privacy
 - oaid
 - purchase-validation-android
-- android-send-consent-for-dma-compliance
 - preserve-user-privacy-android
 - branch-migration-ios
+- android-send-consent-for-dma-compliance
 - android-release-notes
 - purchase-validation
 - branch-migration-android
