@@ -2,3 +2,4 @@
 - get-stub-opendsr-request-status
 - cancel-stub-opendsr-request
 - stub-discovery
+- get-stub-certificate
