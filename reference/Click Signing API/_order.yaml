@@ -2,3 +2,4 @@
 - get-config
 - update-config
 - circuit-breaker
+- add-excluded-app
