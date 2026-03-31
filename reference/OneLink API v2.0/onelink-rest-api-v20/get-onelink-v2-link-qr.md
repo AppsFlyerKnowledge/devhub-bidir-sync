@@ -1,6 +1,6 @@
 ---
 title: Get OneLink QR code
-excerpt: >-
+excerpt: >
   <span style="background-color: #6e00ff; color: #fff; font-size: 12px;
   font-weight: 400; padding: 4px; border-radius: 8px;">
     Premium
