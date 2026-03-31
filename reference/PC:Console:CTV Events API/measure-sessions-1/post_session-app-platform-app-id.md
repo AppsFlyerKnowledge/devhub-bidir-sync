@@ -1,6 +1,6 @@
 ---
 title: Measure sessions
-excerpt: >-
+excerpt: >
   > ℹ️ This is a server to server API. If you need to report events directly
   from your application's client please see [this
   section](doc:c2s-integrations-overview) or contact your CSM
