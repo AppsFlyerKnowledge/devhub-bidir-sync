@@ -1,6 +1,6 @@
 ---
 title: Get OneLink attribution link
-excerpt: >-
+excerpt: >
   > ❗️ Important
 
   > 

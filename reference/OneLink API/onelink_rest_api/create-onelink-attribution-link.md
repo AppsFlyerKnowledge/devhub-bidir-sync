@@ -1,6 +1,6 @@
 ---
 title: Create OneLink attribution link
-excerpt: >-
+excerpt: >
   > ❗️ Important
 
   > 

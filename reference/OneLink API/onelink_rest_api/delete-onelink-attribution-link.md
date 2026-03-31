@@ -1,6 +1,6 @@
 ---
 title: Delete OneLink attribution link
-excerpt: >-
+excerpt: >
   > ❗️ Important
 
   > 

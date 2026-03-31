@@ -1,6 +1,6 @@
 ---
 title: Update OneLink attribution link
-excerpt: >-
+excerpt: >
   > ❗️ Important
 
   > 
