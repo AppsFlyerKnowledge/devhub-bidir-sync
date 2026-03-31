@@ -1,6 +1,6 @@
 ---
 title: Measure sessions
-excerpt: >-
+excerpt: >
   > ℹ️ This is  API is used to to report events directly from your application's
   client. If you need Server-to-Server please see [this
   section](https://dev.appsflyer.com/hc/reference/post_session-app-platform-app-id)         
