@@ -1,6 +1,6 @@
 ---
 title: Import a new audience
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
