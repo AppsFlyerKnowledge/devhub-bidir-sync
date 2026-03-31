@@ -1,6 +1,6 @@
 ---
 title: Get aggregated postbacks
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
