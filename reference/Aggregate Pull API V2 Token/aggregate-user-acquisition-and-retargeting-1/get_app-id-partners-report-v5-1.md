@@ -1,6 +1,6 @@
 ---
 title: Partners
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

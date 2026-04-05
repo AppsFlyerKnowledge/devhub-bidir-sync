@@ -1,6 +1,6 @@
 ---
 title: Geo daily
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

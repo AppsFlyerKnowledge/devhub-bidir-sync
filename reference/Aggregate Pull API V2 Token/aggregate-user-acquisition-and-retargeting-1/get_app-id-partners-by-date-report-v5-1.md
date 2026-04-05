@@ -1,6 +1,6 @@
 ---
 title: Partners daily
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

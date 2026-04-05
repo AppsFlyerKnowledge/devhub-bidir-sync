@@ -1,6 +1,6 @@
 ---
 title: Daily
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

@@ -1,6 +1,6 @@
 ---
 title: Geo
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
