@@ -93,3 +93,4 @@ To fire an impression, see [here](https://dev.appsflyer.com/hc/docs/dl_smart_scr
 ## Game landing page demo
 
 You can find here a fully functional [demo landing page](https://appsflyersdk.github.io/appsflyer-sample-app-smartscript-demo-page/) which demonstrates integrating the `generateDirectClickURL` [Smart Script code](https://github.com/AppsFlyerSDK/appsflyer-sample-app-smartscript-demo-page/blob/master/index.html#L340-345).
+
