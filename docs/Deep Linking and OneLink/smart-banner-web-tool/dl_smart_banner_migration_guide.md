@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 > ⚠️ **Important notice**
 > 
 > As of Nov. 8th, 2023, AppsFlyer Smart Banner web SDK v1, is deprecated. From this date onwards websites using the Smart Banner web SDK v1 can no longer show Smart Banners.
