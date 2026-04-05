@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 ## Overview
 
 AppsFlyer provides a Smart Banner SDK that advertisers integrate into their websites. The purpose of the SDK is to pull all the required data to dynamically display the Smart Banners. The Smart Banners SDK also automatically builds the proper attribution links, so you don't need to build them manually.
