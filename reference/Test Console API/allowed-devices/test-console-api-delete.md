@@ -1,6 +1,6 @@
 ---
 title: Delete device
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

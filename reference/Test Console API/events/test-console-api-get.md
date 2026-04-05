@@ -1,6 +1,6 @@
 ---
 title: Retrieve events
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

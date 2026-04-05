@@ -1,6 +1,6 @@
 ---
 title: Add device
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
