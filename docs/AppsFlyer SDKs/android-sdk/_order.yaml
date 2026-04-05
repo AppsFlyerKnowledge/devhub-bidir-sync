@@ -13,7 +13,7 @@
 - preserve-user-privacy-android
 - android-send-consent-for-dma-compliance
 - android-release-notes
-- android-legacy-security-plugin
 - android-security-plugin
 - branch-migration-ios
 - branch-migration-android
+- android-legacy-security-plugin
