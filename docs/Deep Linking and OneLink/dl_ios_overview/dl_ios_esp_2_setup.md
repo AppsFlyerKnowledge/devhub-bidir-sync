@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 ## Overview
 
 The provided code aims to regulate the functionality of wrapped links within an email campaign, specifically addressing two types: Weblinks, intended to open a website, and links designed to open the app through a universal link or App link.
