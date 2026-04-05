@@ -1,7 +1,7 @@
 - preserve-user-privacy
-- integrate-android-sdk
 - install-android-sdk
 - testing-android
+- integrate-android-sdk
 - push-notifications-android
 - in-app-events-android
 - conversion-data-android
