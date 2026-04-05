@@ -2,10 +2,10 @@
 - install-android-sdk
 - testing-android
 - integrate-android-sdk
-- push-notifications-android
 - in-app-events-android
 - conversion-data-android
 - ad-revenue-1
+- push-notifications-android
 - uninstall-measurement-android
 - purchase-validation
 - purchase-validation-android
