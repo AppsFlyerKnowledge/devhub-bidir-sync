@@ -1,6 +1,6 @@
 ---
 title: Get click signing config
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

@@ -1,6 +1,6 @@
 ---
 title: Update click signing config
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

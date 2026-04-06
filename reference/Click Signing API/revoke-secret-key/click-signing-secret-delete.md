@@ -1,6 +1,6 @@
 ---
 title: Revoke secret key
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

@@ -1,6 +1,6 @@
 ---
 title: Remove excluded app
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

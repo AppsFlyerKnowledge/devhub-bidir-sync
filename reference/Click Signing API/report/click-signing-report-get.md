@@ -1,6 +1,6 @@
 ---
 title: Report
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

@@ -1,6 +1,6 @@
 ---
 title: Test
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

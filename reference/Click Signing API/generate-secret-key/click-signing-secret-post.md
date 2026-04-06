@@ -1,6 +1,6 @@
 ---
 title: Generate secret key
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
