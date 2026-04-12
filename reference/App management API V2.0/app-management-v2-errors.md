@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 ## Errors for adding an app
 
 | Error | Description |
