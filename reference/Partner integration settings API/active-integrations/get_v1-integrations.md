@@ -1,6 +1,6 @@
 ---
 title: Get active integrations
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

@@ -1,6 +1,6 @@
 ---
 title: Set install referrer decryption key
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

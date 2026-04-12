@@ -1,6 +1,6 @@
 ---
 title: Get active integration parameters
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

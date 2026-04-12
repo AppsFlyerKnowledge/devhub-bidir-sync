@@ -1,6 +1,6 @@
 ---
 title: Get a list of unique parameters
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

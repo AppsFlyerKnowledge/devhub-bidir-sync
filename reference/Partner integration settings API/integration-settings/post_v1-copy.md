@@ -1,6 +1,6 @@
 ---
 title: Copy partner integration settings
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
@@ -18,7 +18,7 @@ excerpt: >-
 
   > 📘 Note
 
-  > Only parameters of event names with the `af_` prefix can be copied.
+  > Only parameters of event names with the `af_` prefix can be copied.  
 api:
   file: partner-integration-settings-api.json
   operationId: post_v1-copy

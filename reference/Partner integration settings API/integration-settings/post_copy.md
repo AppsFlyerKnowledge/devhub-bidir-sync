@@ -1,6 +1,6 @@
 ---
 title: Deprecated - Copy partner integration settings
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
