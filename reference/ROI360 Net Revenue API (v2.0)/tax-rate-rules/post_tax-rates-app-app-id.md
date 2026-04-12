@@ -1,6 +1,6 @@
 ---
 title: Create tax rate rule
-excerpt: >-
+excerpt: >
   Create custom tax rate rules for a specific app.
 
 
