@@ -1,6 +1,6 @@
 ---
 title: Get performance report
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
@@ -15,7 +15,7 @@ excerpt: >-
   for SKAN V4.
 
   > If you select SKAN V4, but results are for SKAN V3 postbacks, the SKAN V4
-  fields return `null`.
+  fields return `null`. 
 api:
   file: skan-aggregated-performance-report-api.json
   operationId: skan-agg-performance-report-api-get
