@@ -10,6 +10,8 @@ metadata:
 next:
   description: ''
 ---
+
+
 The AppsFlyer platform attributes and records mobile app events sent by the AppsFlyer SDK and by S2S APIs.
 
 ## Endpoint
