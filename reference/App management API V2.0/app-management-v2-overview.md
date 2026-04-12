@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 **At a glance**
 The dedicated API allows account admins to manage apps within their accounts supporting the main features available in the UI. This includes adding updating and deleting apps. The API also incorporates the same error verification mechanisms. Please note that we currently allow adding and updating mobile apps only while deletion is possible for all platforms.
 
@@ -81,4 +82,4 @@ The following URL parameters are needed in the schema for deleting an app:
 | API Parameter | Type | Mandatory | Remarks |
 | --- | --- | --- | --- |
 | appId | string | Yes | A valid AppsFlyer app ID |
-| platform | string | Yes | Possible values: https://docs.google.com/document/d/1W6H5WX3WZCyMYuEgHqSorU0WF6UuTQbuxF6AISxw7gc/edit#bookmark=id.uredi0417lsz.
+| platform | string | Yes | Possible values: https://docs.google.com/document/d/1W6H5WX3WZCyMYuEgHqSorU0WF6UuTQbuxF6AISxw7gc/edit#bookmark=id.uredi0417lsz. 
