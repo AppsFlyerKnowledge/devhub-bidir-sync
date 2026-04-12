@@ -1,6 +1,6 @@
 ---
 title: Get Master Report
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
