@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 Use this document to understand what has changed in V2.0 and how to transition to the new version effectively:
 
 - **[V1 to V2.0 version comparison](#onelink-api-version-1-and-version-2-side-by-side-comparison)**. This section outlines the changes and new features in V2.0
