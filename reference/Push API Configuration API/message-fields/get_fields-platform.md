@@ -1,6 +1,6 @@
 ---
 title: Retrieve per platform
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

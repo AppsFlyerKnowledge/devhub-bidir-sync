@@ -1,6 +1,6 @@
 ---
 title: Get Push API configuration
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

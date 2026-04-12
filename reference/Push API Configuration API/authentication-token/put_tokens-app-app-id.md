@@ -1,6 +1,6 @@
 ---
 title: Set Push API Authentication Token
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

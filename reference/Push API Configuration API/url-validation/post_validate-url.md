@@ -1,6 +1,6 @@
 ---
 title: Validate URL
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

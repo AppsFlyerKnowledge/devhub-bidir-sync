@@ -1,6 +1,6 @@
 ---
 title: Update Push API configuration
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

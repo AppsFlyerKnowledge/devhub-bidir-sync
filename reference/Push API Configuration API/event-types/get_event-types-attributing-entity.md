@@ -1,6 +1,6 @@
 ---
 title: Retrieve per attributing-entity
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

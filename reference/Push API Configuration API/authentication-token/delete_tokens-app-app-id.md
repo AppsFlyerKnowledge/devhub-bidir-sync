@@ -1,6 +1,6 @@
 ---
 title: Delete Push API Authentication Token
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
