@@ -1,6 +1,6 @@
 ---
 title: App list
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
