@@ -1,6 +1,6 @@
 ---
 title: Create Cohort Report
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
