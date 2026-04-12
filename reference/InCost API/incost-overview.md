@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 # Overview
 
 The InCost API, part of AppsFlyer ROI360, lets ad networks programmatically send advertising cost data to AppsFlyer. AppsFlyer then ingests and processes the data, and makes it available to advertisers and partners via dashboards and reports. The result is advertisers get aggregate cost data that lets them understand the true ROAS impact of your network.
