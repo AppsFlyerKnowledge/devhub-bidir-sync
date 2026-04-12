@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 ## List of supported platforms that can be deleted
 
 `roku`
