@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 **At a glance:**
 
 The [App list API](https://dev.appsflyer.com/hc/reference/app-list-ad-nets-api-get) returns a list of apps (app IDs) based on the caller's account type:
