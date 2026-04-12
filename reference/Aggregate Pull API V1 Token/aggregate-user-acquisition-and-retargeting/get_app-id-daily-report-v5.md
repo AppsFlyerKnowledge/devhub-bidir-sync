@@ -1,6 +1,6 @@
 ---
 title: Daily
-excerpt: >-
+excerpt: >
   Data is grouped by date, media source, and campaign, and excludes in-app
   events. 
 

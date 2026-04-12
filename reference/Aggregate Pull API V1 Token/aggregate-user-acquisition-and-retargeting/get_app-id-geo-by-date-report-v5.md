@@ -1,6 +1,6 @@
 ---
 title: Geo daily
-excerpt: |-
+excerpt: |
   Data is grouped by date, geo, media source, and campaign. 
   Data type: LTV
 api:

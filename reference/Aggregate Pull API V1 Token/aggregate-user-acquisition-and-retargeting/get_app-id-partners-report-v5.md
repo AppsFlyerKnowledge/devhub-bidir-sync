@@ -1,6 +1,6 @@
 ---
 title: Partners
-excerpt: >-
+excerpt: >
   Data is grouped by media source and campaign. 
 
   Data type: LTV 

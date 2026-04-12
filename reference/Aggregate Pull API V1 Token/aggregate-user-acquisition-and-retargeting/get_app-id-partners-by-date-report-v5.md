@@ -1,6 +1,6 @@
 ---
 title: Partners daily
-excerpt: |-
+excerpt: |
   Data is grouped by date, media source, and campaign.
   Data type: LTV
 api:

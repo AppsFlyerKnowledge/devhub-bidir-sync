@@ -1,6 +1,6 @@
 ---
 title: Geo
-excerpt: |-
+excerpt: |
   Data is grouped by geo, media source, and campaign.
   Data type: LTV
 api:
