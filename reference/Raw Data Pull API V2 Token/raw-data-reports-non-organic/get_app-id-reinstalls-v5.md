@@ -1,6 +1,6 @@
 ---
 title: Reinstalls
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

@@ -1,6 +1,6 @@
 ---
 title: Conversions (re-engagements & re-attributions)
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

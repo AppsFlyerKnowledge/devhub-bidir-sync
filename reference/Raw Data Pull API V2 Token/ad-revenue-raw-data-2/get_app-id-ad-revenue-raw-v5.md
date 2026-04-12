@@ -1,6 +1,6 @@
 ---
 title: Attributed ad revenue
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

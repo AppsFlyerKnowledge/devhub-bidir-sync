@@ -1,6 +1,6 @@
 ---
 title: Organic reinstalls
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

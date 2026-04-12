@@ -1,6 +1,6 @@
 ---
 title: Retargeting ad revenue
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

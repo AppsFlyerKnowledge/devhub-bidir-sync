@@ -1,6 +1,6 @@
 ---
 title: Retargeting in-app event postbacks
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

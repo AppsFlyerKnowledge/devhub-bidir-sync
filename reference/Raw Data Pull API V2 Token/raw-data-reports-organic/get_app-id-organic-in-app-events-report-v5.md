@@ -1,6 +1,6 @@
 ---
 title: Organic in-app events
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

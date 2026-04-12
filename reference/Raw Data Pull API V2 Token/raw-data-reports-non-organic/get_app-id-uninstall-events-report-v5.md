@@ -1,6 +1,6 @@
 ---
 title: Uninstalls
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

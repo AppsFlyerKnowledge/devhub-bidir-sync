@@ -1,6 +1,6 @@
 ---
 title: Organic Installs
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

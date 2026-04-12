@@ -1,6 +1,6 @@
 ---
 title: In-app events
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

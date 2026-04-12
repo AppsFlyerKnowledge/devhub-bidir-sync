@@ -1,6 +1,6 @@
 ---
 title: Retargeting conversions postbacks
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

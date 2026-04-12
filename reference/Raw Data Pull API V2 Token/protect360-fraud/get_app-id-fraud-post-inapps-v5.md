@@ -1,6 +1,6 @@
 ---
 title: Post-attribution in-app events
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

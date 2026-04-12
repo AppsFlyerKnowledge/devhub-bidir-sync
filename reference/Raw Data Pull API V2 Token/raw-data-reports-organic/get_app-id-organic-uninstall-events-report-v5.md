@@ -1,6 +1,6 @@
 ---
 title: Organic uninstalls
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

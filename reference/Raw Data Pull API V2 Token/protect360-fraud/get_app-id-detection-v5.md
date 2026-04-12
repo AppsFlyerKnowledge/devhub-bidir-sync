@@ -1,6 +1,6 @@
 ---
 title: Post-attribution installs
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

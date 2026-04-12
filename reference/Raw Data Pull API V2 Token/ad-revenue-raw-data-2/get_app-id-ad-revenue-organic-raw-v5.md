@@ -1,6 +1,6 @@
 ---
 title: Organic ad revenue
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

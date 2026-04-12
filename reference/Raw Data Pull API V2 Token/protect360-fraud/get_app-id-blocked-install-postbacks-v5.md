@@ -1,6 +1,6 @@
 ---
 title: Blocked install postbacks
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

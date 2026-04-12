@@ -1,6 +1,6 @@
 ---
 title: In-app event postbacks
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

@@ -1,6 +1,6 @@
 ---
 title: Clicks
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

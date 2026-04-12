@@ -1,6 +1,6 @@
 ---
 title: Install postbacks
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >

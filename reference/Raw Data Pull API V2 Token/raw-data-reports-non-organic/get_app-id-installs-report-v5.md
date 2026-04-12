@@ -1,6 +1,6 @@
 ---
 title: Installs
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
