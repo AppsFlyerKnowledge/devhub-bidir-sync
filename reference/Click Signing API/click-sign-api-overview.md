@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+
 **At a glance:**
 
 Add signature validation to clicks to avoid fraud liabilities so fraudulent clicks aren't attributed to your ad network.
