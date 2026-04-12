@@ -1,6 +1,6 @@
 ---
 title: Attributed ad revenue
-excerpt: |-
+excerpt: |
   Records ad revenue for users attributed to a media source. 
   Data freshness: Daily
 api:

@@ -1,6 +1,6 @@
 ---
 title: Uninstalls
-excerpt: |-
+excerpt: |
   Records when a user uninstalls the app. 
   Data freshness: Daily
 api:

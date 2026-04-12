@@ -1,6 +1,6 @@
 ---
 title: Installs
-excerpt: >-
+excerpt: >
   Records non-organic installs. The record is generated when a user opens the
   app for the first time.
 

@@ -1,6 +1,6 @@
 ---
 title: Clicks
-excerpt: |-
+excerpt: |
   Records clicks performed by users blocked by Protect360. 
   Data freshness: Daily
 api:

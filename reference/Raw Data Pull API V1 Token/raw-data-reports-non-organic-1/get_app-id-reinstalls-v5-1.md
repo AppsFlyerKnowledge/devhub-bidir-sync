@@ -1,6 +1,6 @@
 ---
 title: Reinstalls
-excerpt: >-
+excerpt: >
   Records users who after uninstalling the app, engage with a UA media source
   and reinstall the app during the re-attribution window. 
 

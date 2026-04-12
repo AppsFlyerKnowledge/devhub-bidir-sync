@@ -1,6 +1,6 @@
 ---
 title: In-app event postbacks
-excerpt: |-
+excerpt: |
   Records in-app event postbacks sent to the media source.
   Data freshness: Daily
 api:

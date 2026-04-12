@@ -1,6 +1,6 @@
 ---
 title: In-app events
-excerpt: |-
+excerpt: |
   Records the events performed by users. 
   Data freshness: Real-time
 api:

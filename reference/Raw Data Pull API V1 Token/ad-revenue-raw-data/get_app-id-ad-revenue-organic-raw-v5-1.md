@@ -1,6 +1,6 @@
 ---
 title: Organic ad revenue
-excerpt: |-
+excerpt: |
   Records ad revenue for users not attributed to a media source.
   Data freshness: Daily
 api:

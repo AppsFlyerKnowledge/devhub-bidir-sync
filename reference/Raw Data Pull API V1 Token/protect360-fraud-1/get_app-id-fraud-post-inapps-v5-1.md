@@ -1,6 +1,6 @@
 ---
 title: Post-attribution in-app events
-excerpt: >-
+excerpt: >
   Records in-app events for installs identified as fraudulent after being
   attributed to a media source or judged fraudulent without regard to the
   install itself. 

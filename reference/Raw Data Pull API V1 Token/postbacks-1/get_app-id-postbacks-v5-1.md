@@ -1,6 +1,6 @@
 ---
 title: Install postbacks
-excerpt: |-
+excerpt: |
   Records install events generated when a user opens the app for the first time.
   Data freshness: Daily
 api:

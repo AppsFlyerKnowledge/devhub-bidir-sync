@@ -1,6 +1,6 @@
 ---
 title: Retargeting conversions postbacks
-excerpt: |-
+excerpt: |
   Records in-app events users performed during the re-engagement window.
   Data freshness: Real-time
 api:

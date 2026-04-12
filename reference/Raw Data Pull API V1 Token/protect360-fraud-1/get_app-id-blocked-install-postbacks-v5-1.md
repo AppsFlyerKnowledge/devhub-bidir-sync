@@ -1,6 +1,6 @@
 ---
 title: Blocked install postbacks
-excerpt: >-
+excerpt: >
   Records copies of postbacks sent to a media source resulting in a blocked
   install. 
 

@@ -1,6 +1,6 @@
 ---
 title: Organic reinstalls
-excerpt: |-
+excerpt: |
   Records users uninstalling the app and then installing it again.
   Data freshness: Daily
 api:

@@ -1,6 +1,6 @@
 ---
 title: Post-attribution installs
-excerpt: >-
+excerpt: >
   Reports include installs attributed to a media source but later found to be
   fraudulent.
 

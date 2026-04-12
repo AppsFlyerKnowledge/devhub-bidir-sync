@@ -1,6 +1,6 @@
 ---
 title: Organic uninstalls
-excerpt: |-
+excerpt: |
   Records users uninstalling the app. 
   Data freshness: Daily
 api:

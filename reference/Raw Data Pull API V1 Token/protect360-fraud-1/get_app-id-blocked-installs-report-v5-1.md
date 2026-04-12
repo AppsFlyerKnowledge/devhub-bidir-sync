@@ -1,6 +1,6 @@
 ---
 title: Installs
-excerpt: >-
+excerpt: >
   Records installs identified as fraudulent and therefore not attributed to any
   media source.
 

@@ -1,6 +1,6 @@
 ---
 title: Organic Installs
-excerpt: |-
+excerpt: |
   Records when the app is opened by a user for the first time.
   Data freshness: Continuous
 api:
