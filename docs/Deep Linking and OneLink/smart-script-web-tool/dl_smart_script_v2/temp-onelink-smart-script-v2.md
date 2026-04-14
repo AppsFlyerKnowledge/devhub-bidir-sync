@@ -1,7 +1,7 @@
 ---
 title: temp - OneLink Smart Script V2
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
