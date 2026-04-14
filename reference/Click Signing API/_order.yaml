@@ -1,0 +1,10 @@
+- click-sign-api-overview
+- get-config
+- update-config
+- circuit-breaker
+- add-excluded-app
+- remove-excluded-app
+- report
+- test
+- generate-secret-key
+- revoke-secret-key
