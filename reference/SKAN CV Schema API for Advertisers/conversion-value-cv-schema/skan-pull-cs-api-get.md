@@ -1,6 +1,6 @@
 ---
 title: Get CV schema
-excerpt: >-
+excerpt: >
   > ⚠️ Important
 
   >
