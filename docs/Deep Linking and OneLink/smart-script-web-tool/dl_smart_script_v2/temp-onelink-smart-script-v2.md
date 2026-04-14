@@ -1,5 +1,5 @@
 ---
-title: temp - OneLink Smart Script V2
+title: '[WIP] OneLink Smart Script V2'
 deprecated: false
 hidden: true
 metadata:
