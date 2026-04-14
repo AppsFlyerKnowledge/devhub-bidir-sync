@@ -32,9 +32,8 @@ You can select between two Smart Banners snippets:
 - **Standard**: The standard integration.
 - **Advanced SDK Verification**: An enhanced integration that adds supply-chain protection for the Web SDK. Use this to add an extra layer of security against CDN compromise, DNS hijacking, and man-in-the-middle attacks.
 
-> **Important!**
-If you are transitioning from the Standard Web SDK to Advanced SDK Verification, replace your existing snippet with the new one. Do not add the new snippet on top of the existing one.
-> 
+> **Important!**  
+> If you are transitioning from the Standard Web SDK to Advanced SDK Verification, replace your existing snippet with the new one. Do not add the new snippet on top of the existing one.
 
 #### **Standard code snippet**
 
@@ -78,16 +77,15 @@ AF('banners', 'showBanner');
 </script>
 ```
 
-#### Smart Banners and People-Based Attribution (PBA)
+### Smart Banners and People-Based Attribution (PBA)
 
 You can select between two Smart Banners and PBA snippets
 
 - **Standard**: The standard integration.
 - **Advanced SDK Verification**: An enhanced integration that adds supply-chain protection for the Web SDK. Use this to add an extra layer of security against CDN compromise, DNS hijacking, and man-in-the-middle attacks.
 
-> **Important!**
-If you are transitioning from the Standard Web SDK to Advanced SDK Verification, replace your existing snippet with the new one. Do not add the new snippet on top of the existing one.
-> 
+> **Important!**  
+> If you are transitioning from the Standard Web SDK to Advanced SDK Verification, replace your existing snippet with the new one. Do not add the new snippet on top of the existing one.
 
 #### Standard code snippet
 
@@ -134,8 +132,8 @@ AF('banners', 'showBanner', { bannerZIndex: 1000, additionalParams: { p1: "v1", 
 
 After selecting a code snippet, perform the following:
 
-1. Replace the *YOUR_WEB_KEY* placeholder in the script with your **Web key**. The web key is created when you create a new Website workplace.
-2. If you selected a Smart Banners and PBA snippet, replace the *YOUR_PBA_KEY* placeholder in the script with your **web dev key**. The web dev key is created when you create a brand bundle.
+1. Replace the _YOUR_WEB_KEY_ placeholder in the script with your **Web key**. The web key is created when you create a new Website workplace.
+2. If you selected a Smart Banners and PBA snippet, replace the _YOUR_PBA_KEY_ placeholder in the script with your **web dev key**. The web dev key is created when you create a brand bundle.
 3. Paste this code snippet in the `head` tag on your website. Make sure to paste it near the top of the `head` tag.
 
 > 📘 Note
@@ -301,7 +299,21 @@ AF('banners', 'hideBanner');
 
 ## Traits and Limitations
 
-| Trait                         | Remarks                                                                                                                                                                                                                                                                                              |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Single page application (SPA) | Smart Banners are by default only displayed once, even if users navigate between pages.<br> To display banners when users navigate between pages, you need to manually call hideBanner and showBanner for every navigation that doesn't reload the page and trigger the Smart Banners default logic. |
-| Click ID auto forwarding | The following click IDs are automatically forwarded to the outgoing URL when they are present on the incoming URL:<br> - Google: `gclid`, `gbraid`, `wbraid`<br> - Facebook: `fbclid`<br> - TikTok: `ttclid`<br> - X (formerly Twitter): `twclid`<br> - Snap: `ScCid` |
+[block:parameters]
+{
+  "data": {
+    "h-0": "Trait",
+    "h-1": "Remarks",
+    "0-0": "Single page application (SPA)",
+    "0-1": "Smart Banners are by default only displayed once, even if users navigate between pages.<br> To display banners when users navigate between pages, you need to manually call hideBanner and showBanner for every navigation that doesn't reload the page and trigger the Smart Banners default logic.",
+    "1-0": "Click ID auto forwarding",
+    "1-1": "The following click IDs are automatically forwarded to the outgoing URL when they are present on the incoming URL:<br> - Google: `gclid`, `gbraid`, `wbraid`<br> - Facebook: `fbclid`<br> - TikTok: `ttclid`<br> - X (formerly Twitter): `twclid`<br> - Snap: `ScCid`"
+  },
+  "cols": 2,
+  "rows": 2,
+  "align": [
+    null,
+    null
+  ]
+}
+[/block]
