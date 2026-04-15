@@ -73,10 +73,12 @@ You can select between two Smart Banners snippets:
 
 ```jsx
 <script>
-  // Queue — buffers AF() calls until the SDK is ready
+  // Queue: buffers AF() calls until the SDK is ready
   window.AppsFlyerSdkObject = "AF";
   window.AF = window.AF || function() {
-    (window.AF.q = window.AF.q || []).push([Date.now()].concat(Array.prototype.slice.call(arguments)));
+    (window.AF.q = window.AF.q || []).push(
+      [Date.now()].concat(Array.prototype.slice.call(arguments))
+    );
   };
   window.AF.id = window.AF.id || { banners: { key: "YOUR_BANNER_KEY" } };
   window.AF.plugins = {};
@@ -94,7 +96,9 @@ You can select between two Smart Banners snippets:
   loaderScript.crossOrigin = "anonymous";
   loaderScript.async = true;
   document.head.appendChild(loaderScript);
-  // Smart Banners are by default set to the max z-index value, so they won't   be hidden by the website elements. This can be changed if you want some       website components to be on top of the banner.
+
+  // Smart Banners are set to the max z-index by default, so they won't be hidden
+  // by website elements. Change this if you want some elements to appear on top of the banner.
   AF('banners', 'showBanner');
 </script>
 ```
