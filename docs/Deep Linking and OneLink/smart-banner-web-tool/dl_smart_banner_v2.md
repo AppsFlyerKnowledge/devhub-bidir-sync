@@ -130,6 +130,8 @@ AF('banners', 'showBanner', { bannerZIndex: 1000, additionalParams: { p1: "v1", 
   loaderScript.crossOrigin = "anonymous";
   loaderScript.async = true;
   document.head.appendChild(loaderScript);
+	// Smart Banners are by default set to the max z-index value, so they won't   be hidden by the website elements. This can be changed if you want some       website components to be on top of the banner.
+  AF('banners', 'showBanner', { bannerZIndex: 1000, additionalParams: { p1:     "v1", p2: "v2"}});
 </script>
 ```
 
