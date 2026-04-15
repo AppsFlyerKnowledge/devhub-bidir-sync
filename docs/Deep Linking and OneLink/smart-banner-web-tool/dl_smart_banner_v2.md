@@ -117,13 +117,37 @@ You can select between two Smart Banners and PBA snippets
 
 ```jsx
 <script>
-!function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){
-(t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))},
-t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,
-o.src="https://websdk.appsflyersdk.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
-p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF", "pba,banners",{pba: {webAppId: "YOUR_PBA_KEY"}, banners: {key: "YOUR_WEB_KEY"}});
-// Smart Banners are by default set to the max z-index value, so they won't be hidden by the website elements. This can be changed if you want some website components to be on top of the banner.
-AF('banners', 'showBanner', { bannerZIndex: 1000, additionalParams: { p1: "v1", p2: "v2"}});
+  // Queue: buffers AF() calls until the SDK is ready
+  window.AppsFlyerSdkObject = "AF";
+  window.AF = window.AF || function() {
+    (window.AF.q = window.AF.q || []).push(
+      [Date.now()].concat(Array.prototype.slice.call(arguments))
+    );
+  };
+  window.AF.id = window.AF.id || {
+    pba:     { webAppId: "YOUR_PBA_KEY" },
+    banners: { key:      "YOUR_WEB_KEY" }
+  };
+  window.AF.plugins = {};
+
+  // Inject SDK loader
+  var sdkScript = document.createElement("script");
+  sdkScript.async = true;
+  sdkScript.src = "https://websdk.appsflyersdk.com?"
+    + "st=pba,banners"
+    + "&af_id=YOUR_WEB_KEY";
+  document.head.appendChild(sdkScript);
+
+  // Smart Banners are set to the max z-index by default, so they won't be hidden
+  // by website elements. Change this if you want some elements to appear on top of the banner.
+  AF('banners', 'showBanner', {
+    bannerZIndex: 1000,
+    additionalParams: {
+      p1: "v1",
+      p2: "v2"
+    }
+  });
+</script>
 ```
 
 #### **Advanced SDK Verification**
