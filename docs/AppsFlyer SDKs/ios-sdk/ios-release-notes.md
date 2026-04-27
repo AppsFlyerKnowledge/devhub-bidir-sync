@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-## Version 6.18
+## Version 6.18.0
 
 #### New Features
 
