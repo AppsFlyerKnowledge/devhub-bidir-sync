@@ -5,8 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-# appsflyer-unity-plugin
-
 🛠 In order for us to provide optimal support, please contact AppsFlyer support through the Customer Assistant Chatbot for assistance with troubleshooting issues or product guidance.  
 To do so, please follow [this article](https://support.appsflyer.com/hc/en-us/articles/23583984402193-Using-the-Customer-Assistant-Chatbot)
 
@@ -100,12 +98,12 @@ After 6.6.0:
 
 ***
 
-##  Strict Mode
+## Strict Mode
 
 The plugin supports a Strict Mode which completely removes the IDFA collection functionality and AdSupport framework dependencies.  
 Use the Strict Mode when developing apps for kids, for example.  
 More information about how to install the Strict Mode is available [here](/docs/Installation.md) .
 
-###  AD_ID permission for Android
+### AD_ID permission for Android
 
 In v6.8.0 of the AppsFlyer SDK, we added the normal permission com.google.android.gms.permission.AD_ID to the SDK's AndroidManifest, to allow the SDK to collect the Android Advertising ID on apps targeting API 33. If your app is targeting children, you need to revoke this permission to comply with Google's Data policy. You can read more about it [here](https://dev.appsflyer.com/hc/docs/install-android-sdk#the-ad_id-permission) .
