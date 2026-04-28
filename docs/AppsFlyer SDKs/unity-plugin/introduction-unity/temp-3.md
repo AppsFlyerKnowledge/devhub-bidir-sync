@@ -87,23 +87,25 @@ Before 6.6.0:
     AppsFlyeriOS.waitForATTUserAuthorizationWithTimeoutInterval(60);
 #endif
 ```
----
+
+***
 
 After 6.6.0:
+
 ```c#
 #if UNITY_IOS && !UNITY_EDITOR
     AppsFlyer.waitForATTUserAuthorizationWithTimeoutInterval(60);
 #endif
 ```
----
 
-## <a id="strict-mode"> Strict Mode
-The plugin supports a Strict Mode which completely removes the IDFA collection functionality and AdSupport framework dependencies.
-Use the Strict Mode when developing apps for kids, for example.
-More information about how to install the Strict Mode is available [here](/docs/Installation.md).
+***
 
+##  Strict Mode
 
-### <a id="init-sdk-deeplink"> AD_ID permission for Android
+The plugin supports a Strict Mode which completely removes the IDFA collection functionality and AdSupport framework dependencies.  
+Use the Strict Mode when developing apps for kids, for example.  
+More information about how to install the Strict Mode is available [here](/docs/Installation.md) .
 
-In v6.8.0 of the AppsFlyer SDK, we added the normal permission com.google.android.gms.permission.AD_ID to the SDK's AndroidManifest, to allow the SDK to collect the Android Advertising ID on apps targeting API 33. If your app is targeting children, you need to revoke this permission to comply with Google's Data policy. You can read more about it [here](https://dev.appsflyer.com/hc/docs/install-android-sdk#the-ad_id-permission).
+###  AD_ID permission for Android
 
+In v6.8.0 of the AppsFlyer SDK, we added the normal permission com.google.android.gms.permission.AD_ID to the SDK's AndroidManifest, to allow the SDK to collect the Android Advertising ID on apps targeting API 33. If your app is targeting children, you need to revoke this permission to comply with Google's Data policy. You can read more about it [here](https://dev.appsflyer.com/hc/docs/install-android-sdk#the-ad_id-permission) .
