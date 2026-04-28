@@ -5,6 +5,8 @@ hidden: true
 metadata:
   robots: index
 ---
+<img src="https://massets.appsflyer.com/wp-content/uploads/2018/06/20092440/static-ziv_1TP.png"  width="400" >
+
 # appsflyer-unity-plugin
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
@@ -17,9 +19,11 @@ To do so, please follow [this article](https://support.appsflyer.com/hc/en-us/ar
 
 ## ButterFlyer Sample App
 
-> <a href="https://github.com/AppsFlyerSDK/appsflyer-unity-sample-app"> ButterFlyer - Unity Sample App</a>
+<a href="https://github.com/AppsFlyerSDK/appsflyer-unity-sample-app">ButterFlyer - Unity Sample App
 
 ![](https://files.readme.io/3cdc241-banner-butterflyer.png "banner-butterflyer.png")
+
+</a>
 
 ## Plugin Github Repository
 
@@ -60,7 +64,7 @@ We have released **two** versions of the AppsFlyer Unity plugin to support teams
 - Starting from version 6.17.1, the **Purchase Connector is now integrated directly into the main AppsFlyer Unity plugin**. You no longer need to download, import, or maintain a separate Purchase Connector package.
 - If you were previously using the standalone Purchase Connector from a separate repository, simply remove any references to `using AppsFlyerConnector;` from your codebase, as its functionality is now included in the main plugin under the `AppsFlyerSDK` namespace.
 - The Purchase Connector now supports **StoreKit 2** for iOS 15+ alongside the existing StoreKit 1 support.
-- For detailed migration instructions and new features, see our [Purchase Connector documentation](/docs/purchase-connector.md)      .
+- For detailed migration instructions and new features, see our [Purchase Connector documentation](/docs/purchase-connector.md) .
 
 ***
 
@@ -70,13 +74,13 @@ We have released **two** versions of the AppsFlyer Unity plugin to support teams
 - **V2 Methods (Recommended)**: New overloads using structured data classes (`AFPurchaseDetailsAndroid`/`AFSDKPurchaseDetailsIOS`) are now the recommended approach.
 - **Legacy Methods (Deprecated)**: The old string-based parameter methods are now deprecated but maintained for backward compatibility.
 - **Migration Required**: If you're using the old `validateAndSendInAppPurchase` methods, consider migrating to the V2 versions for better maintainability.
-- For detailed API documentation and migration examples, see our [API reference](/docs/API.md)      .
+- For detailed API documentation and migration examples, see our [API reference](/docs/API.md) .
 
 ***
 
 ## <a id="breaking-changes">     ❗❗ Breaking changes when updating to 6.12.20 ❗❗
 
-- Starting from version 6.12.20, we have changed the way we distribute the plugin via UPM. The UPM branches will no longer hold a dependency for `com.google.external-dependency-manager` as it was proved to cause issues in different versions of Unity - to be clear, this dependency is still required to utilize our plugin, we just can't distribute the plugin with it in UPM form as the EDM4U dependency is [not available via UPM for quite a while already](https://github.com/googlesamples/unity-jar-resolver/issues/434#issuecomment-827028132)       but is still available via `.unitypackage` or `.tgz` files, if you use UPM to fetch our plugin - [please download a suitable version of EDM4U](https://github.com/googlesamples/unity-jar-resolver)       so you will be able to resolve the dependencies, or opt for [an installation without EDM4U](https://github.com/AppsFlyerSDK/appsflyer-unity-plugin/blob/master/docs/Installation.md#installation-without-unity-jar-resolver)      .
+- Starting from version 6.12.20, we have changed the way we distribute the plugin via UPM. The UPM branches will no longer hold a dependency for `com.google.external-dependency-manager` as it was proved to cause issues in different versions of Unity - to be clear, this dependency is still required to utilize our plugin, we just can't distribute the plugin with it in UPM form as the EDM4U dependency is [not available via UPM for quite a while already](https://github.com/googlesamples/unity-jar-resolver/issues/434#issuecomment-827028132)  but is still available via `.unitypackage` or `.tgz` files, if you use UPM to fetch our plugin - [please download a suitable version of EDM4U](https://github.com/googlesamples/unity-jar-resolver)  so you will be able to resolve the dependencies, or opt for [an installation without EDM4U](https://github.com/AppsFlyerSDK/appsflyer-unity-plugin/blob/master/docs/Installation.md#installation-without-unity-jar-resolver) .
 
 ***
 
@@ -111,36 +115,36 @@ After 6.6.0:
 
 The plugin supports a Strict Mode which completely removes the IDFA collection functionality and AdSupport framework dependencies.  
 Use the Strict Mode when developing apps for kids, for example.  
-More information about how to install the Strict Mode is available [here](/docs/Installation.md)      .
+More information about how to install the Strict Mode is available [here](/docs/Installation.md) .
 
 ### <a id="init-sdk-deeplink"> AD_ID permission for Android
 
-In v6.8.0 of the AppsFlyer SDK, we added the normal permission com.google.android.gms.permission.AD_ID to the SDK's AndroidManifest, to allow the SDK to collect the Android Advertising ID on apps targeting API 33. If your app is targeting children, you need to revoke this permission to comply with Google's Data policy. You can read more about it [here](https://dev.appsflyer.com/hc/docs/install-android-sdk#the-ad_id-permission)      .
+In v6.8.0 of the AppsFlyer SDK, we added the normal permission com.google.android.gms.permission.AD_ID to the SDK's AndroidManifest, to allow the SDK to collect the Android Advertising ID on apps targeting API 33. If your app is targeting children, you need to revoke this permission to comply with Google's Data policy. You can read more about it [here](https://dev.appsflyer.com/hc/docs/install-android-sdk#the-ad_id-permission) .
 
 ***
 
 ## <a id="plugin-build-for"> 🚀 Getting Started
 
-- [Installation](/docs/Installation.md)      
-- [Integration](/docs/BasicIntegration.md)      
-- [Test integration](/docs/Testing.md)      
-- [In-app events](/docs/InAppEvents.md)      
-- [Send Consent for DMA Compliance](/docs/DMAConsent.md)      
-- [Uninstall measurement](/docs/UninstallMeasurement.md)      
+- [Installation](/docs/Installation.md) 
+- [Integration](/docs/BasicIntegration.md) 
+- [Test integration](/docs/Testing.md) 
+- [In-app events](/docs/InAppEvents.md) 
+- [Send Consent for DMA Compliance](/docs/DMAConsent.md) 
+- [Uninstall measurement](/docs/UninstallMeasurement.md) 
 
 ## <a id="plugin-build-for"> 💰 Purchase Connector
 
-- [Purchase Connector (ROI360)](/docs/purchase-connector.md)      
+- [Purchase Connector (ROI360)](/docs/purchase-connector.md) 
 
 ## <a id="plugin-build-for"> 🔗 Deep Linking
 
-- [Integration](/docs/DeepLinkIntegrate.md)      
-- [Unified Deep Link (UDL)](/docs/UnifiedDeepLink.md)      
-- [User invite](/docs/UserInvite.md)      
+- [Integration](/docs/DeepLinkIntegrate.md) 
+- [Unified Deep Link (UDL)](/docs/UnifiedDeepLink.md) 
+- [User invite](/docs/UserInvite.md) 
 
 ## <a id="plugin-build-for"> 🧪 Sample App
 
-- [ButterFlyer](https://github.com/AppsFlyerSDK/appsflyer-unity-sample-app)      
+- [ButterFlyer](https://github.com/AppsFlyerSDK/appsflyer-unity-sample-app) 
 
 ***
 
