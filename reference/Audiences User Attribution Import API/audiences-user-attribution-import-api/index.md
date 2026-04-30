@@ -2,7 +2,7 @@
 title: Audiences User Attribution Import API
 excerpt: ''
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
