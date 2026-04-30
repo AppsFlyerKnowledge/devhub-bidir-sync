@@ -2,7 +2,7 @@
 title: Aggregate (user acquisition and retargeting)
 excerpt: ''
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
