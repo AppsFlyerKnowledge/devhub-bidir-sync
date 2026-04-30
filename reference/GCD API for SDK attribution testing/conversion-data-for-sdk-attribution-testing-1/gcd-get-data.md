@@ -1,6 +1,4 @@
 ---
-title: Get the conversion data
-excerpt: ''
 api:
   file: gcd-api-for-sdk-attribution-testing-1.json
   operationId: gcd-get-data
