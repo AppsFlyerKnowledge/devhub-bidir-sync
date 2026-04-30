@@ -1,6 +1,4 @@
 ---
-title: Impression Engagement
-excerpt: ''
 api:
   file: engagements-api.json
   operationId: get_impression-app-platform-app-id

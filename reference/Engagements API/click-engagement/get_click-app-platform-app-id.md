@@ -1,6 +1,4 @@
 ---
-title: Click Engagement
-excerpt: ''
 api:
   file: engagements-api.json
   operationId: get_click-app-platform-app-id
