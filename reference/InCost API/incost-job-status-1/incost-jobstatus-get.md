@@ -1,6 +1,4 @@
 ---
-title: Get job status
-excerpt: ''
 api:
   file: incost-api-1.json
   operationId: incost-jobstatus-get
