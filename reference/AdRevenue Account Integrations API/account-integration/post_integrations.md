@@ -1,6 +1,4 @@
 ---
-title: Set integration
-excerpt: ''
 api:
   file: adrevenue-account-integrations-api.json
   operationId: post_integrations
