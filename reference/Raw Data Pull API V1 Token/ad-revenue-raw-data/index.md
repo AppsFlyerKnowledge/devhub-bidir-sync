@@ -2,7 +2,7 @@
 title: Ad Revenue raw data
 excerpt: ''
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
