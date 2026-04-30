@@ -1,6 +1,4 @@
 ---
-title: Deep linking for Android
-excerpt: ''
 api:
   file: deep-linking-rest-api.json
   operationId: post_android-app-id
