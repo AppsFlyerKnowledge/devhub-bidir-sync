@@ -1,6 +1,4 @@
 ---
-title: Create new imported audience
-excerpt: ''
 api:
   file: audience-external-api.json
   operationId: post_audience

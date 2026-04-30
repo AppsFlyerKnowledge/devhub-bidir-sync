@@ -1,6 +1,4 @@
 ---
-title: List partner connections for account
-excerpt: ''
 api:
   file: audience-external-api.json
   operationId: get_connections

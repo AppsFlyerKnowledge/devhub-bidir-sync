@@ -1,6 +1,4 @@
 ---
-title: Pause audience
-excerpt: ''
 api:
   file: audience-external-api.json
   operationId: audience-external-pause
