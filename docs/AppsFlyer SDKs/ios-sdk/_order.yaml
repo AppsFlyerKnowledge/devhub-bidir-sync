@@ -1,8 +1,8 @@
 - install-ios-sdk
 - ios-release-notes
-- testing-ios
 - integrate-ios-sdk
 - conversion-data-ios
+- testing-ios
 - in-app-events-ios
 - uninstall-measurement-ios
 - push-notifications-ios
