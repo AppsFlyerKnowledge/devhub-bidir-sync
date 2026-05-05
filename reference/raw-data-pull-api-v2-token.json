@@ -1629,9 +1629,6 @@
             "$ref": "#/components/parameters/Currency"
           },
           {
-            "$ref": "#/components/parameters/TimeZone"
-          },
-          {
             "$ref": "#/components/parameters/Geo"
           },
           {
@@ -1776,9 +1773,6 @@
             "$ref": "#/components/parameters/Currency"
           },
           {
-            "$ref": "#/components/parameters/TimeZone"
-          },
-          {
             "$ref": "#/components/parameters/Geo"
           },
           {
@@ -1921,9 +1915,6 @@
           },
           {
             "$ref": "#/components/parameters/Currency"
-          },
-          {
-            "$ref": "#/components/parameters/TimeZone"
           },
           {
             "$ref": "#/components/parameters/Geo"
