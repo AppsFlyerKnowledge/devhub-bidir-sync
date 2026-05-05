@@ -11,7 +11,6 @@ next:
   description: ''
 ---
 Ad revenue from partners can be reported to AppsFlyer with impression-level granularity via SDK. Impression-level data via SDK:
-
 - Has better data freshness and earlier availability in AppsFlyer.
 - Supports SKAN. 
 
@@ -22,7 +21,6 @@ The AppsFlyer SDK sends impression revenue data to AppsFlyer. The impression rev
 > If your Ad Revenue implementation predates SDK v6.15.0, and you want to upgrade, update your ad revenue code as specified in the guides below. Failing to do so will result in the Ad Revenue functionality not working correctly.
 
 AppsFlyer ad revenue instructions for various platforms:
-
 <style>
   .button-container {
     display: flex;
@@ -46,7 +44,21 @@ AppsFlyer ad revenue instructions for various platforms:
     padding: 8px;  
     border: solid 2px #434446;  
   }
-  
+  /**  .button.android {  
+    border: solid 2px #3DDC84;  
+  }
+  .button.reactnative {  
+    border: solid 2px #FF8C00;  
+  }
+  .button.ios {  
+    border-radius: 6px;  
+    padding: 8px;  
+    border: solid 2px #7D7D7D;  
+  }
+   .button.unity {  
+    border: solid 2px #3DDC84;  
+    border-color: var(--project-primary-color);  
+  }**/
   .ios:before {  
         content: url("https://files.readme.io/19fdc72-apple-icon.svg");  
   }
@@ -75,7 +87,6 @@ AppsFlyer ad revenue instructions for various platforms:
  }
  
 </style>
-
 <div class="button-container">
   <a class="button android" href="https://dev.appsflyer.com/hc/docs/ad-revenue-1">Android SDK</a>
   <a class="button ios" href="https://dev.appsflyer.com/hc/docs/ad-revenue-2">iOS SDK</a>
