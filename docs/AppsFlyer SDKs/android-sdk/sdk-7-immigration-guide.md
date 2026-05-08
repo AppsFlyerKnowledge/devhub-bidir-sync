@@ -1,7 +1,7 @@
 ---
 title: SDK 7 Immigration guide
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
