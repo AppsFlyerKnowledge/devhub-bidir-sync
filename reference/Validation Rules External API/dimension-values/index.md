@@ -1,4 +1,4 @@
 ---
 title: Dimension Values
-hidden: false
+hidden: true
 ---
