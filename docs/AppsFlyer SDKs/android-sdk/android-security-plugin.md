@@ -2,7 +2,7 @@
 title: Android security plugin
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
