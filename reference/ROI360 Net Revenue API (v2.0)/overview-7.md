@@ -16,15 +16,17 @@ The default configuration reflects standard App Store and Google Play fees and t
 
 ROI360 applies the following default store commissions:
 
-| Platform | Region | IAP (one-time purchases) | Subscriptions, months 1–12 | Subscriptions, month 13+ |
-| :--- | :--- | :--- | :--- | :--- |
-| iOS | Japan | 26% | 26% | 15% |
-| iOS | Greater China | 25% | 25% | 12% |
-| iOS | Rest of the world | 30% | 30% | 15% |
-| Android | All regions | 30% | 15% | 15% |
+| Platform | Region              | IAP (one-time purchases) | Subscriptions, months 1–12 | Subscriptions, month 13+ |
+| :------- | :------------------ | :----------------------- | :------------------------- | :----------------------- |
+| iOS      | Japan               | 26%                      | 26%                        | 15%                      |
+| iOS      | China mainland (CN) | 25%                      | 25%                        | 12%                      |
+| iOS      | Rest of the world   | 30%                      | 30%                        | 15%                      |
+| Android  | All regions         | 30%                      | 15%                        | 15%                      |
 
 Default tax rates are listed in <a href="https://docs.google.com/document/d/e/2PACX-1vSl3DwlK2Gt2aa5gmDzD3-K3CtnIM85oMNrqx3PCTamwCERWYU48GugNpD31BFjA2PJjZnqaXIVe2Hx/pub">True Revenue - default tax rates</a>
 
 > ⚠️ **Deprecation Notice**
-> 
+>
 > API v1.0 (`/api/stores-taxes/v1.0/`) is deprecated. Please migrate to v2.0 (`/api/net-revenue/v2.0/`).
+
+<br />
