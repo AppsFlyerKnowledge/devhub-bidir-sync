@@ -37,7 +37,7 @@
           }
         ],
         "requestBody": {
-          "description": "> ⚠️ What if I can't send a device identifier?\n>  You may be unable to send the identifier for a reason out of your control, for example, because the user has limited ad tracking (LAT) or uses iOS 14, and did not give ATT consent. \n> Not sending an advertising ID/device identifier can result in: \n>  **Postback issues**: The media source will receive the postback but without a device identifier; consequently the media source can't associate it with a user. \n>  **Audiences segmentation** and rule failure. Audiences rulesets require [identifiers](https://support.appsflyer.com/hc/en-us/articles/115002689186#useridentifier-advanced-setting). It’s always best practice to send a device ID or customer user ID according to the ID type your ruleset uses, for every S2S event. \n",
+          "description": "> ⚠️ What if I can't send a device identifier?\n>  You may be unable to send the identifier for a reason out of your control, for example, because the user has limited ad tracking (LAT) or uses iOS 14, and did not give ATT consent. \n> Not sending an advertising ID/device identifier can result in: \n>  **Postback issues**: The media source will receive the postback but without a device identifier; consequently the media source can't associate it with a user. \n>  **Audiences segmentation** and rule failure. Audiences rulesets require [identifiers](https://support.appsflyer.com/hc/en-us/articles/115002689186#useridentifier-advanced-setting). It's always best practice to send a device ID or customer user ID according to the ID type your ruleset uses, for every S2S event. \n",
           "required": true,
           "content": {
             "application/json": {
@@ -109,7 +109,7 @@
             }
           },
           "403": {
-            "description": "|Message|How to handle|\n|--- |--- |--- |\n|Forbidden|“Zero Package” does not accept attribution events|\n",
+            "description": "|Message|How to handle|\n|--- |--- |--- |\n|Forbidden|\"Zero Package\" does not accept attribution events|\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -187,6 +187,34 @@
             "type": "string",
             "example": "customer_user_id",
             "description": "[Customer user ID](https://support.appsflyer.com/hc/en-us/articles/207032016), a unique user identifier set by the app owner.\n"
+          },
+          "email_hashed": {
+            "type": "string",
+            "description": "The user's email address, hashed using SHA-256.\nBefore hashing: trim leading and trailing spaces, and convert all characters to lowercase.\n",
+            "example": "62a14e44f765419d10fea99367361a727c12365e2520f32218d505ed9aa0f62f"
+          },
+          "phone_number_hashed": {
+            "type": "string",
+            "description": "The user's phone number, hashed using SHA-256.\nBefore hashing: remove all symbols, letters, and leading zeros. The phone number must include the country code (for example, the US number (650)555-1212 becomes 16505551212).\n",
+            "example": "e323ec626319ca94ee8bff2e4c87cf613be6ea19919ed1364124e16807ab3176"
+          },
+          "phone_number_e164_hashed": {
+            "type": "string",
+            "description": "The user's phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164), hashed using SHA-256.\nBefore hashing: normalize to E.164 format (for example, +12133734253). Include the country code prefixed with +, with no parentheses, leading zeros, spaces, letters, or symbols other than the leading +.\nWe recommend using [libphonenumber-js](https://github.com/catamphetamine/libphonenumber-js) for E.164 parsing.\n",
+            "example": "9f7ec22d72092cd3c0b58726ed9c2d91b92e51a3f29837508fb2948bb22dd2fd"
+          },
+          "first_name_hashed": {
+            "type": "string",
+            "description": "The user's first name, hashed using SHA-256.\nBefore hashing: convert to lowercase.\n"
+          },
+          "last_name_hashed": {
+            "type": "string",
+            "description": "The user's last name, hashed using SHA-256.\nBefore hashing: convert to lowercase.\n"
+          },
+          "fb_login_id": {
+            "type": "string",
+            "description": "The user's Facebook Login ID. Send as a numeric string.",
+            "example": "10293847561029384"
           },
           "ip": {
             "type": "string",
@@ -410,7 +438,7 @@
             "description": "A unique app identifier. In raw-data, the parameter populates Bundle ID. \n**Best practice** - Always populate this parameter. Many ad networks require it for campaign optimization. \n"
           },
           "sharing_filter": {
-            "description": "The sharing filter blocks the sharing of S2S events via postbacks/API with integrated partners and other third-party integrations. \n\nUse the filter to fulfill regulatory requirements like GDPR and CCPA, to comply with user opt-out mechanisms, and for other business logic reasons. \n\nThe `sharing_filter` has the following options:\n\n- `all`: All partners are blocked. Don't share the event with anyone. Example: \"sharing_filter\": \"all\"\n- List of partner ids in an array. \n\n**Note:** \n  To find out the required partner IDs:\n  1. Run the [Get active integrations API](https://dev.appsflyer.com/hc/reference/get_v1-integrations) for a list of all active integrations\n  2. Use the `media_source_name` values from the [API response](https://dev.appsflyer.com/hc/reference/get_v1-integrations) as input values to the method `partners` array. \n\n  **Exceptions**:\n  - For Apple Search Ads use \"`Apple Search Ads`\" (and not \"`iossearchads_int`\").\n  - For Twitter, use \"`twitter`\" (and not \"`twitter_int`\")\n",
+            "description": "The sharing filter blocks the sharing of S2S events via postbacks/API with integrated partners and other third-party integrations. \n\nUse the filter to fulfill regulatory requirements like GDPR and CCPA, to comply with user opt-out mechanisms, and for other business logic reasons. \n\nThe `sharing_filter` has the following options:\n\n- `all`: All partners are blocked. Don't share the event with anyone. Example: \"sharing_filter\": \"all\"\n- List of partner ids in an array. \n\n**Note:** \n  To find out the required partner IDs:\n  1. Run the [Get active integrations API](https://dev.appsflyer.com/hc/reference/get_v1-integrations) for a list of all active integrations\n  2. Use the `media_source_name` values from the [API response](https://dev.appsflyer.com/hc/reference/get_v1-integrations) as input values to the method `partners` array. \n\n  **Exceptions**:\n  - For Apple Search Ads use \"`Apple Search Ads`\" (and not \"`iossearchads_int`\").\n  - For Twitter, use \"`twitter`\" (and not \"`twitter_int`\")\n",
             "type": "array",
             "items": {
               "type": "string",
@@ -527,6 +555,34 @@
             "type": "string",
             "example": "customer_user_id",
             "description": "[Customer user ID](https://support.appsflyer.com/hc/en-us/articles/207032016), a unique user identifier set by the app owner.\n"
+          },
+          "email_hashed": {
+            "type": "string",
+            "description": "The user's email address, hashed using SHA-256.\nBefore hashing: trim leading and trailing spaces, and convert all characters to lowercase.\n",
+            "example": "62a14e44f765419d10fea99367361a727c12365e2520f32218d505ed9aa0f62f"
+          },
+          "phone_number_hashed": {
+            "type": "string",
+            "description": "The user's phone number, hashed using SHA-256.\nBefore hashing: remove all symbols, letters, and leading zeros. The phone number must include the country code (for example, the US number (650)555-1212 becomes 16505551212).\n",
+            "example": "e323ec626319ca94ee8bff2e4c87cf613be6ea19919ed1364124e16807ab3176"
+          },
+          "phone_number_e164_hashed": {
+            "type": "string",
+            "description": "The user's phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164), hashed using SHA-256.\nBefore hashing: normalize to E.164 format (for example, +12133734253). Include the country code prefixed with +, with no parentheses, leading zeros, spaces, letters, or symbols other than the leading +.\nWe recommend using [libphonenumber-js](https://github.com/catamphetamine/libphonenumber-js) for E.164 parsing.\n",
+            "example": "9f7ec22d72092cd3c0b58726ed9c2d91b92e51a3f29837508fb2948bb22dd2fd"
+          },
+          "first_name_hashed": {
+            "type": "string",
+            "description": "The user's first name, hashed using SHA-256.\nBefore hashing: convert to lowercase.\n"
+          },
+          "last_name_hashed": {
+            "type": "string",
+            "description": "The user's last name, hashed using SHA-256.\nBefore hashing: convert to lowercase.\n"
+          },
+          "fb_login_id": {
+            "type": "string",
+            "description": "The user's Facebook Login ID. Send as a numeric string.",
+            "example": "10293847561029384"
           },
           "att": {
             "type": "integer",
@@ -760,7 +816,7 @@
             "description": "A unique app identifier. In raw-data, the parameter populates Bundle ID. \n**Best practice** - Always populate this parameter. Many ad networks require it for campaign optimization. \n"
           },
           "sharing_filter": {
-            "description": "The sharing filter blocks the sharing of S2S events via postbacks/API with integrated partners and other third-party integrations. \n\nUse the filter to fulfill regulatory requirements like GDPR and CCPA, to comply with user opt-out mechanisms, and for other business logic reasons. \n\nThe `sharing_filter` has the following options:\n\n- `all`: All partners are blocked. Don't share the event with anyone. Example: \"sharing_filter\": \"all\"\n- List of partner ids in an array.            \n\n**Note:** \n  To find out the required partner IDs:\n  1. Run the [Get active integrations API](https://dev.appsflyer.com/hc/reference/get_v1-integrations) for a list of all active integrations\n  2. Use the `media_source_name` values from the [API response](https://dev.appsflyer.com/hc/reference/get_v1-integrations) as input values to the method `partners` array. \n\n  **Exceptions**:\n  - For Apple Search Ads use \"`Apple Search Ads`\" (and not \"`iossearchads_int`\").\n  - For Twitter, use \"`twitter`\" (and not \"`twitter_int`\")\n",
+            "description": "The sharing filter blocks the sharing of S2S events via postbacks/API with integrated partners and other third-party integrations. \n\nUse the filter to fulfill regulatory requirements like GDPR and CCPA, to comply with user opt-out mechanisms, and for other business logic reasons. \n\nThe `sharing_filter` has the following options:\n\n- `all`: All partners are blocked. Don't share the event with anyone. Example: \"sharing_filter\": \"all\"\n- List of partner ids in an array.            \n\n**Note:** \n  To find out the required partner IDs:\n  1. Run the [Get active integrations API](https://dev.appsflyer.com/hc/reference/get_v1-integrations) for a list of all active integrations\n  2. Use the `media_source_name` values from the [API response](https://dev.appsflyer.com/hc/reference/get_v1-integrations) as input values to the method `partners` array. \n\n  **Exceptions**:\n  - For Apple Search Ads use \"`Apple Search Ads`\" (and not \"`iossearchads_int`\").\n  - For Twitter, use \"`twitter`\" (and not \"`twitter_int`\")\n",
             "type": "array",
             "items": {
               "type": "string",
@@ -1074,7 +1130,7 @@
             "description": "A unique app identifier. In raw-data, the parameter populates Bundle ID. \n**Best practice** - Always populate this parameter. Many ad networks require it for campaign optimization. \n"
           },
           "sharing_filter": {
-            "description": "The sharing filter blocks the sharing of S2S events via postbacks/API with integrated partners and other third-party integrations. \n\nUse the filter to fulfill regulatory requirements like GDPR and CCPA, to comply with user opt-out mechanisms, and for other business logic reasons. \n\nThe `sharing_filter` has the following options:\n\n- `all`: All partners are blocked. Don't share the event with anyone. Example: \"sharing_filter\": \"all\"\n- List of partner ids in an array. \n\n**Note:** \n  To find out the required partner IDs:\n  1. Run the [Get active integrations API](https://dev.appsflyer.com/hc/reference/get_v1-integrations) for a list of all active integrations\n  2. Use the `media_source_name` values from the [API response](https://dev.appsflyer.com/hc/reference/get_v1-integrations) as input values to the method `partners` array. \n\n  **Exceptions**:\n  - For Apple Search Ads use \"`Apple Search Ads`\" (and not \"`iossearchads_int`\").\n  - For Twitter, use \"`twitter`\" (and not \"`twitter_int`\")\n",
+            "description": "The sharing filter blocks the sharing of S2S events via postbacks/API with integrated partners and other third-party integrations. \n\nUse the filter to fulfill regulatory requirements like GDPR and CCPA, to comply with user opt-out mechanisms, and for other business logic reasons. \n\nThe `sharing_filter` has the following options:\n\n- `all`: All partners are blocked. Don't share the event with anyone. Example: \"sharing_filter\": \"all\"\n- List of partner ids in an array. \n\n**Note:** \n  To find out the required partner IDs:\n  1. Run the [Get active integrations API](https://dev.appsflyer.com/hc/reference/get_v1-integrations) for a list of all active integrations\n  2. Use the `media_source_name` values from the [API response](https://dev.appsflyer.com/hc/reference/get_v1-integrations) as input values to the method `partners` array. \n\n  **Exceptions**:\n  - For Apple Search Ads use \"`Apple Search Ads`\" (and not \"`iossearchads_int`\").\n  - For Twitter, use \"`twitter`\" (and not \"`twitter_int`\")\n",
             "type": "array",
             "items": {
               "type": "string",
