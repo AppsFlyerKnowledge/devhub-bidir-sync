@@ -7,6 +7,7 @@
 - conversion-data
 - push-notifications
 - uninstall-measurement
+- gs-ad-revenue
 - ad-revenue
 - purchase-and-subscription-validation
 - preserve-user-privacy-1
@@ -15,4 +16,3 @@
 - purchase-connector
 - coming-back-soon
 - common-data-structures
-- gs-ad-revenue
