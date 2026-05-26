@@ -10,8 +10,8 @@
 - uninstall-measurement-android
 - purchase-validation-android
 - oaid
-- push-notifications-android
 - preserve-user-privacy-android
+- push-notifications-android
 - android-send-consent-for-dma-compliance
 - android-release-notes
 - android-security-plugin
