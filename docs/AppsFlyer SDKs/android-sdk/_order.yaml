@@ -12,8 +12,8 @@
 - oaid
 - preserve-user-privacy-android
 - android-send-consent-for-dma-compliance
-- purchase-validation
 - android-release-notes
+- purchase-validation
 - branch-migration-android
 - branch-migration-ios
 - android-legacy-security-plugin
