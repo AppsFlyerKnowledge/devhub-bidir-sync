@@ -15,6 +15,6 @@
 - push-notifications-android
 - android-release-notes
 - android-security-plugin
-- branch-migration-ios
 - android-legacy-security-plugin
 - branch-migration-android
+- branch-migration-ios
