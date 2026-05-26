@@ -2,9 +2,9 @@
 - install-ios-sdk
 - integrate-ios-sdk
 - testing-ios
-- conversion-data-ios
 - in-app-events-ios
 - push-notifications-ios
+- conversion-data-ios
 - uninstall-measurement-ios
 - purchase-validation-ios
 - ad-revenue-2
