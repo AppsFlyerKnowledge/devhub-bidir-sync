@@ -5,6 +5,7 @@
 - testing-android
 - in-app-events-android
 - conversion-data-android
+- push-notifications-android
 - purchase-validation
 - ad-revenue-1
 - uninstall-measurement-android
@@ -12,7 +13,6 @@
 - oaid
 - preserve-user-privacy-android
 - android-send-consent-for-dma-compliance
-- push-notifications-android
 - android-release-notes
 - branch-migration-android
 - branch-migration-ios
