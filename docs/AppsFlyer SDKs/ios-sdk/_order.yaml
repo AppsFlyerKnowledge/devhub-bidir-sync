@@ -3,9 +3,9 @@
 - install-ios-sdk
 - testing-ios
 - in-app-events-ios
-- push-notifications-ios
 - conversion-data-ios
 - uninstall-measurement-ios
+- push-notifications-ios
 - ad-revenue-2
 - purchase-validation-ios
 - preserve-user-privacy-ios
