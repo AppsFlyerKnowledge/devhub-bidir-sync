@@ -10,8 +10,8 @@
 - uninstall-measurement-android
 - purchase-validation-android
 - oaid
-- purchase-validation
 - preserve-user-privacy-android
+- purchase-validation
 - android-send-consent-for-dma-compliance
 - android-release-notes
 - branch-migration-android
