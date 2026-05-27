@@ -2,7 +2,6 @@
 api:
   file: legacy-server-to-server-events-api-for-mobile.json
   operationId: post_inappevent-app-id
-deprecated: false
 hidden: false
 metadata:
   title: ''
