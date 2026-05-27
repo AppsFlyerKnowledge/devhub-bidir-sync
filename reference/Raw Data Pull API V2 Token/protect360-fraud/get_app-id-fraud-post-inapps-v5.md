@@ -2,7 +2,6 @@
 api:
   file: raw-data-pull-api-v2-token.json
   operationId: get_app-id-fraud-post-inapps-v5
-deprecated: false
 hidden: false
 metadata:
   title: ''
