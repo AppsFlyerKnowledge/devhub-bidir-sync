@@ -16,6 +16,6 @@
 - android-release-notes
 - purchase-validation
 - branch-migration-ios
-- android-security-plugin
 - branch-migration-android
 - android-legacy-security-plugin
+- android-security-plugin
