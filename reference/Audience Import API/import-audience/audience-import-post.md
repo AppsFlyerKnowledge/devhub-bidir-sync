@@ -2,7 +2,6 @@
 api:
   file: audience-import-api.json
   operationId: audience-import-post
-deprecated: false
 hidden: false
 metadata:
   title: ''
