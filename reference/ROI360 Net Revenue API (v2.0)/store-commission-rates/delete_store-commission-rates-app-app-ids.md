@@ -2,7 +2,6 @@
 api:
   file: roi360-net-revenue-api-v20.json
   operationId: delete_store-commission-rates-app-app-ids
-deprecated: false
 hidden: false
 metadata:
   title: ''
