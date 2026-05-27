@@ -2,7 +2,6 @@
 api:
   file: aggregate-pull-api-v2-token.json
   operationId: get_app-id-geo-by-date-report-v5
-deprecated: false
 hidden: false
 metadata:
   title: ''
