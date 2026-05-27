@@ -1,5 +1,6 @@
 - ios-release-notes
 - integrate-ios-sdk
+- install-ios-sdk-7
 - install-ios-sdk
 - testing-ios
 - in-app-events-ios
@@ -10,4 +11,3 @@
 - purchase-validation-ios
 - preserve-user-privacy-ios
 - ios-send-consent-for-dma-compliance
-- install-ios-sdk-7
