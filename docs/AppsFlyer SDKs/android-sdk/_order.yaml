@@ -1,8 +1,8 @@
 - preserve-user-privacy
 - ios-sdk-7
 - install-android-sdk
-- android-sdk-7
 - integrate-android-sdk
+- android-sdk-7
 - testing-android
 - in-app-events-android
 - conversion-data-android
