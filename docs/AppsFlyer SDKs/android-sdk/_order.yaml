@@ -1,4 +1,5 @@
 - preserve-user-privacy
+- android-sdk-7
 - ios-sdk-7
 - install-android-sdk
 - integrate-android-sdk
@@ -13,7 +14,6 @@
 - preserve-user-privacy-android
 - android-send-consent-for-dma-compliance
 - android-release-notes
-- android-sdk-7
 - purchase-validation
 - branch-migration-android
 - branch-migration-ios
