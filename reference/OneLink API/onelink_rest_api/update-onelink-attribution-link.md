@@ -2,7 +2,6 @@
 api:
   file: onelink-api-2.json
   operationId: update-onelink-attribution-link
-deprecated: false
 hidden: false
 metadata:
   title: ''
