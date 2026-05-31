@@ -2,7 +2,7 @@
 title: Getting started
 excerpt: Getting started with the AppsFlyer SDKs.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
