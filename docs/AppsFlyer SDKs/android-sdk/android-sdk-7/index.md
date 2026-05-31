@@ -1,6 +1,6 @@
 ---
 title: Android SDK 7
-hidden: true
+hidden: false
 ---
 
 # Android SDK 7
