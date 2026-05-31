@@ -1,6 +1,6 @@
 ---
 title: iOS SDK 7
-hidden: false
+hidden: true
 ---
 
 # iOS SDK 7
