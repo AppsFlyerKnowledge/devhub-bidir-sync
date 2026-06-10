@@ -16,35 +16,168 @@ next:
 
 ![](https://files.readme.io/3ba689f-API.svg "API.svg")
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0b18afb-Screenshot_20221205-191054_Chrome.jpg",
-        "Screenshot_20221205-191054_Chrome.jpg",
-        986
-      ],
-      "align": "center",
-      "sizing": "80"
-    }
-  ]
-}
-[/block]
 
+<Image src="https://files.readme.io/0b18afb-Screenshot_20221205-191054_Chrome.jpg" alt="986" align="center" width="80%" />
 
 
 ![](https://files.readme.io/f0086fb-Screen_Shot_2022-12-06_at_17.05.10.png "Screen Shot 2022-12-06 at 17.05.10.png")
 
 ![](https://files.readme.io/f98642e-Screen_Shot_2022-12-06_at_17.05.22.png "Screen Shot 2022-12-06 at 17.05.22.png")
 
-[block:html]
-{
-  "html": "<div></div>\n<div class=\"wrap-collabsible-breaking\">\n  <input id=\"collapsible-breaking\" class=\"toggle-breaking\" type=\"checkbox\">\n  <label for=\"collapsible-breaking\" class=\"lbl-toggle-breaking\">Expand/Collapse using HTML/CSS Widget</label>\n  <div class=\"collapsible-content-breaking\">\n    <div class=\"content-inner-breaking\">\n      \n<div class=\"magic-block-callout type-info \">\n\t<div class=\"callout-info\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n\t</div>\n</div>\n      \n<div class=\"magic-block-textarea\">\n      \n  <h2 class=\"header-scroll\"><div class=\"anchor waypoint\" id=\"section-lorem-ipsum-dolor-sit\"></div>Lorem ipsum dolor sit amet\n<a class=\"fa fa-anchor\" href=\"#section-changing-text-component-headers\"></a></h2>\n\n  <p>Lorem ipsum <a href=\"https://google.com\" target=\"_self\">dolor sit amet</a>Lorem ipsum dolor sit amet <code>Lorem</code> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n</p> \n        \n  <h2 class=\"header-scroll\"><div class=\"anchor waypoint\" id=\"section-lorem-ipsum-dolor-sit-amet\"></div>Lorem ipsum dolor sit amet<a class=\"fa fa-anchor\" href=\"#section-obfuscating-twitter-data-within-conversation-objects\"></a></h2>\n      \n</div>\n      \n<div class=\"magic-block-callout type-danger \">\n\t<h3><i title=\"Danger\" class=\"fa fa-exclamation-triangle\"></i>Callout Error\n\t</h3>\n</div>\n      \n<div class=\"magic-block-textarea\">\n      \n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat:</p>\n\n<ul>\n\t<li> <a href=\"https://google.com\" target=\"_self\">magna aliqua</a> </li>\n\t<li> <a href=\"https://google.com\" target=\"_self\">labore et dolore</a> </li>\n\t<li> <a href=\"https://google.com\" target=\"_self\">Lorem ipsum dolor</a> </li>\n</ul>\n  \n  <h2 class=\"header-scroll\"><div class=\"anchor waypoint\" id=\"section-labore-et-dolore-magna-aliqua\"></div>labore et dolore magna aliqua.\n<a class=\"fa fa-anchor\" href=\"#section-changing-ids-to-no-longer-be-unique-across-all-workspaces\"></a></h2>\n\n</div>\n  \n<div class=\"magic-block-callout type-danger \">\n\t<h3><i title=\"Danger\" class=\"fa fa-exclamation-triangle\"></i>Callout Error\n\t</h3>\n</div>\n      \n<div class=\"magic-block-textarea\">\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <code>id</code> labore et dolore magna aliqua.</p>\n\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore <code>magna_aliqua</code>/<code>et_dolore</code>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua <code>magna_aliqua</code>/<code>et_dolore</code>,labore et dolore magna aliqua.<code>magna_aliqua</code>/<code>et_dolore</code>Lorem ipsum dolor sit amet.</p>\n\n<p>Lorem ipsum dolor sit amet<b>labore et dolore magna aliqua.</b> magna aliqua <code>et</code> et dolore <a href=\"https://google.com\" target=\"_self\">Lorem</a> labore et dolore magna aliqua. </code>et</code>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<code>magna_aliqua</code>/<code>et_dolre</code>.\n</p>\n  \n      </div>\n\t\t</div>\n  </div>\n</div>\n\n<style>\n  \n.wrap-collabsible-breaking {\n  margin-bottom: 1.2rem 0;\n}\n\ninput[type='checkbox'] {\n  display: none;\n}\n\n.lbl-toggle-breaking {\n  display: block;\n\n  font-weight: 400;\n  font-size: 20px;\n  text-align: left;\n  color: #000000;\n  \n  padding: 16px;\n  border: 1px solid rgba(0,0,0,.2);\n  border-radius: 4px;\n  box-shadow: 0 0 0 transparent;\n\n  cursor: pointer;\n\n  transition: all 0.25s ease-out;\n}\n\n.lbl-toggle-breaking:hover {\n  color: #286efa;\n  border: 1px solid rgb(40,110,250)\n}\n\n.lbl-toggle-breaking::before {\n  content: ' ';\n  display: inline-block;\n\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  border-left: 5px solid currentColor;\n  vertical-align: middle;\n  margin-right: .7rem;\n  transform: translateY(-2px);\n\n  transition: transform .2s ease-out;\n}\n\n.toggle-breaking:checked + .lbl-toggle-breaking::before {\n  transform: rotate(90deg) translateX(-3px);\n}\n  \n.toggle-breaking:checked + .lbl-toggle-breaking + .collapsible-content-breaking {\n  max-height: 5000px;\n}\n\n.collapsible-content-breaking {\n  max-height: 0px;\n  overflow: hidden;\n  transition: max-height .30s ease-in-out;\n}\n\n.toggle-breaking:checked + .lbl-toggle-breaking {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n  border-bottom: transparent;\n}\n  \n.toggle-breaking:checked + .lbl-toggle-breaking:hover + .collapsible-content-breaking .content-inner-breaking {\n  border-left: 1px solid rgb(40,110,250);\n  border-right: 1px solid rgb(40,110,250);\n  border-bottom: 1px solid rgb(40,110,250);\n}\n  \n.collapsible-content-breaking .content-inner-breaking {\n  background: #fff;\n  border-left: 1px solid rgba(0,0,0,.2);\n  border-right: 1px solid rgba(0,0,0,.2);\n  border-bottom: 1px solid rgba(0,0,0,.2);\n  border-bottom-left-radius: 7px;\n  border-bottom-right-radius: 7px;\n  padding: 2.0rem 1rem;\n}\n\n.magic-block-callout {\n  position: relative;\n  right: 11px;\n}\n  \n</style>\n<style></style>"
+<HTMLBlock>{`
+<div></div>
+<div class="wrap-collabsible-breaking">
+  <input id="collapsible-breaking" class="toggle-breaking" type="checkbox">
+  <label for="collapsible-breaking" class="lbl-toggle-breaking">Expand/Collapse using HTML/CSS Widget</label>
+  <div class="collapsible-content-breaking">
+    <div class="content-inner-breaking">
+      
+<div class="magic-block-callout type-info ">
+	<div class="callout-info"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div>
+</div>
+      
+<div class="magic-block-textarea">
+      
+  <h2 class="header-scroll"><div class="anchor waypoint" id="section-lorem-ipsum-dolor-sit"></div>Lorem ipsum dolor sit amet
+<a class="fa fa-anchor" href="#section-changing-text-component-headers"></a></h2>
+
+  <p>Lorem ipsum <a href="https://google.com" target="_self">dolor sit amet</a>Lorem ipsum dolor sit amet <code>Lorem</code> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p> 
+        
+  <h2 class="header-scroll"><div class="anchor waypoint" id="section-lorem-ipsum-dolor-sit-amet"></div>Lorem ipsum dolor sit amet<a class="fa fa-anchor" href="#section-obfuscating-twitter-data-within-conversation-objects"></a></h2>
+      
+</div>
+      
+<div class="magic-block-callout type-danger ">
+	<h3><i title="Danger" class="fa fa-exclamation-triangle"></i>Callout Error
+	</h3>
+</div>
+      
+<div class="magic-block-textarea">
+      
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat:</p>
+
+<ul>
+	<li> <a href="https://google.com" target="_self">magna aliqua</a> </li>
+	<li> <a href="https://google.com" target="_self">labore et dolore</a> </li>
+	<li> <a href="https://google.com" target="_self">Lorem ipsum dolor</a> </li>
+</ul>
+  
+  <h2 class="header-scroll"><div class="anchor waypoint" id="section-labore-et-dolore-magna-aliqua"></div>labore et dolore magna aliqua.
+<a class="fa fa-anchor" href="#section-changing-ids-to-no-longer-be-unique-across-all-workspaces"></a></h2>
+
+</div>
+  
+<div class="magic-block-callout type-danger ">
+	<h3><i title="Danger" class="fa fa-exclamation-triangle"></i>Callout Error
+	</h3>
+</div>
+      
+<div class="magic-block-textarea">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut <code>id</code> labore et dolore magna aliqua.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore <code>magna_aliqua</code>/<code>et_dolore</code>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua <code>magna_aliqua</code>/<code>et_dolore</code>,labore et dolore magna aliqua.<code>magna_aliqua</code>/<code>et_dolore</code>Lorem ipsum dolor sit amet.</p>
+
+<p>Lorem ipsum dolor sit amet<b>labore et dolore magna aliqua.</b> magna aliqua <code>et</code> et dolore <a href="https://google.com" target="_self">Lorem</a> labore et dolore magna aliqua. </code>et</code>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<code>magna_aliqua</code>/<code>et_dolre</code>.
+</p>
+  
+      </div>
+		</div>
+  </div>
+</div>
+
+<style>
+  
+.wrap-collabsible-breaking {
+  margin-bottom: 1.2rem 0;
 }
-[/block]
 
+input[type='checkbox'] {
+  display: none;
+}
 
+.lbl-toggle-breaking {
+  display: block;
+
+  font-weight: 400;
+  font-size: 20px;
+  text-align: left;
+  color: #000000;
+  
+  padding: 16px;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 4px;
+  box-shadow: 0 0 0 transparent;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle-breaking:hover {
+  color: #286efa;
+  border: 1px solid rgb(40,110,250)
+}
+
+.lbl-toggle-breaking::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateY(-2px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle-breaking:checked + .lbl-toggle-breaking::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+  
+.toggle-breaking:checked + .lbl-toggle-breaking + .collapsible-content-breaking {
+  max-height: 5000px;
+}
+
+.collapsible-content-breaking {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .30s ease-in-out;
+}
+
+.toggle-breaking:checked + .lbl-toggle-breaking {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: transparent;
+}
+  
+.toggle-breaking:checked + .lbl-toggle-breaking:hover + .collapsible-content-breaking .content-inner-breaking {
+  border-left: 1px solid rgb(40,110,250);
+  border-right: 1px solid rgb(40,110,250);
+  border-bottom: 1px solid rgb(40,110,250);
+}
+  
+.collapsible-content-breaking .content-inner-breaking {
+  background: #fff;
+  border-left: 1px solid rgba(0,0,0,.2);
+  border-right: 1px solid rgba(0,0,0,.2);
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 2.0rem 1rem;
+}
+
+.magic-block-callout {
+  position: relative;
+  right: 11px;
+}
+  
+</style>
+<style></style>
+`}</HTMLBlock>
 
 ![](https://files.readme.io/89ad96b-analytics.svg "analytics.svg")
 
@@ -105,3 +238,7 @@ next:
 ![](https://files.readme.io/5a806fc-small-ProjectSettings2.png)
 
 ![](https://files.readme.io/cb4b8dc-small-PackageName.png)
+
+![](https://files.readme.io/25c3ff31618b141eb998703578b02daed230664ceab2ce071366cee1bd4b4d78-WhatsApp_Image_2026-06-09_at_17.03.29.jpeg)
+
+<br />
