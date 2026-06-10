@@ -950,7 +950,7 @@
                     "type": "string",
                     "maxLength": 2000,
                     "pattern": "^[ \t\\-_.a-zA-Z0-9]*$",
-                    "description": "The token value should be a string with a maximum of 2,000 characters,  containing only the characters a-z, A-Z, 0-9, and the special characters [ \t-_.]."
+                    "description": "The token value should be a string with a maximum of 2,000 characters, containing only the characters a-z, A-Z, 0-9, and the special characters [ \t-_.]."
                   },
                   "token_name": {
                     "oneOf": [
@@ -967,7 +967,7 @@
                     ],
                     "maxLength": 30,
                     "nullable": true,
-                    "description": "The token name must be either 'Authorization' or a string starting with 'X-',  consisting of a maximum of 30 characters including only the  characters a-z, A-Z, 0-9, '-' and '_'. If the token name is empty or null,  it will default to the last received token name, or 'Authorization' if there is none."
+                    "description": "The token name must be either 'Authorization' or a string starting with 'X-', consisting of a maximum of 30 characters including only the characters a-z, A-Z, 0-9, '-' and '_'. If the token name is empty or null, it will default to the last received token name, or 'Authorization' if there is none."
                   }
                 }
               }
