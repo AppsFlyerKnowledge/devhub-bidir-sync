@@ -3,11 +3,11 @@
   "info": {
     "title": "Validation Rules External API",
     "version": "1.0.0",
-    "description": "Server-to-Server API for managing validation rules: create, list, retrieve, update, delete,\nand patch dimension values.\n\nAuthentication is via bearer token sent to the API gateway, which extracts the account\nidentity and forwards the request to the service.\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update full rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n"
+    "description": "Server-to-Server API for managing validation rules: create, list, retrieve, update, delete,\nand patch dimension values.\n\nAuthentication is via bearer token sent to the API gateway, which extracts the account\nidentity and forwards the request to the service.\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n"
   },
   "servers": [
     {
-      "url": "https://hq1.appsflyer.com/api/vr2api/public/v1",
+      "url": "https://hq1.appsflyer.com/api/vr2api/v1",
       "description": "Validation Rules API v1"
     }
   ],
@@ -32,7 +32,7 @@
         ],
         "summary": "List rules",
         "operationId": "listRules",
-        "description": "Returns all active rules (enabled or disabled) for the account.\nDeleted rules are excluded. Returns metadata fields only (no conditions/population data).\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update full rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
+        "description": "Returns all active rules (enabled or disabled) for the account.\nDeleted rules are excluded. Returns metadata fields only (no conditions/population data).\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
         "responses": {
           "200": {
             "description": "Array of rule metadata",
@@ -69,7 +69,7 @@
         ],
         "summary": "Create rule",
         "operationId": "createRule",
-        "description": "**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update full rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
+        "description": "**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -107,18 +107,26 @@
       }
     },
     "/rules/{rule_id}": {
+      "parameters": [
+        {
+          "name": "rule_id",
+          "in": "path",
+          "required": true,
+          "description": "The UUID of the rule. Use the `rule_id` returned by List rules or Create rule.",
+          "schema": {
+            "type": "string",
+            "format": "uuid",
+            "example": "550e8400-e29b-41d4-a716-446655440000"
+          }
+        }
+      ],
       "get": {
         "tags": [
           "Rules"
         ],
         "summary": "Get rule",
         "operationId": "getRule",
-        "description": "Returns the full rule including conditions, population, and all metadata.\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update full rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/RuleIdPath"
-          }
-        ],
+        "description": "Returns the full rule including conditions, population, and all metadata.\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
         "responses": {
           "200": {
             "description": "Full rule",
@@ -148,14 +156,9 @@
         "tags": [
           "Rules"
         ],
-        "summary": "Update full rule",
+        "summary": "Update rule",
         "operationId": "updateRule",
-        "description": "Full replacement update. Version is incremented automatically.\nThe rule becomes API-managed after update.\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update full rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/RuleIdPath"
-          }
-        ],
+        "description": "Full replacement update. Version is incremented automatically.\nThe rule becomes API-managed after update.\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -200,12 +203,7 @@
         ],
         "summary": "Delete rule",
         "operationId": "deleteRule",
-        "description": "Soft-deletes the rule by creating a new version with status \"deleted\".\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update full rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/RuleIdPath"
-          }
-        ],
+        "description": "Soft-deletes the rule by creating a new version with status \"deleted\".\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
         "responses": {
           "204": {
             "description": "No Content"
@@ -226,18 +224,26 @@
       }
     },
     "/rules/{rule_id}/status": {
+      "parameters": [
+        {
+          "name": "rule_id",
+          "in": "path",
+          "required": true,
+          "description": "The UUID of the rule. Use the `rule_id` returned by List rules or Create rule.",
+          "schema": {
+            "type": "string",
+            "format": "uuid",
+            "example": "550e8400-e29b-41d4-a716-446655440000"
+          }
+        }
+      ],
       "put": {
         "tags": [
           "Rules"
         ],
         "summary": "Update rule status",
         "operationId": "updateRuleStatus",
-        "description": "Enable or disable a rule. If the status already matches, returns the\ncurrent rule metadata without creating a new version.\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update full rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/RuleIdPath"
-          }
-        ],
+        "description": "Enable or disable a rule. If the status already matches, returns the\ncurrent rule metadata without creating a new version.\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -290,18 +296,26 @@
       }
     },
     "/rules/{rule_id}/values": {
+      "parameters": [
+        {
+          "name": "rule_id",
+          "in": "path",
+          "required": true,
+          "description": "The UUID of the rule. Use the `rule_id` returned by List rules or Create rule.",
+          "schema": {
+            "type": "string",
+            "format": "uuid",
+            "example": "550e8400-e29b-41d4-a716-446655440000"
+          }
+        }
+      ],
       "patch": {
         "tags": [
           "Dimension Values"
         ],
         "summary": "Patch dimension values",
         "operationId": "patchDimensionValues",
-        "description": "Add, remove, or replace values for a specific dimension in a rule section.\nThe dimension must use a list-type operator (s.in, s.not_in).\nCreates a new rule version.\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update full rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/RuleIdPath"
-          }
-        ],
+        "description": "Add, remove, or replace values for a specific dimension in a rule section.\nThe dimension must use a list-type operator (s.in, s.not_in).\nCreates a new rule version.\n\n**Rules**\n- [List rules](https://dev.appsflyer.com/hc/reference/listrules)\n- [Create rule](https://dev.appsflyer.com/hc/reference/createrule)\n- [Get rule](https://dev.appsflyer.com/hc/reference/getrule)\n- [Update rule](https://dev.appsflyer.com/hc/reference/updaterule)\n- [Delete rule](https://dev.appsflyer.com/hc/reference/deleterule)\n- [Update rule status](https://dev.appsflyer.com/hc/reference/updaterulestatus)\n\n**Dimension Values**\n- [Patch dimension values](https://dev.appsflyer.com/hc/reference/patchdimensionvalues)\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -351,18 +365,6 @@
     }
   },
   "components": {
-    "parameters": {
-      "RuleIdPath": {
-        "name": "rule_id",
-        "in": "path",
-        "required": true,
-        "description": "The UUID of the rule",
-        "schema": {
-          "type": "string",
-          "format": "uuid"
-        }
-      }
-    },
     "responses": {
       "BadRequest": {
         "description": "Bad request (validation error)",
