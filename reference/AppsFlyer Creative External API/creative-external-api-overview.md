@@ -1,6 +1,6 @@
 ---
 title: Overview
-hidden: false
+hidden: true
 ---
 
 The Creative External API is a programmatic HTTP API for uploading creatives and publishing ads to ad networks without using the AppsFlyer dashboard. v1.0 targets Facebook (Meta).
