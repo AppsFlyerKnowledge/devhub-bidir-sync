@@ -4,9 +4,9 @@
 - sdk-integration
 - integration-testing
 - in-app-events-sdk
+- conversion-data
 - push-notifications
 - uninstall-measurement
-- conversion-data
 - gs-ad-revenue
 - purchase-and-subscription-validation
 - preserve-user-privacy-1
