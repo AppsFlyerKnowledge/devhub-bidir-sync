@@ -3,9 +3,6 @@ title: Integrate SDK with AI
 hidden: false
 ---
 
-
-# Integrate the SDK with AI
-
 Offload much of the AppsFlyer SDK integration work to AppsFlyer's SDK MCP server by using an AI-powered coding tool, such as OpenAI Codex, GitHub Copilot, or Cursor. This guide applies to both **iOS** and **Android** app projects.
 
 ## Step 1: Get ready
