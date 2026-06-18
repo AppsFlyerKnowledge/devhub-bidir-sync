@@ -32,7 +32,7 @@
           "Creative External API"
         ],
         "summary": "Submit a creative upload + publish batch",
-        "description": "Accepts a batch of creative URLs together with target-network publish\ninstructions and queues them for processing. The endpoint is asynchronous\n— it returns a `batch_id` immediately; poll `/creative/v1.0/upload/status/{batch_id}`\nfor per-item outcomes.\n\nPer-creative validation (file format, dimensions, aspect ratio, duration)\nhappens after download. A creative that violates network constraints is\nmarked as `failed` with a human-readable `error_message` and a full list\nof `issues` — the rest of the batch is unaffected.\n\nThe customer's account is resolved from the Bearer token by the API\nGateway. Any `account_id` or `af_user` field in the request body is\nignored.\n",
+        "description": "Accepts a batch of creative URLs together with target-network publish\ninstructions and queues them for processing. The endpoint is asynchronous\n— it returns a `batch_id` immediately; poll `/creative/v1.0/upload/status/{batch_id}`\nfor per-item outcomes.\n\nPer-creative validation (file format, dimensions, aspect ratio, duration)\nhappens after download. A creative that violates network constraints is\nmarked as `failed` with a human-readable `error_message` and a full list\nof `issues` — the rest of the batch is unaffected.\n",
         "operationId": "creative-external-api-upload-batch-post",
         "requestBody": {
           "required": true,
