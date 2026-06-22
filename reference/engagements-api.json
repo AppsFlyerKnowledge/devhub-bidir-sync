@@ -869,7 +869,7 @@
       "AflookbackWindow": {
         "type": "string",
         "maxLength": 256,
-        "description": "Attribution lookback window\nConfigurable number of days/hours for the lookback window attribution period. \nAvailable parameter values: \n- Clicks: \n    Deterministic: 1-30 days \n    Probabilistic: 1-7 days\n- Impressions: 1-7 days OR 1-23 hours. \nValidation: 3 char max and using the scheme above\n"
+        "description": "Attribution lookback window\nConfigurable number of days/hours for the lookback window attribution period. \nAvailable parameter values: \n- Clicks: \n    Deterministic: 1-30 days \n    Probabilistic: 1-7 days\n- Impressions:\n    Deterministic: 1-24 hours.\n    Probabilistic: 1-7 days OR 1-23 hours. \nValidation: 3 char max and using the scheme above\n"
       },
       "AfAdPlacement": {
         "type": "string",
