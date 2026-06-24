@@ -21,7 +21,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Create OneLink link",
-        "description": "<p><span style=\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\">\n  Premium\n</span></p>\n\n> 📘 Note\n> \n> This API replaces [Create OneLink link v1.0](https://dev.appsflyer.com/hc/reference/create-onelink-attribution-link)\n",
+        "description": "<p><span style=\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\">\n  Premium\n</span></p>\n\n> 📘 Note\n>\n> This API replaces [Create OneLink link v1.0](https://dev.appsflyer.com/hc/reference/create-onelink-attribution-link)\n",
         "operationId": "onelink-v2-create-link",
         "parameters": [
           {
@@ -46,12 +46,12 @@
                 "properties": {
                   "shortlink_id": {
                     "type": "string",
-                    "description": "The ID of the shortlink created. \nIf not passed, the ID is a random string.\n> ⚠️ \n> If fired twice, the second call would receive a response of: \n> `409 - Shortlink ID already in use`\n",
+                    "description": "The ID of the shortlink created.\nIf not passed, the ID is a random string.\n> ⚠️\n> If fired twice, the second call would receive a response of:\n> `409 - Shortlink ID already exists`\n",
                     "example": "my_shortlink_id"
                   },
                   "ttl": {
                     "type": "string",
-                    "description": "Time to Live for the full link. Default is 31 days. Value can be specified in days (default), minutes or hours (for example, 10m, 20h, 14d).",
+                    "description": "Time to Live for the full link. Default is 31 days. Maximum is 730 days for API v2. Value can be specified in days (default), minutes or hours (for example, 10m, 20h, 14d). Invalid or out-of-range values are silently clamped to the 31-day default.",
                     "example": "1h"
                   },
                   "brand_domain": {
@@ -103,34 +103,28 @@
                   "$ref": "#/components/schemas/Error"
                 },
                 "examples": {
-                  "API limit reached": {
-                    "value": {
-                      "error-type": "invalid_parameter",
-                      "message": "Data sent exceeds limiParameter 'af_r' has an invalid value: 'badURL'. Reason: value should be a valid URL."
-                    }
-                  },
                   "Payload limit": {
                     "value": {
-                      "error-type": "limit-exceeded",
-                      "message": "Generating shortlink failed, data sent exceeds limit."
+                      "error_type": "limit_exceeded",
+                      "message": "Generating shortlink failed, data sent exceeds limit"
                     }
                   },
                   "Creation failure": {
                     "value": {
-                      "error-type": "internal-error",
+                      "error_type": "internal_error",
                       "message": "Failed to create shortlink."
                     }
                   },
                   "API access blocked": {
                     "value": {
-                      "error-type": "invalid-source",
+                      "error_type": "invalid_source",
                       "message": "This operation is not allowed for this shortlink source-caller."
                     }
                   },
-                  "Unsupported TTL": {
+                  "Invalid request body": {
                     "value": {
-                      "error-type": "unsupported-ttl",
-                      "message": "TTL value is not supported. Maximum allowed TTL is 365 days."
+                      "error_type": "invalid_parameter",
+                      "message": "Generating shortlink failed, invalid request body"
                     }
                   }
                 }
@@ -147,8 +141,56 @@
                 "examples": {
                   "Unauthorized": {
                     "value": {
-                      "error-type": "unauthorized",
-                      "message": "Authentication Failed"
+                      "error_type": "authentication_failure",
+                      "message": "Authentication failed. Use a valid OneLink API token from your security center."
+                    }
+                  },
+                  "Account validation failure": {
+                    "value": {
+                      "error_type": "wrong_brand_domain",
+                      "message": "Account validation failure"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "API not enabled": {
+                    "value": {
+                      "error_type": "feature_not_enabled",
+                      "message": "OneLink API is not enabled for this account. Note: OneLink API is a premium feature. Please contact your AppsFlyer Customer Success Manager for access."
+                    }
+                  },
+                  "Branded domain mismatch": {
+                    "value": {
+                      "error_type": "wrong_brand_domain",
+                      "message": "Brand domain mismatch"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "OneLink template not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "Shortlink not found": {
+                    "value": {
+                      "error_type": "invalid_parameter",
+                      "message": "Shortlink not found"
                     }
                   }
                 }
@@ -156,7 +198,7 @@
             }
           },
           "409": {
-            "description": "the provided shortlink-id already exists for this template",
+            "description": "The provided shortlink ID already exists for this template",
             "content": {
               "application/json": {
                 "schema": {
@@ -165,8 +207,8 @@
                 "examples": {
                   "Shortlink ID already exists": {
                     "value": {
-                      "error-type": "shortlink_id_in_use",
-                      "message": "Shortlink ID already in use"
+                      "error_type": "invalid_parameter",
+                      "message": "Shortlink ID already exists"
                     }
                   }
                 }
@@ -181,16 +223,16 @@
                   "$ref": "#/components/schemas/Error"
                 },
                 "examples": {
-                  "Quota Exceeded": {
+                  "Monthly quota exceeded": {
                     "value": {
-                      "error-type": "quota_exceeded",
+                      "error_type": "quota_exceeded",
                       "message": "Monthly Quota Exceeded."
                     }
                   },
                   "Rate limit exceeded": {
                     "value": {
-                      "error-type": "rate_limit_exceeded",
-                      "message": "Rate limit exceeded."
+                      "error_type": "rate_limit_exceeded",
+                      "message": "Rate Limit Exceeded."
                     }
                   }
                 }
@@ -207,7 +249,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Get OneLink link data",
-        "description": "<p><span style=\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\">\n  Premium\n</span></p>\n\n> 📘 Note\n> \n> This API replaces [Get OneLink link data v1.0](https://dev.appsflyer.com/hc/reference/get-onelink-attribution-link)\n",
+        "description": "<p><span style=\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\">\n  Premium\n</span></p>\n\n> 📘 Note\n>\n> This API replaces [Get OneLink link data v1.0](https://dev.appsflyer.com/hc/reference/get-onelink-attribution-link)\n",
         "operationId": "get-onelink-v2-link",
         "parameters": [
           {
@@ -283,7 +325,7 @@
                 "examples": {
                   "API access blocked": {
                     "value": {
-                      "error-type": "invalid-source",
+                      "error_type": "invalid_source",
                       "message": "This operation is not allowed for this shortlink source-caller."
                     }
                   }
@@ -301,8 +343,8 @@
                 "examples": {
                   "Unauthorized": {
                     "value": {
-                      "error-type": "unauthorized",
-                      "message": "Authentication Failed"
+                      "error_type": "authentication_failure",
+                      "message": "Authentication failed. Use a valid OneLink API token from your security center."
                     }
                   }
                 }
@@ -310,15 +352,18 @@
             }
           },
           "404": {
-            "description": "The link does not exist",
+            "description": "The shortlink does not exist",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Error"
                 },
                 "examples": {
-                  "Link doesn't exist": {
-                    "value": "Not Found"
+                  "Shortlink not found": {
+                    "value": {
+                      "error_type": "invalid_parameter",
+                      "message": "Shortlink not found"
+                    }
                   }
                 }
               }
@@ -332,7 +377,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Update OneLink link",
-        "description": "<p><span style=\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\">\n  Premium\n</span></p>\n\n> 📘 Note\n> \n> This API replaces [Update OneLink link v1.0](https://dev.appsflyer.com/hc/reference/update-onelink-attribution-link)\n",
+        "description": "<p><span style=\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\">\n  Premium\n</span></p>\n\n> 📘 Note\n>\n> This API replaces [Update OneLink link v1.0](https://dev.appsflyer.com/hc/reference/update-onelink-attribution-link)\n",
         "operationId": "update-onelink-v2-link",
         "parameters": [
           {
@@ -371,7 +416,7 @@
                   },
                   "ttl": {
                     "type": "string",
-                    "description": "Time to Live for the full link. value can be specified in days (default), minutes or hours (for example, 10m, 20h, 14d).",
+                    "description": "Time to Live for the full link. Value can be specified in days (default), minutes or hours (for example, 10m, 20h, 14d).",
                     "example": "22d"
                   },
                   "data": {
@@ -417,34 +462,28 @@
                   "$ref": "#/components/schemas/Error"
                 },
                 "examples": {
-                  "API limit reached": {
-                    "value": {
-                      "error-type": "invalid_parameter",
-                      "message": "Data sent exceeds limiParameter 'af_r' has an invalid value: 'badURL'. Reason: value should be a valid URL."
-                    }
-                  },
                   "Payload limit": {
                     "value": {
-                      "error-type": "limit-exceeded",
-                      "message": "Generating shortlink failed, data sent exceeds limit."
+                      "error_type": "limit_exceeded",
+                      "message": "Generating shortlink failed, data sent exceeds limit"
                     }
                   },
-                  "Creation failure": {
+                  "Update failure": {
                     "value": {
-                      "error-type": "internal-error",
+                      "error_type": "internal_error",
                       "message": "Failed to create shortlink."
                     }
                   },
                   "API access blocked": {
                     "value": {
-                      "error-type": "invalid-source",
+                      "error_type": "invalid_source",
                       "message": "This operation is not allowed for this shortlink source-caller."
                     }
                   },
-                  "Unsupported TTL": {
+                  "Invalid request body": {
                     "value": {
-                      "error-type": "unsupported-ttl",
-                      "message": "TTL value is not supported. Maximum allowed TTL is 365 days."
+                      "error_type": "invalid_parameter",
+                      "message": "Generating shortlink failed, invalid request body"
                     }
                   }
                 }
@@ -461,8 +500,8 @@
                 "examples": {
                   "Unauthorized": {
                     "value": {
-                      "error-type": "unauthorized",
-                      "message": "Authentication Failed"
+                      "error_type": "authentication_failure",
+                      "message": "Authentication failed. Use a valid OneLink API token from your security center."
                     }
                   }
                 }
@@ -470,22 +509,25 @@
             }
           },
           "404": {
-            "description": "The link does not exist",
+            "description": "The shortlink does not exist",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Error"
                 },
                 "examples": {
-                  "The link does not exist": {
-                    "value": "Not Found"
+                  "Shortlink not found": {
+                    "value": {
+                      "error_type": "invalid_parameter",
+                      "message": "Shortlink not found"
+                    }
                   }
                 }
               }
             }
           },
           "429": {
-            "description": "Client has reached its API limit calls",
+            "description": "Limit exceeded",
             "content": {
               "application/json": {
                 "schema": {
@@ -493,10 +535,16 @@
                 },
                 "examples": {
                   "Monthly quota exceeded": {
-                    "value": "Monthly quota exceeded"
+                    "value": {
+                      "error_type": "quota_exceeded",
+                      "message": "Monthly Quota Exceeded."
+                    }
                   },
                   "Rate limit exceeded": {
-                    "value": "Rate limit exceeded"
+                    "value": {
+                      "error_type": "rate_limit_exceeded",
+                      "message": "Rate Limit Exceeded."
+                    }
                   }
                 }
               }
@@ -510,7 +558,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Delete OneLink link",
-        "description": "<p><span style=\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\">\n  Premium\n</span></p>\n\n> 📘 Note\n> \n> This API replaces [Delete OneLink link v1.0](https://dev.appsflyer.com/hc/reference/delete-onelink-attribution-link)\n",
+        "description": "<p><span style=\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\">\n  Premium\n</span></p>\n\n> 📘 Note\n>\n> This API replaces [Delete OneLink link v1.0](https://dev.appsflyer.com/hc/reference/delete-onelink-attribution-link)\n",
         "operationId": "delete-onelink-v2-link",
         "parameters": [
           {
@@ -561,8 +609,14 @@
                 "examples": {
                   "API access blocked": {
                     "value": {
-                      "error-type": "invalid-source",
+                      "error_type": "invalid_source",
                       "message": "This operation is not allowed for this shortlink source-caller."
+                    }
+                  },
+                  "Delete failure": {
+                    "value": {
+                      "error_type": "internal_error",
+                      "message": "Failed to delete shortlink"
                     }
                   }
                 }
@@ -579,8 +633,8 @@
                 "examples": {
                   "Unauthorized": {
                     "value": {
-                      "error-type": "unauthorized",
-                      "message": "Authentication Failed"
+                      "error_type": "authentication_failure",
+                      "message": "Authentication failed. Use a valid OneLink API token from your security center."
                     }
                   }
                 }
@@ -588,22 +642,25 @@
             }
           },
           "404": {
-            "description": "The link does not exist",
+            "description": "The shortlink does not exist",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Error"
                 },
                 "examples": {
-                  "The link does not exist": {
-                    "value": "Not Found"
+                  "Shortlink not found": {
+                    "value": {
+                      "error_type": "invalid_parameter",
+                      "message": "Shortlink not found"
+                    }
                   }
                 }
               }
             }
           },
           "429": {
-            "description": "Client has reached its API limit calls",
+            "description": "Limit exceeded",
             "content": {
               "application/json": {
                 "schema": {
@@ -611,10 +668,16 @@
                 },
                 "examples": {
                   "Monthly quota exceeded": {
-                    "value": "Monthly quota exceeded"
+                    "value": {
+                      "error_type": "quota_exceeded",
+                      "message": "Monthly Quota Exceeded."
+                    }
                   },
                   "Rate limit exceeded": {
-                    "value": "Rate limit exceeded"
+                    "value": {
+                      "error_type": "rate_limit_exceeded",
+                      "message": "Rate Limit Exceeded."
+                    }
                   }
                 }
               }
@@ -630,7 +693,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Get OneLink QR code",
-        "description": "<span style=\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\">\n  Premium\n</span>\n\n> 📘 Note \n> \n> The QR code’s color and logo are automatically pulled from your OneLink template settings. To customize these design elements or restore the default, go to the OneLink Management page in the AppsFlyer dashboard.\n",
+        "description": "<span style=\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\">\n  Premium\n</span>\n\n> 📘 Note\n>\n> The QR code's color and logo are automatically pulled from your OneLink template settings. To customize these design elements or restore the default, go to the OneLink Management page in the AppsFlyer dashboard.\n",
         "operationId": "get-onelink-v2-link-qr",
         "parameters": [
           {
@@ -728,26 +791,20 @@
                 "examples": {
                   "API access blocked": {
                     "value": {
-                      "error-type": "invalid-source",
+                      "error_type": "invalid_source",
                       "message": "This operation is not allowed for this shortlink source-caller."
                     }
                   },
-                  "Unsupported QR format or size": {
+                  "Invalid QR parameter": {
                     "value": {
-                      "error-type": "invalid_parameter",
-                      "message": "Invalid QR parameter."
+                      "error_type": "invalid_parameter",
+                      "message": "Invalid QR parameter: <code>"
                     }
                   },
-                  "QR logic failure": {
+                  "QR generation failure": {
                     "value": {
-                      "error-type": "qr_error",
-                      "message": "Unexpected error occurred while generating QR code."
-                    }
-                  },
-                  "QR request not v2": {
-                    "value": {
-                      "error-type": "invalid_source",
-                      "message": "This operation is not allowed for this shortlink source-caller."
+                      "error_type": "qr_error",
+                      "message": "Unexpected error occurred while generating QR code"
                     }
                   }
                 }
@@ -764,8 +821,8 @@
                 "examples": {
                   "Unauthorized": {
                     "value": {
-                      "error-type": "unauthorized",
-                      "message": "Authentication Failed"
+                      "error_type": "authentication_failure",
+                      "message": "Authentication failed. Use a valid OneLink API token from your security center."
                     }
                   }
                 }
@@ -773,17 +830,17 @@
             }
           },
           "404": {
-            "description": "The link does not exist",
+            "description": "The shortlink does not exist",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Error"
                 },
                 "examples": {
-                  "Link not found": {
+                  "Shortlink not found": {
                     "value": {
-                      "error-type": "not_found",
-                      "message": "The link does exist."
+                      "error_type": "invalid_parameter",
+                      "message": "Shortlink not found"
                     }
                   }
                 }
@@ -853,11 +910,11 @@
     "schemas": {
       "Error": {
         "required": [
-          "error-type",
+          "error_type",
           "message"
         ],
         "properties": {
-          "error-type": {
+          "error_type": {
             "type": "string"
           },
           "message": {
