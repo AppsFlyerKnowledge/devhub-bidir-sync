@@ -1,6 +1,5 @@
 ---
 title: Raw data reports (non-organic)
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

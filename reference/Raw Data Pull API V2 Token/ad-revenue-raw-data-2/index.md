@@ -1,6 +1,5 @@
 ---
 title: Ad Revenue raw data
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

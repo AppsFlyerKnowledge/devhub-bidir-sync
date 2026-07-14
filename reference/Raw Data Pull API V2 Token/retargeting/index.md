@@ -1,6 +1,5 @@
 ---
 title: Retargeting
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
