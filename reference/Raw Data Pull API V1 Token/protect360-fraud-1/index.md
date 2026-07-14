@@ -1,6 +1,5 @@
 ---
 title: Protect360 fraud
-excerpt: ''
 deprecated: false
 hidden: true
 metadata:

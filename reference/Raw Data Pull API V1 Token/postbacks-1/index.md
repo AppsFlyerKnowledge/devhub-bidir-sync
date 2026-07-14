@@ -1,6 +1,5 @@
 ---
 title: Postbacks
-excerpt: ''
 deprecated: false
 hidden: true
 metadata:
