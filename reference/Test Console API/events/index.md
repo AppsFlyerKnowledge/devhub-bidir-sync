@@ -1,6 +1,5 @@
 ---
 title: Events
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

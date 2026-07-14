@@ -1,6 +1,5 @@
 ---
 title: Allowed devices
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
