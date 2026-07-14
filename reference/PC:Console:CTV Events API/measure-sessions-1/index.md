@@ -1,6 +1,5 @@
 ---
 title: Measure sessions
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

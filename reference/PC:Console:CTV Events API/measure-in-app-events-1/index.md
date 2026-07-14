@@ -1,6 +1,5 @@
 ---
 title: Measure in-app events
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
