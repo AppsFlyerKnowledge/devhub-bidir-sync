@@ -1,6 +1,5 @@
 ---
 title: URL Validation
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

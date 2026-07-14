@@ -1,6 +1,5 @@
 ---
 title: Message Fields
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

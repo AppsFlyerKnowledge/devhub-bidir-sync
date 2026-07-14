@@ -1,6 +1,5 @@
 ---
 title: Event Types
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

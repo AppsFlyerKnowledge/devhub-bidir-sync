@@ -1,6 +1,5 @@
 ---
 title: Authentication Token
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

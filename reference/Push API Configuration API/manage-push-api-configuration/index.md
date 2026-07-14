@@ -1,6 +1,5 @@
 ---
 title: Manage Push API configuration
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
