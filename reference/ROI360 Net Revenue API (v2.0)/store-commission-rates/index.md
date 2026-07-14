@@ -1,6 +1,5 @@
 ---
 title: Store commission rates
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

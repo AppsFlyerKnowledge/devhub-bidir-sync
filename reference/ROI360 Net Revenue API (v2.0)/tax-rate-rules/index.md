@@ -1,6 +1,5 @@
 ---
 title: Tax rate rules
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
