@@ -1,6 +1,5 @@
 ---
 title: Click Engagement
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
