@@ -1,6 +1,5 @@
 ---
 title: Active integrations
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

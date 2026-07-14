@@ -1,6 +1,5 @@
 ---
 title: Unique partner integration parameters
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

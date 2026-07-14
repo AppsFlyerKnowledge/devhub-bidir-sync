@@ -1,6 +1,5 @@
 ---
 title: Google Play install referrer
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

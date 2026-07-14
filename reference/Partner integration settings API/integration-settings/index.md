@@ -1,6 +1,5 @@
 ---
 title: Integration settings
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
