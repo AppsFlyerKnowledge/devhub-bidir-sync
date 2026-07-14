@@ -1,6 +1,5 @@
 ---
 title: Import audience
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
