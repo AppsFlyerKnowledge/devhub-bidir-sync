@@ -1,6 +1,5 @@
 ---
 title: Create audience
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

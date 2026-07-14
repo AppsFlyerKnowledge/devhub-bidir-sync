@@ -1,6 +1,5 @@
 ---
 title: Audience split
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

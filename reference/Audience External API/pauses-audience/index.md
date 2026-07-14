@@ -1,6 +1,5 @@
 ---
 title: Pauses audience
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

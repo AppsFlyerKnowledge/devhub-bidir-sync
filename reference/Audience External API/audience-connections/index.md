@@ -1,6 +1,5 @@
 ---
 title: Audience connections
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

@@ -1,6 +1,5 @@
 ---
 title: Account connections
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

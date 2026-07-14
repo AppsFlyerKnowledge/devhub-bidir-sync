@@ -1,6 +1,5 @@
 ---
 title: Audience upload
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

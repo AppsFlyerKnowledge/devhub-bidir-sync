@@ -1,6 +1,5 @@
 ---
 title: Account splits
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
