@@ -1,6 +1,5 @@
 ---
 title: Cohort Report
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
