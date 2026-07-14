@@ -1,6 +1,5 @@
 ---
 title: Revoke secret key
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

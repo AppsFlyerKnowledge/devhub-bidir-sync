@@ -1,6 +1,5 @@
 ---
 title: Update config
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

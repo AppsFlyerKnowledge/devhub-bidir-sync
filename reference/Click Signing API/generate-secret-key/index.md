@@ -1,6 +1,5 @@
 ---
 title: Generate secret key
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

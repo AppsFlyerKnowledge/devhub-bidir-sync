@@ -1,6 +1,5 @@
 ---
 title: Circuit breaker
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

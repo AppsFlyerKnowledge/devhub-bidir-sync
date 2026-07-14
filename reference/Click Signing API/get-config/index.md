@@ -1,6 +1,5 @@
 ---
 title: Get config
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
