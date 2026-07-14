@@ -1,6 +1,5 @@
 ---
 title: iOS deep linking request
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
