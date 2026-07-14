@@ -1,6 +1,5 @@
 ---
 title: Measure first app opens
-excerpt: ''
 deprecated: false
 hidden: true
 metadata:
