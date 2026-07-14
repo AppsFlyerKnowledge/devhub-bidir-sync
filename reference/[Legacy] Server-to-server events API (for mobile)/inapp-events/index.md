@@ -1,6 +1,5 @@
 ---
 title: Inapp Events
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
