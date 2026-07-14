@@ -1,6 +1,5 @@
 ---
 title: Master Report
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
