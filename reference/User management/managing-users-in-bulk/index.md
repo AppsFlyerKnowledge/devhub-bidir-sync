@@ -1,6 +1,5 @@
 ---
 title: Managing users in bulk
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
