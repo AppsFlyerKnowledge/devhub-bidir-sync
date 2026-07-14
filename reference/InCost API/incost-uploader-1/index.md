@@ -1,6 +1,5 @@
 ---
 title: InCost uploader
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

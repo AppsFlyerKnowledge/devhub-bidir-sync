@@ -1,6 +1,5 @@
 ---
 title: InCost job status
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
