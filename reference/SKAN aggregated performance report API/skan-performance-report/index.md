@@ -1,6 +1,5 @@
 ---
 title: SKAN performance report
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
