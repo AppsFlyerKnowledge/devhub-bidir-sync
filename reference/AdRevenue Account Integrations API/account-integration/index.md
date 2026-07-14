@@ -1,6 +1,5 @@
 ---
 title: Account Integration
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
