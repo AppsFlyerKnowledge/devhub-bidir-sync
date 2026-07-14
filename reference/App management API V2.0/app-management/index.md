@@ -1,6 +1,5 @@
 ---
 title: App management
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
