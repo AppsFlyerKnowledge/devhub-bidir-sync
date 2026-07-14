@@ -1,6 +1,5 @@
 ---
 title: Events management
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
