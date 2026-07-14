@@ -1,6 +1,5 @@
 ---
 title: Additional Identifiers Handling
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
