@@ -1,6 +1,5 @@
 ---
 title: SKAN postbacks
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
