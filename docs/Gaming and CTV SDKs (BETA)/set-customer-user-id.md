@@ -63,9 +63,11 @@ Below is a platform-by-platform guide for retrieving and setting the CUID across
 ### Server to Server (S2S)
 
 - [PC/Console/CTV Events](https://dev.appsflyer.com/hc/reference/pc-console-ctv-api-overview)
-- [Web](https://dev.appsflyer.com/hc/reference/web-s2s-api-setcuid-post)
+- <Anchor target="_blank" href="https://support.appsflyer.com/hc/en-us/articles/45670116601617--Beta-Server-to-Server-S2S-API-for-Web-Attribution#example-request">Web</Anchor>
 - [Mobile](https://dev.appsflyer.com/hc/reference/s2s-events-api3-post)
 
 ### Additional
 
 - [Google Play Games on PC - identical to Android](https://dev.appsflyer.com/hc/docs/integrate-android-sdk#set-the-customer-user-id)
+
+<br />
