@@ -10,6 +10,16 @@ metadata:
 next:
   description: ''
 ---
+## Version 7.0.1
+
+#### New Features
+- Added hashed PII collection for network sharing via `setUserEmail`, `setUserPhone`, `setUserFirstName`, `setUserLastName`, and `setUserFbLoginId`.
+
+#### Changed Features
+- Removed the `setUserEmails` and `setPhoneNumber` APIs — full removal, not a deprecation. Use `setUserEmail` and `setUserPhone` instead.
+
+#### Technical Update
+- Raised `targetSdkVersion` to 36.
 
 ## Version 6.18.1
 
