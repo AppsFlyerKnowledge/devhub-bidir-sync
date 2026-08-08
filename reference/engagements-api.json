@@ -874,7 +874,7 @@
       "AfAdPlacement": {
         "type": "string",
         "maxLength": 256,
-        "description": "Ad network unique transaction identifier"
+        "description": "Ad network unique transaction identifier (test)"
       },
       "AfAdType": {
         "type": "string",
