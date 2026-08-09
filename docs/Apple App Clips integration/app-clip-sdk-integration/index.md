@@ -16,7 +16,7 @@ next:
 ---
 The developer routes the user to the correct activity using the invocation URL (the QR code, NFC tag, etc. that invokes the App Clip).
 
-**Before you begin**: Make sure you and the marketer have already created a OneLink template with Universal Links and a OneLink custom link set up to direct your full-app users. With the template and custom link already configured, AppsFlyer automatically hosts and edits the AASA file to support App Clips. **Note**: It may take several hours for the AASA file to update.
+**Before you begin**: Make sure you and the marketer have already created a OneLink template with <Anchor target="_blank" href="https://dev.appsflyer.com/hc/docs/dl_ios_init_setup#app-opening-methods">Universal Links</Anchor> and a OneLink custom link set up to direct your full-app users. With the template and custom link already configured, AppsFlyer automatically hosts and edits the AASA file to support App Clips. **Note**: It may take several hours for the AASA file to update.
 
 **To add the SDK to the App Clip and route the user**:
 
