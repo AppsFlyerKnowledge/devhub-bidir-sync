@@ -6,7 +6,6 @@
 - push-notifications-android
 - uninstall-measurement-android
 - oaid
-- preserve-user-privacy-android
 - android-send-consent-for-dma-compliance
 - purchase-validation
 - branch-migration-android
