@@ -1,6 +1,7 @@
 - preserve-user-privacy
 - android-release-notes
 - android-sdk-7
+- android-sdk-6
 - install-android-sdk
 - integrate-android-sdk
 - testing-android
@@ -18,4 +19,3 @@
 - branch-migration-ios
 - android-legacy-security-plugin
 - android-security-plugin
-- android-sdk-6
