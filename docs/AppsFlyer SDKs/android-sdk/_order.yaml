@@ -6,6 +6,6 @@
 - android-sdk-reference
 - purchase-validation
 - android-security-plugin
+- android-legacy-security-plugin
 - branch-migration-android
 - branch-migration-ios
-- android-legacy-security-plugin
