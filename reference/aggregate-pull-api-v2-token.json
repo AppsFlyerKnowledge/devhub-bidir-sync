@@ -2,8 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Aggregate Pull API V2 Token",
-    "version": "1.0.0",
-    "description": "> ⚠️ Important\n>\n> This API returns a redirect to the report URL. If you copy the example cURL command into a terminal, add the `-L` flag manually to follow the redirect. Without `-L`, curl returns no data.\n"
+    "version": "1.0.0"
   },
   "servers": [
     {
@@ -22,7 +21,7 @@
           "Aggregate (user acquisition and retargeting)"
         ],
         "summary": "Partners",
-        "description": "> ⚠️ Important\n>\n> All API V2 tokens generated before March 10, 2026, 19:00 UTC have been revoked. If your token was generated before this date, please regenerate it. [Learn how](https://support.appsflyer.com/hc/en-us/articles/360004562377-Managing-AppsFlyer-tokens).\n\nData is grouped by media source and campaign.\nData type: LTV\nFor details, see [KB link](https://support.appsflyer.com/hc/en-us/articles/360007530258-Using-Pull-API-raw-data)\n",
+        "description": "> ⚠️ Important\n>\n> This API returns a redirect to the report URL. If you copy the example cURL command into a terminal, add the `-L` flag manually to follow the redirect. Without `-L`, curl returns no data.\n\nData is grouped by media source and campaign.\nData type: LTV\nFor details, see [KB link](https://support.appsflyer.com/hc/en-us/articles/360007530258-Using-Pull-API-raw-data)\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/AppId"
@@ -74,7 +73,7 @@
           "Aggregate (user acquisition and retargeting)"
         ],
         "summary": "Partners daily",
-        "description": "> ⚠️ Important\n>\n> All API V2 tokens generated before March 10, 2026, 19:00 UTC have been revoked. If your token was generated before this date, please regenerate it. [Learn how](https://support.appsflyer.com/hc/en-us/articles/360004562377-Managing-AppsFlyer-tokens).\n\nData is grouped by date, media source, and campaign.\nData type: LTV\n",
+        "description": "> ⚠️ Important\n>\n> This API returns a redirect to the report URL. If you copy the example cURL command into a terminal, add the `-L` flag manually to follow the redirect. Without `-L`, curl returns no data.\n\nData is grouped by date, media source, and campaign.\nData type: LTV\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/AppId"
@@ -126,7 +125,7 @@
           "Aggregate (user acquisition and retargeting)"
         ],
         "summary": "Daily",
-        "description": "> ⚠️ Important\n>\n> All API V2 tokens generated before March 10, 2026, 19:00 UTC have been revoked. If your token was generated before this date, please regenerate it. [Learn how](https://support.appsflyer.com/hc/en-us/articles/360004562377-Managing-AppsFlyer-tokens).\n\nData is grouped by date, media source, and campaign, and excludes in-app events.\nData type: LTV\n",
+        "description": "> ⚠️ Important\n>\n> This API returns a redirect to the report URL. If you copy the example cURL command into a terminal, add the `-L` flag manually to follow the redirect. Without `-L`, curl returns no data.\n\nData is grouped by date, media source, and campaign, and excludes in-app events.\nData type: LTV\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/AppId"
@@ -178,7 +177,7 @@
           "Aggregate (user acquisition and retargeting)"
         ],
         "summary": "Geo",
-        "description": "> ⚠️ Important\n>\n> All API V2 tokens generated before March 10, 2026, 19:00 UTC have been revoked. If your token was generated before this date, please regenerate it. [Learn how](https://support.appsflyer.com/hc/en-us/articles/360004562377-Managing-AppsFlyer-tokens).\n\nData is grouped by geo, media source, and campaign.\nData type: LTV\n",
+        "description": "> ⚠️ Important\n>\n> This API returns a redirect to the report URL. If you copy the example cURL command into a terminal, add the `-L` flag manually to follow the redirect. Without `-L`, curl returns no data.\n\nData is grouped by geo, media source, and campaign.\nData type: LTV\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/AppId"
@@ -230,7 +229,7 @@
           "Aggregate (user acquisition and retargeting)"
         ],
         "summary": "Geo daily",
-        "description": "> ⚠️ Important\n>\n> All API V2 tokens generated before March 10, 2026, 19:00 UTC have been revoked. If your token was generated before this date, please regenerate it. [Learn how](https://support.appsflyer.com/hc/en-us/articles/360004562377-Managing-AppsFlyer-tokens).\n\nData is grouped by date, geo, media source, and campaign.\nData type: LTV\n",
+        "description": "> ⚠️ Important\n>\n> This API returns a redirect to the report URL. If you copy the example cURL command into a terminal, add the `-L` flag manually to follow the redirect. Without `-L`, curl returns no data.\n\nData is grouped by date, geo, media source, and campaign.\nData type: LTV\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/AppId"
