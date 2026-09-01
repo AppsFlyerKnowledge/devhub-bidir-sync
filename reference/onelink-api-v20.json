@@ -21,7 +21,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Create OneLink link",
-        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n\n> 📘 Note\n>\n> This API replaces [Create OneLink link v1.0](https://dev.appsflyer.com/hc/reference/create-onelink-attribution-link)\n",
+        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 600; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n\n> 📘 Note\n>\n> This API replaces [Create OneLink link v1.0](https://dev.appsflyer.com/hc/reference/create-onelink-attribution-link)\n",
         "operationId": "onelink-v2-create-link",
         "parameters": [
           {
@@ -249,7 +249,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Get OneLink link data",
-        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n\n> 📘 Note\n>\n> This API replaces [Get OneLink link data v1.0](https://dev.appsflyer.com/hc/reference/get-onelink-attribution-link)\n",
+        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 600; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n\n> 📘 Note\n>\n> This API replaces [Get OneLink link data v1.0](https://dev.appsflyer.com/hc/reference/get-onelink-attribution-link)\n",
         "operationId": "get-onelink-v2-link",
         "parameters": [
           {
@@ -377,7 +377,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Update OneLink link",
-        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n\n> 📘 Note\n>\n> This API replaces [Update OneLink link v1.0](https://dev.appsflyer.com/hc/reference/update-onelink-attribution-link)\n",
+        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 600; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n\n> 📘 Note\n>\n> This API replaces [Update OneLink link v1.0](https://dev.appsflyer.com/hc/reference/update-onelink-attribution-link)\n",
         "operationId": "update-onelink-v2-link",
         "parameters": [
           {
@@ -558,7 +558,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Delete OneLink link",
-        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n\n> 📘 Note\n>\n> This API replaces [Delete OneLink link v1.0](https://dev.appsflyer.com/hc/reference/delete-onelink-attribution-link)\n",
+        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 600; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n\n> 📘 Note\n>\n> This API replaces [Delete OneLink link v1.0](https://dev.appsflyer.com/hc/reference/delete-onelink-attribution-link)\n",
         "operationId": "delete-onelink-v2-link",
         "parameters": [
           {
@@ -693,7 +693,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Get OneLink QR code",
-        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n\n> 📘 Note\n>\n> The QR code's color and logo are automatically pulled from your OneLink template settings. To customize these design elements or restore the default, go to the OneLink Management page in the AppsFlyer dashboard.\n",
+        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 600; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n\n> 📘 Note\n>\n> The QR code's color and logo are automatically pulled from your OneLink template settings. To customize these design elements or restore the default, go to the OneLink Management page in the AppsFlyer dashboard.\n",
         "operationId": "get-onelink-v2-link-qr",
         "parameters": [
           {
@@ -856,7 +856,7 @@
           "OneLink REST API v2.0"
         ],
         "summary": "Get account quota",
-        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 400; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n",
+        "description": "[block:html]\n{\n  \"html\": \"<span style=\\\"background-color: #6e00ff; color: #fff; font-size: 12px; font-weight: 600; padding: 4px; border-radius: 8px;\\\">Premium</span>\"\n}\n[/block]\n",
         "operationId": "get-onelink-v2-link-quota",
         "parameters": [
           {
