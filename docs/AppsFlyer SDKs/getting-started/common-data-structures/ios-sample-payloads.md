@@ -194,3 +194,7 @@ Input to `onConversionDataSuccess(_ data: [AnyHashable: Any])`
   some code or other
   ```
 </Accordion>
+
+<Accordion title="Some title" icon="fa-info-circle">
+  wdythiing is going on here?
+</Accordion>
