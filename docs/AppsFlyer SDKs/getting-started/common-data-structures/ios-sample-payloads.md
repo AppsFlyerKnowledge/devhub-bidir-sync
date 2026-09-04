@@ -182,3 +182,7 @@ Input to `onConversionDataSuccess(_ data: [AnyHashable: Any])`
 	"shortlink": "6d66214a"
 }
 ```
+
+<KBAccordion title="Accordion one" icon="fa-info-circle" iconColor="#8470be">
+Lorem ipsum
+</KBAccordion>
