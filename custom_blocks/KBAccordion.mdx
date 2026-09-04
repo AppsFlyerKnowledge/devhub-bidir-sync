@@ -9,7 +9,7 @@ export const KBAccordion = ({ children, icon, iconColor, title }) => {
   return (
     <div className="border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden">
       <div
-        className={`flex items-center justify-between w-full p-3 text-base font-medium bg-gray-50 dark:bg-gray-800 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 ${isOpen ? 'border-b border-gray-200 dark:border-gray-600' : ''}`}
+        className={`flex items-center justify-between w-full p-4 text-base font-medium bg-gray-50 dark:bg-gray-800 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 ${isOpen ? 'border-b border-gray-200 dark:border-gray-600' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="flex items-center">
@@ -21,8 +21,14 @@ export const KBAccordion = ({ children, icon, iconColor, title }) => {
         <i className={`fa fa-regular fa-chevron-right text-sm text-gray-500 dark:text-gray-300 transition-transform ${isOpen ? 'rotate-90' : ''}`} />
       </div>
       {isOpen && (
-        <div className="text-gray-600 dark:text-white bg-white dark:bg-gray-900 px-4 py-3">{children}</div>
+        <div className="text-gray-600 dark:text-white bg-white dark:bg-gray-900 px-4 pt-4 pb-5">
+          {children}
+        </div>
       )}
     </div>
   );
 };
+
+<KBAccordion title="Accordion one">
+Lorem ipsum
+</KBAccordion>
