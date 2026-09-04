@@ -14,11 +14,11 @@ export const KBAccordion = ({ children, icon, iconColor, title }) => {
       >
         <span className="flex items-center">
           {icon && (
-            <i className={`fa-duotone fa-solid ${icon} mr-2`} style={{ color: iconColor }} />
+            <i className={`fa-duotone fa-solid ${icon} font-black mr-2`} style={{ color: iconColor }} />
           )}
           <span>{title}</span>
         </span>
-        <i className={`fa fa-solid fa-chevron-right text-sm text-gray-500 dark:text-gray-300 mr-2 transition-transform ${isOpen ? 'rotate-90' : ''}`} />
+        <i className={`fa fa-solid fa-chevron-right font-black text-sm text-gray-500 dark:text-gray-300 mr-2 transition-transform ${isOpen ? 'rotate-90' : ''}`} />
       </div>
       {isOpen && (
         <div className="text-gray-600 dark:text-white px-4 pt-1 pb-2">
