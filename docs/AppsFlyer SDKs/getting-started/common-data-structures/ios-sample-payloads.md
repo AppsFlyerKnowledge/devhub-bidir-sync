@@ -1,7 +1,7 @@
 ---
 title: iOS sample payloads
 deprecated: false
-hidden: true
+hidden: false
 icon: 😀
 link:
   new_tab: false
