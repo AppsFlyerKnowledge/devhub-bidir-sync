@@ -198,3 +198,9 @@ Input to `onConversionDataSuccess(_ data: [AnyHashable: Any])`
 <Accordion title="Some title" icon="fa-info-circle">
   wdythiing is going on here?
 </Accordion>
+
+<Accordion title="My Accordion" icon="fa-info-circle" iconColor="purple">
+  Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** Ut enim
+  ad minim veniam, quis nostrud exercitation ullamco. Excepteur sint
+  occaecat cupidatat non proident!
+</Accordion>
