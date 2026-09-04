@@ -182,27 +182,3 @@ Input to `onConversionDataSuccess(_ data: [AnyHashable: Any])`
 	"shortlink": "6d66214a"
 }
 ```
-
-<Accordion title="Accordion one" icon="fa-info-circle">
-  Lorem ipsum
-</Accordion>
-
-<Accordion title="Accordion two" icon="fa-info-circle">
-  Lorem ipsum.<br />
-
-  ```text
-  some code or other
-  ```
-</Accordion>
-
-<Accordion title="Some title" icon="fa-info-circle">
-  wdythiing is going on here?
-</Accordion>
-
-<Accordion title="" icon="fa-info-circle">
-
-</Accordion>
-
-<Accordion />
-
-This is a title
