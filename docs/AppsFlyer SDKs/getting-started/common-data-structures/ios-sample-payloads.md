@@ -1,14 +1,14 @@
 ---
 title: iOS sample payloads
-excerpt: ''
 deprecated: false
 hidden: true
+icon: 😀
+link:
+  new_tab: false
 metadata:
   title: ''
   description: ''
   robots: index
-next:
-  description: ''
 ---
 See the following sample payloads for Universal Links, URI schemes, and deferred deep linking. The samples contain a full payload, relevant for when all parameters in the Onelink custom link setup page  contain data.
 
