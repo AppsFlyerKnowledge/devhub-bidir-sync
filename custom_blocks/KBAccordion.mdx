@@ -7,7 +7,10 @@ export const KBAccordion = ({ children, icon, iconColor, title }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden bg-gray-50 dark:bg-gray-800">
+    <div
+      className="rounded-t-[8px] rounded-b-[5px] overflow-hidden bg-gray-50 dark:bg-gray-800"
+      style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
+    >
       <div
         className={`flex items-center justify-between w-full pt-[4px] pb-[4px] pl-[15px] pr-[15px] text-base font-medium leading-8 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 ${isOpen ? 'border-b border-gray-200 dark:border-gray-600' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
