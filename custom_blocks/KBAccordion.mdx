@@ -9,7 +9,7 @@ export const KBAccordion = ({ children, icon, iconColor, title }) => {
   return (
     <div className="border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden bg-gray-50 dark:bg-gray-800">
       <div
-        className={`flex items-center justify-between w-full py-2 px-4 text-base font-medium leading-8 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 ${isOpen ? 'border-b border-gray-200 dark:border-gray-600' : ''}`}
+        className={`flex items-center justify-between w-full pt-[4px] pb-[4px] pl-[15px] pr-[15px] text-base font-medium leading-8 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 ${isOpen ? 'border-b border-gray-200 dark:border-gray-600' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="flex items-center">
@@ -18,10 +18,10 @@ export const KBAccordion = ({ children, icon, iconColor, title }) => {
           )}
           <span>{title}</span>
         </span>
-        <i className={`fa fa-solid fa-chevron-right font-black text-sm text-gray-500 dark:text-gray-300 mr-2 transition-transform ${isOpen ? 'rotate-90' : ''}`} />
+        <i className={`fa fa-solid fa-chevron-right font-black text-sm text-gray-500 dark:text-gray-300 transition-transform ${isOpen ? 'rotate-90' : ''}`} />
       </div>
       {isOpen && (
-        <div className="text-gray-600 dark:text-white px-4 pt-1 pb-2">
+        <div className="text-gray-600 dark:text-white pl-[15px] pr-4 pt-1 pb-2">
           {children}
         </div>
       )}
