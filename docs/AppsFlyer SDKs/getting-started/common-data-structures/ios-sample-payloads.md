@@ -186,3 +186,7 @@ Input to `onConversionDataSuccess(_ data: [AnyHashable: Any])`
 <KBAccordion title="Accordion one" icon="fa-info-circle" iconColor="#8470be">
 Lorem ipsum
 </KBAccordion>
+
+<Accordion title="a title" icon="fa-info-circle">
+  Lorem ipsum
+</Accordion>
