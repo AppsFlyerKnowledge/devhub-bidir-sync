@@ -10,40 +10,18 @@ metadata:
 next:
   description: ''
 ---
-<Callout icon="🔍" theme="info">
-  ### PM Review Draft — MKSD-28
+<mark style={{backgroundColor: '#FFE0B2'}}>Slug (`create-direct-click-url`) left unchanged from the current live article, confirm if it should change too for PC/console/Steam discoverability (needs a redirect if so).</mark>
 
-  Marked-up preview of proposed changes for [MKSD-28](https://appsflyer.atlassian.net/browse/MKSD-28). Legend:
+<mark style={{backgroundColor: '#FFF59D'}}>Smart Script can generate direct click URLs that redirect users to non-mobile stores, where they can download, install, or purchase PC, CTV, or console apps.
 
-  - ✏️ green box = new or rewritten content
-  - <mark style={{backgroundColor: '#FFF59D'}}>yellow highlight</mark> = small in-place edit
-  - 🟠 **[NEEDS CONFIRMATION]** = open question, do not publish as-is until resolved
+This is a different flow from the mobile setup in [OneLink Smart Script V2](https://dev.appsflyer.com/hc/docs/dl_smart_script_v2). The mobile flow calls `generateOneLinkURL` and returns a OneLink URL that leads to the app store. The cross-platform flow described here calls `generateDirectClickURL` and returns a direct click URL that redirects straight to the platform-specific storefront you specify.
 
-  All marks and this notice will be removed once changes are approved.
-</Callout>
+**Prerequisites**
 
-<Callout icon="✏️" theme="info">
-  **Change 4** — title updated (frontmatter): "Smart script for cross-platform" → "Smart Script for PC, console, and Steam (cross-platform)". This also fixes the "Smart script" vs. "Smart Script" casing inconsistency. Original request: "Revisit the article title for PC/console discoverability."
+- The platform value for each storefront you're integrating (see the supported list below).
+- The `app_id` and `redirectURL` for each platform's storefront.</mark>
 
-  🟠 **[NEEDS CONFIRMATION]**: slug (`create-direct-click-url`) left unchanged to avoid breaking inbound links. Change it too if you want PC/console/Steam in the URL, that needs a redirect set up.
-</Callout>
-
-<Callout icon="✏️" theme="info">
-  **Change 5** — expanded intro, explains the mobile vs. cross-platform difference, adds a Prerequisites section. Original request: "Expand the cross-platform article into a standalone implementation guide (intro, prerequisites, numbered flow, validation step)." and "Explain the mobile vs. cross-platform difference explicitly."
-
-  Smart Script can generate direct click URLs that redirect users to non-mobile stores, where they can download, install, or purchase PC, CTV, or console apps.
-
-  This is a different flow from the mobile setup in [OneLink Smart Script V2](https://dev.appsflyer.com/hc/docs/dl_smart_script_v2). The mobile flow calls `generateOneLinkURL` and returns a OneLink URL that leads to the app store. The cross-platform flow described here calls `generateDirectClickURL` and returns a direct click URL that redirects straight to the platform-specific storefront you specify.
-
-  **Prerequisites**
-
-  - The platform value for each storefront you're integrating (see the supported list below).
-  - The `app_id` and `redirectURL` for each platform's storefront.
-</Callout>
-
-<Callout icon="🚧" theme="warn">
-  🟠 **[NEEDS CONFIRMATION]**: the ticket also asked to list a "OneLink template requirement" as a prerequisite. `generateDirectClickURL`'s signature has no OneLink URL argument, so it isn't included above. Needs confirmation from engineering before adding.
-</Callout>
+<mark style={{backgroundColor: '#FFE0B2'}}>The ticket also asked to list a "OneLink template requirement" as a prerequisite. `generateDirectClickURL`'s signature has no OneLink URL argument, so it isn't included above, confirm with engineering before adding.</mark>
 
 ## Implementation steps
 
@@ -53,7 +31,7 @@ To create a direct click URL, follow these steps:
 
 1. [Download the Smart Script](https://onelinksmartscript.appsflyer.com/onelink-smart-script-latest.js).
 2. Get the arguments to call the script, mapping the incoming parameters to the marketer’s parameters.
-3. Initialize the Smart Script [arguments](#arguments) and <mark style={{backgroundColor: '#FFF59D'}}>[configuration objects](https://dev.appsflyer.com/hc/docs/onelink-smart-script-v2web-to-app-url-generator#configuration-object)</mark> as in the following example: *(Change 8 — fixed duplicated `/hc/hc/` path segment. Original request: "Fix the broken configuration objects link.")*
+3. Initialize the Smart Script [arguments](#arguments) and <mark style={{backgroundColor: '#FFF59D'}}>[configuration objects](https://dev.appsflyer.com/hc/docs/onelink-smart-script-v2web-to-app-url-generator#configuration-object)</mark> as in the following example:
 
    ```jsx
    var mediaSource = { keys: ["my_media_source"], defaultValue: "my_default_media_source" };
@@ -107,33 +85,19 @@ To create a direct click URL, follow these steps:
 > 
 > For more information and a full example, see [here](https://dev.appsflyer.com/hc/docs/dl_smart_script_v2#preserve-incoming-url-parameters-across-pages).
 
-<Callout icon="✏️" theme="info">
-  **Change 9** — new validation step (step 6). Original request: "...validation step" (part of the standalone implementation guide bullet).
-
-  6. Validate the generated URL using the [Direct Click URL test page](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/direct_click.html), editing the input URL and confirming the output resolves to the correct platform's storefront.
-</Callout>
+<mark style={{backgroundColor: '#FFF59D'}}>6. Validate the generated URL using the [Direct Click URL test page](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/direct_click.html), editing the input URL and confirming the output resolves to the correct platform's storefront.</mark>
 
 ### Create a QR code with the Smart Script result
 
-<Callout icon="✏️" theme="info">
-  **Change 10** — added local context instead of a bare "see here" link. Original request: not its own Requested fix bullet, addresses issue #10 in the ticket's Issues list ("QR code and impression sections only link back to the mobile article"). 🟠 **[NEEDS CONFIRMATION]**: confirm this is in scope, since it's not in the Requested fix list.
-
-  The `displayQrCode` method works the same way for direct click URLs as it does for mobile OneLinks. For setup steps, see [Create a QR code with the Smart Script result](https://dev.appsflyer.com/hc/docs/dl_smart_script_v2#create-a-qr-code-with-the-smart-script-result) in the mobile article.
-</Callout>
+<mark style={{backgroundColor: '#FFF59D'}}>The `displayQrCode` method works the same way for direct click URLs as it does for mobile OneLinks. For setup steps, see [Create a QR code with the Smart Script result](https://dev.appsflyer.com/hc/docs/dl_smart_script_v2#create-a-qr-code-with-the-smart-script-result) in the mobile article.</mark>
 
 ### Fire an impression
 
-<Callout icon="✏️" theme="info">
-  **Change 11** — added local context, same rationale as Change 10. 🟠 **[NEEDS CONFIRMATION]**: same open scope question as Change 10.
+<mark style={{backgroundColor: '#FFF59D'}}>`fireImpressionsLink` works the same way for direct click URLs as it does for mobile OneLinks. For setup steps and the cross-platform example, see [Impressions, OneLink template with cross-platform support](https://dev.appsflyer.com/hc/docs/dl_smart_script_v2#impressions----onelink-template-with-cross-platform-support) in the mobile article.</mark>
 
-  `fireImpressionsLink` works the same way for direct click URLs as it does for mobile OneLinks. For setup steps and the cross-platform example, see [Impressions, OneLink template with cross-platform support](https://dev.appsflyer.com/hc/docs/dl_smart_script_v2#impressions----onelink-template-with-cross-platform-support) in the mobile article.
-</Callout>
+<mark style={{backgroundColor: '#FFE0B2'}}>The QR code and impression rewrites above aren't from a specific line in the Requested fix list, they address issue #10 in the ticket's Issues list. Confirm they're in scope.</mark>
 
 ## Arguments
-
-<Callout icon="✏️" theme="info">
-  **Change 6** — clarified `app_id` and `redirectURL` in the table below (highlighted inline). Original request: "Fix platform list formatting, clarify app_id/redirectURL, state supported afParameters." (this covers the "clarify app_id/redirectURL" part). Platform list formatting checked separately, the source already uses a proper list per platform, no change made, worth a look at the live rendered page.
-</Callout>
 
 [block:html]
 {
@@ -141,19 +105,11 @@ To create a direct click URL, follow these steps:
 }
 [/block]
 
-<Callout icon="✏️" theme="warn">
-  **Change 7** — 🟠 **[NEEDS CONFIRMATION]**: `deepLinkValue` and `af_sub1-5` exist in the mobile article's arguments table but not here. Original request: "Fix platform list formatting, clarify app_id/redirectURL, state supported afParameters." (this covers the "state supported afParameters" part). Per Dori's call, not asserting support either way until engineering confirms.
+<mark style={{backgroundColor: '#FFE0B2'}}>`deepLinkValue` and `af_sub1-5` exist in the mobile article's arguments table but not here. Support for `deepLinkValue` and `af_sub1-5` with `generateDirectClickURL` needs confirmation from engineering before this is documented either way.</mark>
 
-  🚧 Support for `deepLinkValue` and `af_sub1-5` with `generateDirectClickURL` needs confirmation from engineering before this is documented.
-</Callout>
+## <mark style={{backgroundColor: '#FFF59D'}}>UTM parameter mapping</mark>
 
-<Callout icon="✏️" theme="info">
-  **Change 12** — new UTM-to-dimension mapping table (cross-platform article only, mobile article already has a working UTM example). Original request: "Add a UTM-to-dimension mapping table."
-</Callout>
-
-## UTM parameter mapping
-
-If your PC or Steam campaigns use standard UTM parameters, Smart Script maps them to AppsFlyer dimensions as follows:
+<mark style={{backgroundColor: '#FFF59D'}}>If your PC or Steam campaigns use standard UTM parameters, Smart Script maps them to AppsFlyer dimensions as follows:</mark>
 
 | UTM parameter | AppsFlyer dimension | Configuration object |
 | --- | --- | --- |
