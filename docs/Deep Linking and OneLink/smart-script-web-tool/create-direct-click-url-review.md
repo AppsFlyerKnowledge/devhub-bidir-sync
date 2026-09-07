@@ -10,14 +10,14 @@ metadata:
 next:
   description: ''
 ---
-<mark style={{backgroundColor: '#FFF59D'}}>Smart Script can generate direct click URLs that redirect users to non-mobile stores, where they can download, install, or purchase PC, CTV, or console apps.
+<mark style={{backgroundColor: '#FFF59D'}}>Smart Script can generate direct click URLs that redirect users to non-mobile stores, where they can download, install, or purchase PC, CTV, or console apps.</mark>
 
-This is a different flow from the mobile setup in [OneLink Smart Script V2](https://dev.appsflyer.com/hc/docs/dl_smart_script_v2). The mobile flow calls `generateOneLinkURL` and returns a OneLink URL that leads to the app store. The cross-platform flow described here calls `generateDirectClickURL` and returns a direct click URL that redirects straight to the platform-specific storefront you specify.
+<mark style={{backgroundColor: '#FFF59D'}}>This is a different flow from the mobile setup in [OneLink Smart Script V2](https://dev.appsflyer.com/hc/docs/dl_smart_script_v2). The mobile flow calls `generateOneLinkURL` and returns a OneLink URL that leads to the app store. The cross-platform flow described here calls `generateDirectClickURL` and returns a direct click URL that redirects straight to the platform-specific storefront you specify.</mark>
 
-**Prerequisites**
+<mark style={{backgroundColor: '#FFF59D'}}>**Prerequisites**</mark>
 
-- The platform value for each storefront you're integrating (see the supported list below).
-- The `app_id` and `redirectURL` for each platform's storefront.</mark>
+- <mark style={{backgroundColor: '#FFF59D'}}>The platform value for each storefront you're integrating (see the supported list below).</mark>
+- <mark style={{backgroundColor: '#FFF59D'}}>The `app_id` and `redirectURL` for each platform's storefront.</mark>
 
 ## Implementation steps
 
