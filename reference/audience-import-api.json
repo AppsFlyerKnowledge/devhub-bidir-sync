@@ -253,6 +253,14 @@
           },
           "amplitude_id": {
             "type": "string"
+          },
+          "ad_user_data_enabled": {
+            "type": "string",
+            "description": "Relevant for as-is audiences only. Whether the user gave consent to send their user data to Google. Values: `true`/`false`. If left blank, sent to Google as \"Unspecified\" and likely excluded from EEA audiences."
+          },
+          "ad_personalization_enabled": {
+            "type": "string",
+            "description": "Relevant for as-is audiences only. Whether the user gave Google consent to use their data for personalized advertising. Values: `true`/`false`. If left blank, sent to Google as \"Unspecified\" and likely excluded from EEA audiences."
           }
         }
       }
