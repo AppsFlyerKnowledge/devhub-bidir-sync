@@ -83,6 +83,40 @@ To create a direct click URL, follow these steps:
 
 <mark style={{backgroundColor: '#FFF59D'}}>6. Validate the generated URL using the [Direct Click URL test page](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/direct_click.html), editing the input URL and confirming the output resolves to the correct platform's storefront.</mark>
 
+### Enable deterministic PC attribution
+
+<mark style={{backgroundColor: '#FFF59D'}}>Deterministic PC attribution lets you attribute installs and events on PC destinations by carrying AppsFlyer attribution parameters through the direct click URL to the final landing page.</mark>
+
+<mark style={{backgroundColor: '#FFF59D'}}>To enable it, add `af_generate_referrer` as a custom parameter inside `afParameters.afCustom`, with `keys: []` so the value is always forced:</mark>
+
+```jsx
+var mediaSource = {keys: ["my_media_source"], defaultValue: "my_default_media_source"};
+var campaign = {keys: ["my_campaign"], defaultValue: "my_default_campaign"};
+
+var af_generate_referrer = {
+  paramKey: "af_generate_referrer",
+  keys: [],
+  defaultValue: "true"
+};
+
+var result = window.AF_SMART_SCRIPT.generateDirectClickURL({
+  afParameters: {
+    mediaSource: mediaSource,
+    campaign: campaign,
+    afCustom: [af_generate_referrer]
+  },
+  platform: 'steam',
+  app_id: '123456',
+  redirectURL: 'https://store.steampowered.com/app/440/Team_Fortress_2/'
+});
+```
+
+<Callout icon="🚧" theme="warn">
+  ### <mark style={{backgroundColor: '#FFF59D'}}>Required: set af_generate_referrer to true</mark>
+
+  <mark style={{backgroundColor: '#FFF59D'}}>`af_generate_referrer` must be set to `true`. Otherwise the referrer ID isn't included in the response from the engagement API.</mark>
+</Callout>
+
 ### Create a QR code with the Smart Script result
 
 <mark style={{backgroundColor: '#FFF59D'}}>The `displayQrCode` method works the same way for direct click URLs as it does for mobile OneLinks. For setup steps, see [Create a QR code with the Smart Script result](https://dev.appsflyer.com/hc/docs/dl_smart_script_v2#create-a-qr-code-with-the-smart-script-result) in the mobile article.</mark>
