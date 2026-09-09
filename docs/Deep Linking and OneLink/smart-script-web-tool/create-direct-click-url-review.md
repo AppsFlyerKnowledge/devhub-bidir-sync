@@ -111,10 +111,12 @@ var result = window.AF_SMART_SCRIPT.generateDirectClickURL({
 });
 ```
 
+<mark style={{backgroundColor: '#FFF59D'}}>After the user clicks the direct click URL, the Engagements API logs the click, generates a referrer ID, and redirects (HTTP 302) to your `redirectURL` with the referrer ID appended as a query parameter. Extract the referrer ID from that URL and attach it to the game download, so you can send it back with the game's first launch event.</mark>
+
 <Callout icon="🚧" theme="warn">
   ### <mark style={{backgroundColor: '#FFF59D'}}>Required: set af_generate_referrer to true</mark>
 
-  <mark style={{backgroundColor: '#FFF59D'}}>`af_generate_referrer` must be set to `true`. Otherwise the referrer ID isn't included in the response from the engagement API.</mark>
+  <mark style={{backgroundColor: '#FFF59D'}}>`af_generate_referrer` must be set to `true`. Otherwise the referrer ID isn't appended to the redirect URL.</mark>
 </Callout>
 
 ### Create a QR code with the Smart Script result
