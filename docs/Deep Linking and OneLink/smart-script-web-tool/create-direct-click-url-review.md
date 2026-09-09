@@ -85,9 +85,9 @@ To create a direct click URL, follow these steps:
 
 ### Enable deterministic PC attribution
 
-<mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>Deterministic PC attribution lets you attribute installs and events on PC destinations by carrying AppsFlyer attribution parameters through the direct click URL to the final landing page.</mark>
+<mark style={{backgroundColor: '#F0E6FF', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>Deterministic PC attribution lets you attribute installs and events on PC destinations by carrying AppsFlyer attribution parameters through the direct click URL to the final landing page.</mark>
 
-<mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>To enable it, add `af_generate_referrer` as a custom parameter inside `afParameters.afCustom`, with `keys: []` so the value is always forced:</mark>
+<mark style={{backgroundColor: '#F0E6FF', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>To enable it, add `af_generate_referrer` as a custom parameter inside `afParameters.afCustom`, with `keys: []` so the value is always forced:</mark>
 
 ```jsx
 var mediaSource = {keys: ["my_media_source"], defaultValue: "my_default_media_source"};
@@ -111,12 +111,12 @@ var result = window.AF_SMART_SCRIPT.generateDirectClickURL({
 });
 ```
 
-<mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>After the user clicks the direct click URL, the Engagements API logs the click, generates a referrer ID, and redirects (HTTP 302) to your `redirectURL` with the referrer ID appended as a query parameter. Extract the referrer ID from that URL and attach it to the game download, so you can send it back with the game's first launch event.</mark>
+<mark style={{backgroundColor: '#F0E6FF', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>After the user clicks the direct click URL, the Engagements API logs the click, generates a referrer ID, and redirects (HTTP 302) to your `redirectURL` with the referrer ID appended as a query parameter. Extract the referrer ID from that URL and attach it to the game download, so you can send it back with the game's first launch event.</mark>
 
 <Callout icon="🚧" theme="warn">
-  ### <mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>Required: set af_generate_referrer to true</mark>
+  ### <mark style={{backgroundColor: '#F0E6FF', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>Required: set af_generate_referrer to true</mark>
 
-  <mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>`af_generate_referrer` must be set to `true`. Otherwise the referrer ID isn't appended to the redirect URL.</mark>
+  <mark style={{backgroundColor: '#F0E6FF', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>`af_generate_referrer` must be set to `true`. Otherwise the referrer ID isn't appended to the redirect URL.</mark>
 </Callout>
 
 ### Create a QR code with the Smart Script result
