@@ -18,14 +18,14 @@ next:
 
 ## About OneLink Smart Script
 
-<mark style={{backgroundColor: '#FFF59D'}}>OneLink Smart Script uses incoming URLs leading to the webpage to automatically generate unique outgoing OneLink URLs. For mobile apps, Smart Script generates OneLink URLs that lead to the app store. Smart Script also supports PC, console, CTV, and Steam apps, see [Smart Script for cross-platform apps](https://dev.appsflyer.com/hc/docs/create-direct-click-url) for that flow.</mark>
+<mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>OneLink Smart Script uses incoming URLs leading to the webpage to automatically generate unique outgoing OneLink URLs. For mobile apps, Smart Script generates OneLink URLs that lead to the app store. Smart Script also supports PC, console, CTV, and Steam apps, see [Smart Script for cross-platform apps](https://dev.appsflyer.com/hc/docs/create-direct-click-url) for that flow.</mark>
 
 The outgoing URLs are generated using [arguments](https://dev.appsflyer.com/hc/docs/onelink-smart-script-v2web-to-app-url-generator#arguments) you receive from the marketer and input into the script. **Note**: The `afParameters` argument has a structure made up of several other arguments (parameters), each of which contains a [configuration object](https://dev.appsflyer.com/hc/docs/onelink-smart-script-v2web-to-app-url-generator#configuration-object) that has keys, override values, and a default value.
 
 <Callout icon="📘" theme="info">
-  ### <mark style={{backgroundColor: '#FFF59D'}}>Building for PC, console, or Steam?</mark>
+  ### <mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>Building for PC, console, or Steam?</mark>
 
-  <mark style={{backgroundColor: '#FFF59D'}}>This article covers the mobile flow, which calls `generateOneLinkURL`. If you're implementing Smart Script for a PC, console, CTV, or Steam app, go to [Smart Script for cross-platform apps](https://dev.appsflyer.com/hc/docs/create-direct-click-url), which covers `generateDirectClickURL` instead.</mark>
+  <mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>This article covers the mobile flow, which calls `generateOneLinkURL`. If you're implementing Smart Script for a PC, console, CTV, or Steam app, go to [Smart Script for cross-platform apps](https://dev.appsflyer.com/hc/docs/create-direct-click-url), which covers `generateDirectClickURL` instead.</mark>
 </Callout>
 
 ## Implementation steps
@@ -185,7 +185,7 @@ window.AF_SMART_SCRIPT.displayQrCode(divId, qrOptions)
 
 ### Fire an impression
 
-You can fire an impression when a page loads, a CTA or banner displays, etc. <mark style={{backgroundColor: '#FFF59D'}}>**Note**: Whether you can fire impressions from desktop or console depends on your OneLink template. Templates with mobile-only support can only fire impressions on mobile devices. Templates with cross-platform support can also fire impressions from desktop or console.</mark>
+You can fire an impression when a page loads, a CTA or banner displays, etc. <mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>**Note**: Whether you can fire impressions from desktop or console depends on your OneLink template. Templates with mobile-only support can only fire impressions on mobile devices. Templates with cross-platform support can also fire impressions from desktop or console.</mark>
 
 **Prerequisite**: Smart Script V2.2+
 
@@ -619,9 +619,9 @@ See [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/exam
 </Callout>
 
 <Callout icon="🚧" theme="warn">
-  ### <mark style={{backgroundColor: '#FFF59D'}}>Required: enable cross-platform attribution</mark>
+  ### <mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>Required: enable cross-platform attribution</mark>
 
-  <mark style={{backgroundColor: '#FFF59D'}}>To fire an impression from a non-mobile platform, add the `af_xplatform` custom parameter to `afCustom` in your `afParameters` object, with a default value of `"true"`:</mark>
+  <mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>To fire an impression from a non-mobile platform, add the `af_xplatform` custom parameter to `afCustom` in your `afParameters` object, with a default value of `"true"`:</mark>
 
   ```javascript
   var afParameters = {
@@ -632,7 +632,7 @@ See [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/exam
   };
   ```
 
-  <mark style={{backgroundColor: '#FFF59D'}}>This parameter is only required when calling `generateOneLinkURL` to fire an impression. Omit it when calling `generateDirectClickURL` to generate the install link itself.</mark>
+  <mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>This parameter is only required when calling `generateOneLinkURL` to fire an impression. Omit it when calling `generateDirectClickURL` to generate the install link itself.</mark>
 </Callout>
 
 <Callout icon="🚧" theme="warn">
