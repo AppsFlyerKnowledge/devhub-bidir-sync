@@ -87,35 +87,37 @@ To create a direct click URL, follow these steps:
 
 ### Enable deterministic PC attribution
 
-This step is optional. Skip it if you don't need deterministic matching, the base flow in [Create a direct click URL](#create-a-direct-click-url) above already reports installs and events through the standard PC/Console/CTV server-to-server integration, matched to clicks probabilistically (by IP/device signals). Enabling deterministic attribution ties a specific click to a specific install with certainty instead.
+Deterministic PC attribution lets you attribute installs and events on PC destinations by carrying AppsFlyer attribution parameters through the direct click URL beyond the final landing page. When a user clicks, the Engagements API logs the click, generates a referrer ID, and redirects (HTTP 302) to your `redirectURL` with the referrer ID appended as a query parameter.
 
-Deterministic PC attribution lets you attribute installs and events on PC destinations by carrying AppsFlyer attribution parameters through the direct click URL beyond the final landing page.
+To enable it:
 
-To enable it, add `af_generate_referrer` as a custom parameter inside `afParameters.afCustom`, with `keys: []` so the value is always forced:
+1. Add `af_generate_referrer` as a custom parameter inside `afParameters.afCustom`, with `keys: []` so the value is always forced:
 
 ```jsx
-var mediaSource = {keys: ["my_media_source"], defaultValue: "my_default_media_source"};
-var campaign = {keys: ["my_campaign"], defaultValue: "my_default_campaign"};
+   var mediaSource = {keys: ["my_media_source"], defaultValue: "my_default_media_source"};
+   var campaign = {keys: ["my_campaign"], defaultValue: "my_default_campaign"};
 
-var af_generate_referrer = {
-  paramKey: "af_generate_referrer",
-  keys: [],
-  defaultValue: "true"
-};
+   var af_generate_referrer = {
+     paramKey: "af_generate_referrer",
+     keys: [],
+     defaultValue: "true"
+   };
 
-var result = window.AF_SMART_SCRIPT.generateDirectClickURL({
-  afParameters: {
-    mediaSource: mediaSource,
-    campaign: campaign,
-    afCustom: [af_generate_referrer]
-  },
-  platform: 'steam',
-  app_id: '123456',
-  redirectURL: 'https://store.steampowered.com/app/440/Team_Fortress_2/'
-});
+   var result = window.AF_SMART_SCRIPT.generateDirectClickURL({
+     afParameters: {
+       mediaSource: mediaSource,
+       campaign: campaign,
+       afCustom: [af_generate_referrer]
+     },
+     platform: 'steam',
+     app_id: '123456',
+     redirectURL: 'https://store.steampowered.com/app/440/Team_Fortress_2/'
+   });
 ```
 
-After the user clicks the direct click URL, the Engagements API logs the click, generates a referrer ID, and redirects (HTTP 302) to your `redirectURL` with the referrer ID appended as a query parameter. Extract the referrer ID from that URL and attach it to the game download, so you can send it back with the game's first launch event.
+2. On the landing page (where `redirectURL` points), read the referrer ID from the URL's query parameters.
+3. In your download or packaging pipeline, attach the referrer ID to the game package before serving it.
+4. In the game's first-launch (first open) event, send the referrer ID back to AppsFlyer.
 
 <Callout icon="🚧" theme="warn">
   ### Required: set af_generate_referrer to true
