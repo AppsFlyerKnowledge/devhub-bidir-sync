@@ -83,11 +83,15 @@ To create a direct click URL, follow these steps:
 
 <mark style={{backgroundColor: '#E6FFED', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>6. Validate the generated URL using the [Direct Click URL test page](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/direct_click.html), editing the input URL and confirming the output resolves to the correct platform's storefront.</mark>
 
+<div style={{backgroundColor: '#F0E6FF', padding: '16px 20px', borderRadius: '8px'}}>
+
 ### Enable deterministic PC attribution
 
-<mark style={{backgroundColor: '#F0E6FF', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>Deterministic PC attribution lets you attribute installs and events on PC destinations by carrying AppsFlyer attribution parameters through the direct click URL to the final landing page.</mark>
+This step is optional. Skip it if you don't need deterministic matching, the base flow in [Create a direct click URL](#create-a-direct-click-url) above already reports installs and events through the standard PC/Console/CTV server-to-server integration, matched to clicks probabilistically (by IP/device signals). Enabling deterministic attribution ties a specific click to a specific install with certainty instead.
 
-<mark style={{backgroundColor: '#F0E6FF', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>To enable it, add `af_generate_referrer` as a custom parameter inside `afParameters.afCustom`, with `keys: []` so the value is always forced:</mark>
+Deterministic PC attribution lets you attribute installs and events on PC destinations by carrying AppsFlyer attribution parameters through the direct click URL beyond the final landing page.
+
+To enable it, add `af_generate_referrer` as a custom parameter inside `afParameters.afCustom`, with `keys: []` so the value is always forced:
 
 ```jsx
 var mediaSource = {keys: ["my_media_source"], defaultValue: "my_default_media_source"};
@@ -111,13 +115,15 @@ var result = window.AF_SMART_SCRIPT.generateDirectClickURL({
 });
 ```
 
-<mark style={{backgroundColor: '#F0E6FF', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>After the user clicks the direct click URL, the Engagements API logs the click, generates a referrer ID, and redirects (HTTP 302) to your `redirectURL` with the referrer ID appended as a query parameter. Extract the referrer ID from that URL and attach it to the game download, so you can send it back with the game's first launch event.</mark>
+After the user clicks the direct click URL, the Engagements API logs the click, generates a referrer ID, and redirects (HTTP 302) to your `redirectURL` with the referrer ID appended as a query parameter. Extract the referrer ID from that URL and attach it to the game download, so you can send it back with the game's first launch event.
 
 <Callout icon="🚧" theme="warn">
-  ### <mark style={{backgroundColor: '#F0E6FF', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>Required: set af_generate_referrer to true</mark>
+  ### Required: set af_generate_referrer to true
 
-  <mark style={{backgroundColor: '#F0E6FF', display: 'inline-block', padding: '2px 6px', borderRadius: '4px'}}>`af_generate_referrer` must be set to `true`. Otherwise the referrer ID isn't appended to the redirect URL.</mark>
+  `af_generate_referrer` must be set to `true`, and `redirectURL` must be provided, since the referrer ID is appended to that URL. Without both, the referrer ID isn't generated.
 </Callout>
+
+</div>
 
 ### Create a QR code with the Smart Script result
 
