@@ -44,6 +44,7 @@ public static void logAndOpenStore(@NonNull Context context,
 ```
 
 **Description**
+Attributes the click and opens the promoted app's Play Store listing. Learn more in [Cross-promotion](doc:cross-promotion).
 
 **Input arguments**
 
