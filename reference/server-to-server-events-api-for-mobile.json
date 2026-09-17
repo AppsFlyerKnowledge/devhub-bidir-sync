@@ -601,7 +601,7 @@
               2,
               3
             ],
-            "description": "iOS [ATTrackingManager authorization status](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus/)\n\n- If the device OS version is iOS 14 or later, populate attwith ATTrackingManager.\n- The iOS values for [ATTrackingManager](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus/) are:\n  - `0`: Not determined\n  - `1`: Restricted\n  - `2`: Denied\n  - `3`: Authorize\n\n> 📘 \n>\n> We recommend that you populate `att` with the ATTrackingManager value as it impacts which identifiers are shared with partners in accordance with your [Aggregated Advanced Privacy settings](https://support.appsflyer.com/hc/en-us/articles/360018515798).\n"
+            "description": "iOS [ATTrackingManager authorization status](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus/)\n\n- If the device OS version is iOS 14 or later, populate attwith ATTrackingManager.\n- The iOS values for [ATTrackingManager](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus/) are:\n  - `0`: Not determined\n  - `1`: Restricted\n  - `2`: Denied\n  - `3`: Authorized\n\n> 📘 \n>\n> We recommend that you populate `att` with the ATTrackingManager value as it impacts which identifiers are shared with partners in accordance with your [Aggregated Advanced Privacy settings](https://support.appsflyer.com/hc/en-us/articles/360018515798).\n"
           },
           "ip": {
             "type": "string",
@@ -920,7 +920,7 @@
               2,
               3
             ],
-            "description": "iOS [ATTrackingManager authorization status](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus/)\n\n- If the device OS version is iOS 14 or later, populate attwith ATTrackingManager.\n- The iOS values for [ATTrackingManager](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus/) are:\n  - `0`: Not determined\n  - `1`: Restricted\n  - `2`: Denied\n  - `3`: Authorize\n\n> 📘 \n>\n> We recommend that you populate `att` with the ATTrackingManager value as it impacts which identifiers are shared with partners in accordance with your [Aggregated Advanced Privacy settings](https://support.appsflyer.com/hc/en-us/articles/360018515798).\n"
+            "description": "iOS [ATTrackingManager authorization status](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus/)\n\n- If the device OS version is iOS 14 or later, populate attwith ATTrackingManager.\n- The iOS values for [ATTrackingManager](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus/) are:\n  - `0`: Not determined\n  - `1`: Restricted\n  - `2`: Denied\n  - `3`: Authorized\n\n> 📘 \n>\n> We recommend that you populate `att` with the ATTrackingManager value as it impacts which identifiers are shared with partners in accordance with your [Aggregated Advanced Privacy settings](https://support.appsflyer.com/hc/en-us/articles/360018515798).\n"
           },
           "ip": {
             "type": "string",
