@@ -27,7 +27,7 @@
           {
             "name": "onelink-id",
             "in": "path",
-            "description": "Required. The OneLink template ID. Find it on the OneLink Management page in the AppsFlyer platform, or in the OneLink template URL itself (the segment after the domain, for example `H5hv` in `https://yourapp.onelink.me/H5hv`).",
+            "description": "Required. The OneLink template ID. Find it on the OneLink Management page in the AppsFlyer platform.",
             "schema": {
               "type": "string",
               "example": "A1b3"
@@ -383,7 +383,7 @@
           {
             "name": "onelink-id",
             "in": "path",
-            "description": "Required. The OneLink template ID. Find it on the OneLink Management page in the AppsFlyer platform, or in the OneLink template URL itself (the segment after the domain, for example `H5hv` in `https://yourapp.onelink.me/H5hv`).",
+            "description": "Required. The OneLink template ID. Find it on the OneLink Management page in the AppsFlyer platform.",
             "schema": {
               "type": "string",
               "example": "A1b2"
@@ -564,7 +564,7 @@
           {
             "name": "onelink-id",
             "in": "path",
-            "description": "Required. The OneLink template ID. Find it on the OneLink Management page in the AppsFlyer platform, or in the OneLink template URL itself (the segment after the domain, for example `H5hv` in `https://yourapp.onelink.me/H5hv`).",
+            "description": "Required. The OneLink template ID. Find it on the OneLink Management page in the AppsFlyer platform.",
             "schema": {
               "type": "string",
               "example": "A1b2"
