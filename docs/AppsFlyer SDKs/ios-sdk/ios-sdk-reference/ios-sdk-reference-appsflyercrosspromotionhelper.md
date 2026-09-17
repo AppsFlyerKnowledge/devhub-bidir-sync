@@ -56,7 +56,7 @@ logs an impression as part of a cross-promotion campaign. Make sure to use the p
 ```
 
 **Description**
-You can utilize the StoreKit component to open the App Store while remaining in the context of your app. Learn more in [Cross-promotion](doc:cross-promotion).
+You can utilize the StoreKit component to open the App Store while remaining in the context of your app. Learn more in [Cross-promotion](doc:cross-promotion-ios).
 
 **Input arguments**
 
