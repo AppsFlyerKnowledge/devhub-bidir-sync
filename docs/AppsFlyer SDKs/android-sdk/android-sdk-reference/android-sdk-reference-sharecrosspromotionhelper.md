@@ -44,7 +44,7 @@ public static void logAndOpenStore(@NonNull Context context,
 ```
 
 **Description**
-Attributes the click and opens the promoted app's Play Store listing. Learn more in [Cross-promotion](doc:cross-promotion-android).
+Sends the click to AppsFlyer and opens the promoted app's Play Store listing. Learn more in [Cross-promotion](doc:cross-promotion-android).
 
 **Input arguments**
 
