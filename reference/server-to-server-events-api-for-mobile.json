@@ -73,7 +73,7 @@
             }
           },
           "400": {
-            "description": "|Message|How to handle|\n|--- |--- |--- |\n|Failed to Authenticate|Ensure that the authentication key is correct|\n|appsflyer_id is a mandatory field|<ul><li>Make sure you pass the correct AppsFlyer ID in the JSON</li><li>JSON is `stringified()` and formatted correctly</li></ul>|\n|Bad request|When the request failed at least one of the validation criteria|\n|Payload is missing or failed to parse|<ul><li>Make sure that the JSON is stringified and formatted correctly</li><li>If more than one event is included in the JSON payload. Make sure to send one event per request.</li></ul>\n|app_id|<ul><li>`app_id` doesn't match the authentcation token</li><li>Make sure that the app_id is correct.</li></ul>\n",
+            "description": "|Message|How to handle|\n|--- |--- |\n|Failed to Authenticate|Ensure that the authentication key is correct|\n|appsflyer_id is a mandatory field|<ul><li>Make sure you pass the correct AppsFlyer ID in the JSON</li><li>JSON is `stringified()` and formatted correctly</li></ul>|\n|Bad request|When the request failed at least one of the validation criteria|\n|Payload is missing or failed to parse|<ul><li>Make sure that the JSON is stringified and formatted correctly</li><li>If more than one event is included in the JSON payload. Make sure to send one event per request.</li></ul>|\n|app_id|<ul><li>`app_id` doesn't match the authentcation token</li><li>Make sure that the app_id is correct.</li></ul>\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -98,7 +98,7 @@
             }
           },
           "401": {
-            "description": "|Message|How to handle|\n|--- |--- |--- |\n|Unauthorized|When the key provided in the authentication header is not the `<S2S_key>` for this app|\n",
+            "description": "|Message|How to handle|\n|--- |--- |\n|Unauthorized|When the key provided in the authentication header is not the `<S2S_key>` for this app|\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -113,7 +113,7 @@
             }
           },
           "403": {
-            "description": "|Message|How to handle|\n|--- |--- |--- |\n|Forbidden|\"Zero Package\" does not accept attribution events|\n",
+            "description": "|Message|How to handle|\n|--- |--- |\n|Forbidden|\"Zero Package\" does not accept attribution events|\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -128,7 +128,7 @@
             }
           },
           "500": {
-            "description": "|Message|How to handle|\n|--- |--- |--- |\n|Internal Server Error|Verify that the JSON is `stringified()` and formatted correctly|\n",
+            "description": "|Message|How to handle|\n|--- |--- |\n|Internal Server Error|Verify that the JSON is `stringified()` and formatted correctly|\n",
             "content": {
               "application/json": {
                 "schema": {
