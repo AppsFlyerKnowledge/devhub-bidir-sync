@@ -17,6 +17,8 @@ The AppsFlyer SDK sends impression revenue data to AppsFlyer. The impression rev
 
 AppsFlyer ad revenue instructions for various platforms:
 
+<br />
+
 <HTMLBlock>{`
 <style>
   .button-container {
@@ -58,7 +60,7 @@ AppsFlyer ad revenue instructions for various platforms:
     content: url("https://files.readme.io/3e1288d-reactnative-icon.svg");
   }
   .unreal:before {
-    content: url("https://files.readme.io/4fc0a693cad7714ad5e6a7c861e70c1bd08e992fcf43643fc7ce1b4a250f8180-unreal-1.svg");
+    content: url("https://files.readme.io/fb6c8925f930c4b4d07a53fffe4d78db0f841fd9f97b0a6146031c282ff8b879-unreal-1.svg");
   }
   a[href*=http]:not([href*="dev.appsflyer.com"]):not(.landing-page__social):after {
     display: none !important;
