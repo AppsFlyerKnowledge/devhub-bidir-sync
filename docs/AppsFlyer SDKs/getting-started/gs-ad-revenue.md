@@ -65,6 +65,7 @@ AppsFlyer ad revenue instructions for various platforms:
   }
   .unreal:before {
     content: url("https://files.readme.io/6f38b616a7a0b57bedc6f12490989491a692934e57615ca5e23a3f9b5ae4c110-unreal-4.svg");
+    margin-bottom: -9px;
   }
   a[href*=http]:not([href*="dev.appsflyer.com"]):not(.landing-page__social):after {
     display: none !important;
