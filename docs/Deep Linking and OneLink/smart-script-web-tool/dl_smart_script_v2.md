@@ -25,7 +25,7 @@ The outgoing URLs are generated using [arguments](https://dev.appsflyer.com/hc/d
 <Callout icon="📘" theme="info">
   ### Building for PC, console, or Steam?
 
-  This article covers the mobile flow, which calls `generateOneLinkURL`. If you're implementing Smart Script for a PC, console, CTV, or Steam app, go to [Smart Script for cross-platform apps](https://dev.appsflyer.com/hc/docs/create-direct-click-url), which covers `generateDirectClickURL` instead.
+  This article covers the mobile flow, which calls `generateOneLinkURL`. If you're implementing Smart Script for a PC, console, CTV, or Steam app, go to [Smart Script for PC, console, and Steam](https://dev.appsflyer.com/hc/docs/create-direct-click-url), which covers `generateDirectClickURL` instead.
 </Callout>
 
 ## Implementation steps
