@@ -17,6 +17,10 @@ The AppsFlyer SDK sends impression revenue data to AppsFlyer. The impression rev
 
 AppsFlyer ad revenue instructions for various platforms:
 
+![](https://files.readme.io/2337cac32bfe9c1e83a618ef8686a1ba2230dfd4b512cae8184ec8932856b58c-unreal-3.svg)
+
+![](https://files.readme.io/6f38b616a7a0b57bedc6f12490989491a692934e57615ca5e23a3f9b5ae4c110-unreal-4.svg)
+
 <br />
 
 <HTMLBlock>{`
