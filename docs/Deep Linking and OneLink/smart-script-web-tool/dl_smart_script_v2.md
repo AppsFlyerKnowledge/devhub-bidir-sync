@@ -18,9 +18,15 @@ next:
 
 ## About OneLink Smart Script
 
-OneLink Smart Script uses incoming URLs leading to the webpage to automatically generate unique outgoing OneLink URLs leading to the app store.
+OneLink Smart Script uses incoming URLs leading to the webpage to automatically generate unique outgoing OneLink URLs. For mobile apps, Smart Script generates OneLink URLs that lead to the app store. Smart Script also supports PC, console, CTV, and Steam apps, see [Smart Script for cross-platform apps](https://dev.appsflyer.com/hc/docs/create-direct-click-url) for that flow.
 
 The outgoing URLs are generated using [arguments](https://dev.appsflyer.com/hc/docs/onelink-smart-script-v2web-to-app-url-generator#arguments) you receive from the marketer and input into the script. **Note**: The `afParameters` argument has a structure made up of several other arguments (parameters), each of which contains a [configuration object](https://dev.appsflyer.com/hc/docs/onelink-smart-script-v2web-to-app-url-generator#configuration-object) that has keys, override values, and a default value.
+
+<Callout icon="📘" theme="info">
+  ### Building for PC, console, or Steam?
+
+  This article covers the mobile flow, which calls `generateOneLinkURL`. If you're implementing Smart Script for a PC, console, CTV, or Steam app, go to [Smart Script for cross-platform apps](https://dev.appsflyer.com/hc/docs/create-direct-click-url), which covers `generateDirectClickURL` instead.
+</Callout>
 
 ## Implementation steps
 
@@ -179,7 +185,7 @@ window.AF_SMART_SCRIPT.displayQrCode(divId, qrOptions)
 
 ### Fire an impression
 
-You can fire an impression when a page loads, a CTA or banner displays, etc. **Note**: Impressions can only be fired on mobile devices; not on desktop.
+You can fire an impression when a page loads, a CTA or banner displays, etc. **Note**: Whether you can fire impressions from desktop or console depends on your OneLink template. Templates with mobile-only support can only fire impressions on mobile devices. Templates with cross-platform support can also fire impressions from desktop or console.
 
 **Prerequisite**: Smart Script V2.2+
 
@@ -551,7 +557,7 @@ See [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/exam
 
 ### GBRAID and WBRAID
 
-See [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/google_gbraid.html?inmedia=email\&gbraid=1a2b3c) of the conversion of an incoming URL to an outgoing OneLink URL, passing the `gbraid` parameter and [another example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/google_wbraid.html?inmedia=email\&wbraid=7hjy89) for passing the `wbraid` parameter.
+See [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/google_gbraid.html?inmedia=email\&gbraid=1a2b3c) of the conversion of an incoming URL to an outgoing OneLink URL, passing the `gbraid` parameter and [another example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/google_wbraid.html?inmedia=email\&wbraid=7hjy89) for passing the `wbraid` parameter.
 
 ### Google click ID passthrough
 
@@ -586,7 +592,7 @@ See [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/exam
 
 ### URL skip list
 
-See [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/url_skip_list.html?incmp=gogo\&inmedia=email\&af_r=hotel.me) of how you can disable the Smart Script for a particular string in the URL (for example, `af_r`) by creating a skip list. If any of the strings in the skip list appear in the URL of the click, the Smart Script returns `null`.
+See [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/url_skip_list.html?incmp=gogo\&inmedia=email\&af_r=hotel.me) of how you can disable the Smart Script for a particular string in the URL (for example, `af_r`) by creating a skip list. If any of the strings in the skip list appear in the URL of the click, the Smart Script returns `null`.
 
 ### Smart Script set up with Google Tag Manager
 
@@ -613,6 +619,23 @@ See [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/exam
 </Callout>
 
 <Callout icon="🚧" theme="warn">
+  ### Required: enable cross-platform attribution
+
+  To fire an impression from a non-mobile platform, add the `af_xplatform` custom parameter to `afCustom` in your `afParameters` object, with a default value of `"true"`:
+
+  ```javascript
+  var afParameters = {
+    ...
+    afCustom: [
+      { paramKey: "af_xplatform", keys: [], defaultValue: "true" },
+    ],
+  };
+  ```
+
+  This parameter is only required when calling `generateOneLinkURL` to fire an impression. Omit it when calling `generateDirectClickURL` to generate the install link itself.
+</Callout>
+
+<Callout icon="🚧" theme="warn">
   ### A must-do workaround
 
   Please wrap the call to `fireImpressionsLink` with `setTimeout` to make sure there is at least 1 second of delay between the call to `generateOneLinkURL` and `fireImpressionsLink`
@@ -634,14 +657,14 @@ You can find here [an example](https://appsflyersdk.github.io/appsflyer-onelink-
   Available from version 2.7.0.
 </Callout>
 
-You can set Smart Script to copy the HTTP `document.referrer` to either a custom outgoing URL parameter or predefined outgoing URL parameters. If you want to see web referrer values in dashboards or in raw data reports, we suggest using one of the following **predefined** outgoing URL parameters:
+You can set Smart Script to copy the HTTP `document.referrer` to either a custom outgoing URL parameter or predefined outgoing URL parameters. If you want to see web referrer values in dashboards or in raw data reports, we suggest using one of the following **predefined** outgoing URL parameters:
 
-- `af_channel` - Parameter is available in dashboards and raw data
-- `af_sub1-5` - The parameter is available in raw data under the **af_sub1-5** columns and in the **original URL** column.
+- `af_channel` - Parameter is available in dashboards and raw data
+- `af_sub1-5` - The parameter is available in raw data under the **af_sub1-5** columns and in the **original URL** column.
 
-If you want to set a custom parameter, Smart Script has to copy the   `document.referrer` property value and set it as the value of the parameter. In this [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/webreferrer.html?utm_source=my_source\&utm_channel=my_channel),  Smart Script copies the `document.referrer` value to a custom outgoing URL parameter key defined by `webReferrer`. The selected custom key in the example is `this_referrer`.
+If you want to set a custom parameter, Smart Script has to copy the   `document.referrer` property value and set it as the value of the parameter. In this [example](https://appsflyersdk.github.io/appsflyer-onelink-smart-script/examples/webreferrer.html?utm_source=my_source\&utm_channel=my_channel),  Smart Script copies the `document.referrer` value to a custom outgoing URL parameter key defined by `webReferrer`. The selected custom key in the example is `this_referrer`.
 
-For more information, see [Web referrer mapping](https://support.appsflyer.com/hc/en-us/articles/4413588932241-OneLink-Smart-Script-V2-setup#web-referrer-mapping).
+For more information, see [Web referrer mapping](https://support.appsflyer.com/hc/en-us/articles/4413588932241-OneLink-Smart-Script-V2-setup#web-referrer-mapping).
 
 ### Utilizing Local Storage to Set Parameters for Deep Linking
 
