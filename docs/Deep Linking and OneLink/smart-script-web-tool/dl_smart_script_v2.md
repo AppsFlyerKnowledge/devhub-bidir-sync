@@ -18,7 +18,7 @@ next:
 
 ## About OneLink Smart Script
 
-OneLink Smart Script uses incoming URLs leading to the webpage to automatically generate unique outgoing OneLink URLs. For mobile apps, Smart Script generates OneLink URLs that lead to the app store. Smart Script also supports PC, console, CTV, and Steam apps, see [Smart Script for cross-platform apps](https://dev.appsflyer.com/hc/docs/create-direct-click-url) for that flow.
+OneLink Smart Script uses incoming URLs leading to the webpage to automatically generate unique outgoing OneLink URLs. For mobile apps, Smart Script generates OneLink URLs that lead to the app store. Smart Script also supports PC, console, CTV, and Steam apps, see[ Smart Script for PC, console, and Steam ](https://dev.appsflyer.com/hc/docs/create-direct-click-url)for that flow.
 
 The outgoing URLs are generated using [arguments](https://dev.appsflyer.com/hc/docs/onelink-smart-script-v2web-to-app-url-generator#arguments) you receive from the marketer and input into the script. **Note**: The `afParameters` argument has a structure made up of several other arguments (parameters), each of which contains a [configuration object](https://dev.appsflyer.com/hc/docs/onelink-smart-script-v2web-to-app-url-generator#configuration-object) that has keys, override values, and a default value.
 
