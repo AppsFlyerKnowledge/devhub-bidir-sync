@@ -64,7 +64,7 @@ AppsFlyer ad revenue instructions for various platforms:
     content: url("https://files.readme.io/3e1288d-reactnative-icon.svg");
   }
   .unreal:before {
-    content: url("https://files.readme.io/fb6c8925f930c4b4d07a53fffe4d78db0f841fd9f97b0a6146031c282ff8b879-unreal-1.svg");
+    content: url("https://files.readme.io/6f38b616a7a0b57bedc6f12490989491a692934e57615ca5e23a3f9b5ae4c110-unreal-4.svg");
   }
   a[href*=http]:not([href*="dev.appsflyer.com"]):not(.landing-page__social):after {
     display: none !important;
