@@ -1,14 +1,13 @@
 ---
-title: Smart script for cross-platform
-excerpt: ''
+title: Smart script for PC, console, and Steam
 deprecated: false
 hidden: false
+link:
+  new_tab: false
 metadata:
   title: ''
   description: ''
   robots: index
-next:
-  description: ''
 ---
 Smart Script can generate direct click URLs that redirect users to non-mobile stores, where they can download, install, or purchase PC, CTV, or console apps.
 
