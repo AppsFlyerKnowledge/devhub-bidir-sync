@@ -78,6 +78,7 @@ AppsFlyer ad revenue instructions for various platforms:
   <a target="_blank" class="button capacitor" href="https://github.com/AppsFlyerSDK/appsflyer-capacitor-plugin/blob/main/docs/API.md#logadrevenue">Capacitor</a>
   <a target="_blank" class="button cocos2dx" href="https://github.com/AppsFlyerSDK/appsflyer-cocos2dx-plugin?tab=readme-ov-file#logAdrevenue">Cocos2dx</a>
 </div>
+<br>
 <div class="button-container">
   <a target="_blank" class="button unreal" href="https://github.com/AppsFlyerSDK/appsflyer-unreal-plugin/blob/master/docs/API.md#log-ad-revenue">Unreal</a>
 `}</HTMLBlock>
