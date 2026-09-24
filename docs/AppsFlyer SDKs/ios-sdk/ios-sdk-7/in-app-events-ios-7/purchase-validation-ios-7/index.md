@@ -22,7 +22,7 @@ Call Validate and Log (`validateAndLogInAppPurchase`) every time a transaction o
 - Requires an explicit call from the app for every transaction
 - Suitable for apps that need to capture events not included in the Purchase Connector’s default coverage. With the Validate and log method, developers can explicitly target and send these additional events.
 
-To get started see: [Validate and Log](https://dev.appsflyer.com/hc/docs/validate-and-log-purchase-ios-7)
+To get started see: [Validate and Log](https://dev.appsflyer.com/hc/docs/validate-and-log-purchase-ios)
 
 ### 2. Automated Integration method – Purchase Connector
 
@@ -34,7 +34,7 @@ Purchase Connector automatically detects in-app purchases and subscriptions made
     - Logging subscription revenue from users who subscribed before the integration was added.
     - Logging subscription price changes, ensuring revenue reflects updated pricing.
 
-To get started see: [iOS purchase SDK connector](https://dev.appsflyer.com/hc/docs/purchase-connector-ios-7)
+To get started see: [Android purchase SDK connector](https://dev.appsflyer.com/hc/docs/purchase-connector-ios)
 
 ---
 > ⚠️ Important

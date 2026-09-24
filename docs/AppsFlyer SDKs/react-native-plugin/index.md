@@ -2,7 +2,7 @@
 title: React Native Plugin
 excerpt: ''
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
@@ -72,16 +72,9 @@ If you have used 1 of the removed APIs, please check the integration guide for t
 - [Installation](https://dev.appsflyer.com/hc/docs/rn_installation)
 - [Expo Installation](https://dev.appsflyer.com/hc/docs/rn_expoinstallation)
 - [Integration](https://dev.appsflyer.com/hc/docs/rn_integration)
-- [Test integration](https://dev.appsflyer.com/hc/docs/rn_testing)
+- [Test integration](/Docs/Testing.md)
 - [In-app events](https://dev.appsflyer.com/hc/docs/rn_inappevents)
-- [Conversion data and ad revenue](https://dev.appsflyer.com/hc/docs/rn_api#logadrevenue)
-- [Uninstall measurement](https://dev.appsflyer.com/hc/docs/rn_uninstallmeasurement)
-- [Send consent for DMA compliance / CMP](https://dev.appsflyer.com/hc/docs/rn_cmp)
-
-## Purchases and subscriptions
-
-- [Validate and log (manual integration)](https://dev.appsflyer.com/hc/docs/rn_api#validateAndLogInAppPurchaseV2)
-- [Purchase Connector (ROI360, automated integration)](https://dev.appsflyer.com/hc/docs/rn_purchaseconnector)
+- [Uninstall measurement](/Docs/UninstallMeasurement.md)
 
 ## 🔗 Deep Linking
 
