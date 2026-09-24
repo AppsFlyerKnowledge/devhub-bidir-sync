@@ -2,7 +2,7 @@
 title: Android SDK
 excerpt: AppsFlyer Android SDK guides for developers.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
@@ -20,44 +20,56 @@ next:
 }
 [/block]
 
-Android SDK Implementation Flow
+Which SDK version should I use?
 --------------------------------
-1. <a href="https://dev.appsflyer.com/hc/docs/install-android-sdk">SDK installation</a>
-2. <a href="https://dev.appsflyer.com/hc/docs/integrate-android-sdk">SDK integration</a>
-3. <a href="https://dev.appsflyer.com/hc/docs/testing-android">Integration testing</a>
 
-Core capabilities
------------------
+> 🚧 Important
+>
+> Android SDK v7 is current and recommended for all new integrations. It changes how sessions start and includes other breaking changes. SDK 6 continues to receive critical fixes only, all new features ship on v7 only.
 
-<div class="button-container">
-  <a class="button" href="https://dev.appsflyer.com/hc/docs/in-app-events-android">In-app events</a>
-  <a class="button" href="https://dev.appsflyer.com/hc/docs/android">Deep linking</a>
-  <a class="button" href="https://dev.appsflyer.com/hc/docs/conversion-data-android">Conversion data</a>
-</div>
-<div class="button-container">
-  <a class="button" href="https://dev.appsflyer.com/hc/docs/android-sdk-reference">Android SDK reference</a>
-  <a class="button" href="https://support.appsflyer.com/hc/en-us/articles/115001256006">Android SDK release notes</a>
-</div>
+## Android SDK 7 (current)
+
+Already integrated on v6? See [Migrate to Android SDK v7](doc:migrate-android-sdk-to-v7).
+
+- [Integrate SDK](doc:integrate-sdk-android-7)
+  - [Install SDK](doc:install-android-sdk-7)
+  - [Integrate SDK](doc:integrate-android-sdk-7)
+  - [Getting the conversion data](doc:conversion-data-android-7)
+  - [Setting the Customer User ID](doc:customer-user-id-android-7)
+  - [Troubleshooting](doc:troubleshooting-android-7)
+- [In-app events](doc:in-app-events-android-7)
+  - [Sending events](doc:sending-events-android-7)
+  - [Purchase and subscription validation](doc:purchase-validation-android-7)
+  - [Ad revenue](doc:ad-revenue-android-7)
+- [Preserve user privacy](doc:preserve-user-privacy-android-7)
+- [Features](doc:features-android-7)
+  - [Push notifications](doc:push-notifications-android-7)
+  - [Uninstall measurement](doc:uninstall-measurement-android-7)
+  - [Send consent for DMA compliance](doc:android-send-consent-for-dma-compliance-7)
+  - [OAID](doc:oaid-android-7)
+
+## Android SDK 6 (previous version)
+
+If you're starting a new integration, use Android SDK 7 instead.
+
+[block:html]
+{
+  "html": "<details><summary>Android SDK 6</summary>\n<div class=\"af__accordion\">\n  <ul>\n    <li><a href=\"https://dev.appsflyer.com/hc/docs/android-sdk-6\">Android SDK 6</a></li>\n  </ul>\n</div>\n</details>"
+}
+[/block]
+
+Reference and release notes
+----------------------------
+
+[block:html]
+{
+  "html": "<details><summary>Reference and release notes</summary>\n<div class=\"af__accordion\">\n  <ul>\n    <li><a href=\"https://dev.appsflyer.com/hc/docs/android-sdk-reference\">Android SDK reference</a></li>\n    <li><a href=\"https://support.appsflyer.com/hc/en-us/articles/115001256006\">Android SDK release notes</a></li>\n  </ul>\n</div>\n</details>"
+}
+[/block]
 
 SDK compatibility
 -----------------
 
-- Starting Android V4.4
+- Starting Android V4.4 (v6). Android SDK v7 raises the minimum to API 21, see the [migration guide](https://dev.appsflyer.com/hc/docs/migrate-android-sdk-to-v7) for details.
 - Non-mobile Android-based platforms, such as Smart TVs (including Amazon Fire TV). [See CTV overview](https://support.appsflyer.com/hc/en-us/articles/4404083608849)
-- [Out-of-store-markets](https://support.appsflyer.com/hc/en-us/articles/207447023)  for Android apps, such as Amazon and Baidu.
-<style>
-  .button-container {
-  	display: flex;
-  }
-  .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-	  border-radius: 6px;
-    border: solid 2px;
-    border-color: var(--project-primary-color);
-    padding: 16px;
-    margin-right: 4px;
-	}
-</style>
+- [Out-of-store-markets](https://support.appsflyer.com/hc/en-us/articles/207447023) for Android apps, such as Amazon and Baidu.
