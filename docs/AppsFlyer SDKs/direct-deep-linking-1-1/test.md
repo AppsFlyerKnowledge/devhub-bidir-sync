@@ -10,5 +10,7 @@ metadata:
 </Accordion>
 
 <Accordion title="Second test accordion" icon="fa-info-circle">
-  another content
+  ### another content
 </Accordion>
+
+/
