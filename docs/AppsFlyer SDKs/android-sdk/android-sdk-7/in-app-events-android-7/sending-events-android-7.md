@@ -13,9 +13,19 @@ In-app events consist of two parts:
 - **Event name**: the unique event identifier. It's usually how marketers see the event in the dashboard.
 - **Event values**: an object made up of key-value pairs called event parameters, which provide additional context about the event.
 
-Event names and parameters can be predefined or custom. Predefined events and parameters are exposed as SDK constants (see [Event constants](#event-constants) below), prefixed with `af_`. Use the constants instead of raw strings: it avoids naming mistakes, and changes to the underlying names stay transparent to you.
+Event names and parameters can be predefined or custom.
 
-Custom event names and parameters are user-defined and describe scenarios specific to your app. Don't prefix custom event names with `af_`, to avoid confusion with predefined events.
+> 👍 Tip
+>
+> Quickly define and generate in-app events code for all major platforms using the [in-app event generator tool](https://evgen.appsflyer.com?utm_medium=referral&utm_source=devhub).
+
+Predefined events and parameters are exposed as SDK constants (see [Event constants](#event-constants) below), prefixed with `af_`. Use the constants instead of raw strings: it avoids naming mistakes, and changes to the underlying names stay transparent to you.
+
+Custom event names and parameters are user-defined and describe scenarios specific to your app.
+
+> 🚧 Attention
+>
+> To avoid confusion with predefined events, don't prefix custom event names with `af_`.
 
 **Valid custom event names:** up to 100 characters, non-English characters supported.
 
