@@ -16,7 +16,11 @@ The SDK lets you control three things about the data you send to AppsFlyer:
 
 ### When to send user-level data
 
-The SDK sends install and in-app event data to AppsFlyer as soon as `start` is called. Calling a privacy-preserving method before `start` can prevent AppsFlyer from properly attributing the install. If you want attribution to occur, call privacy-preserving methods only after `start`, once the install event has already been sent.
+The SDK sends information about app installs and in-app events to AppsFlyer as soon as `start` is called. Privacy-preserving methods affect the availability of certain user-level event data depending on whether they're invoked before or after the `start` call.
+
+When `start` is called for the first time, the SDK sends the install event to AppsFlyer, along with the parameters required to attribute the installation to the correct media source. Invoking privacy-preserving methods before calling `start` can prevent AppsFlyer from attributing the install event properly.
+
+So, if you want attribution to occur, avoid calling privacy-preserving methods before `start`. Instead, call them only after the install event has been sent to AppsFlyer. This approach ensures that the user's in-app events remain private while install attribution can still take place.
 
 ### Who receives user-level data
 
