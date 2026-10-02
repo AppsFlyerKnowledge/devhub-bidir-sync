@@ -11,8 +11,6 @@ next:
   description: ''
 ---
 
-# Preserve user privacy
-
 ## Privacy-preserving methods: When, Who, and What to send
 
 The SDK lets you control three things about the data you send to AppsFlyer:
