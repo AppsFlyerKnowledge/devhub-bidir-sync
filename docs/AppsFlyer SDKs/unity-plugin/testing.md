@@ -19,8 +19,8 @@ You are can test your integration for the following OS:
 
 In order to test the plugin, you need to build an iOS/Android app. Then you can follow these guides: 
 - [Marketers](https://support.appsflyer.com/hc/en-us/articles/360001559405-Test-mobile-SDK-integration-with-the-app#introduction).
-- [Android](https://dev.appsflyer.com/hc/docs/testing-android)
-- [iOS](https://dev.appsflyer.com/hc/docs/testing-ios)
+- [Android](https://dev.appsflyer.com/hc/docs/integrate-android-sdk#test-the-integration)
+- [iOS](https://dev.appsflyer.com/hc/docs/integrate-ios-sdk#test-the-integration)
 
 To enable the debug logs, set the following API to true:
 ```c#

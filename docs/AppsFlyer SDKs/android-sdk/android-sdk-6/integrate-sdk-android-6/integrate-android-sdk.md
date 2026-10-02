@@ -187,6 +187,14 @@ AppsFlyerLib.getInstance().setDebugLog(true)
 
 ## Test the integration
 
+Testing verifies that the SDK starts and successfully establishes a connection to AppsFlyer, with no networking or authentication issues, and relays attribution data correctly.
+
+It's performed by:
+
+1. Creating an AppsFlyer attribution link and using it to simulate a user clicking an ad.
+2. Installing the app on a [registered test device](https://support.appsflyer.com/hc/en-us/articles/207031996-Registering-test-devices-).
+3. Inspecting the conversion data.
+
 [block:html]
 {
   "html": "<style>\n  .containerBox {\n    right: 0;\n    display: flex;\n    justify-content: flex-start;\n    border-radius: 10px;\n    padding: 20px 10px;\n    padding-right: 50px;\n    padding-top: 10px;\n  }\n .djButton {\n    padding: 8px 16px;\n    border-radius: 4px;\n    text-decoration: none;\n    color: white;\n    font-weight: 600;\n   \tcursor: pointer;\n    border: none;\n    background-color: rgb(3, 109, 235) !important;\n  }\n  \n  .djButton:hover {\n  \tbackground-color: #0360ce !important;\n    transition: 0.3s;\n  }\n</style>\n\n<div class=\"containerBox\">\n  <img src=\"https://dj.dev.appsflyer.com/images/DJ_illustratration.svg\" style=\"width: 120px; margin: 0 0; margin-right: 20px\">\n  <div>\n  \n      <h3>\n        Easily test with our SDK wizard\n    </h3>\n      <button onclick=\"window.open('https://dj.dev.appsflyer.com/?sourceos=android&utm_source=devhub&utm_medium=integrate-android-sdk');gtag('event', 'click', {'event_category': 'DJ_Banner', 'event_label': 'DJ_Anrd_test', 'value': '1'});\" target=\"_blank\" class=\"djButton\">\n      Let's go\n      </button>\n  </div>\n</div>\n"
@@ -200,6 +208,8 @@ AppsFlyerLib.getInstance().setDebugLog(true)
 For a full troubleshooting checklist, see [Troubleshooting](doc:troubleshooting-android).
 
 ### Creating an Android debug app
+
+To avoid mixing production data with test conversions and in-app events, you can test the SDK integration using a debug app. Debug apps differ from production apps in that they have a different app ID, their own instance in the AppsFlyer dashboard, and aren't published to app stores.
 
 <span class="annotation-optional">Optional</span>  
 You can utilize Android Studio's build variants to configure an easy-to-use debug app for testing purposes.

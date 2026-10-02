@@ -52,7 +52,7 @@ Result: {
     taskIdentifier = 4;
 }
 ```
-For more iOS integration tests, see [Here](https://dev.appsflyer.com/hc/docs/testing-ios)
+For more iOS integration tests, see [Here](https://dev.appsflyer.com/hc/docs/integrate-ios-sdk#test-the-integration)
 
 ## Testing for Android
 Open your Android project with Android studio (`android` folder) and run it. In the logs section (adb), you will see logs related to AppsFlyer start with `I/AppsFlyer_x.x.x`.<br>
@@ -65,4 +65,4 @@ and also:
 ```
 I/AppsFlyer_6.4.3: response code: 200 // ~~> success!
 ```
-For more Android integration tests, see [Here](https://dev.appsflyer.com/hc/docs/testing-android)
+For more Android integration tests, see [Here](https://dev.appsflyer.com/hc/docs/integrate-android-sdk#test-the-integration)
