@@ -12,7 +12,12 @@ next:
 ---
 # Send consent for DMA compliance (Unity)
 
-For a general introduction to DMA consent data, see the [DMA consent overview](https://dev.appsflyer.com/hc/docs/send-consent-for-dma-compliance) in the AppsFlyer docs. The SDK offers two alternative methods for gathering consent data:
+As part of the EU Digital Markets Act (DMA), big tech companies must get consent from European end users before using personal data from third-party services for advertising. Google and Amazon require AppsFlyer customers to include specific consent fields when sending events from EU end users. The AppsFlyer SDK (v6.13.0+) can collect and send this consent data with each event.
+
+> **Note**  
+> All EU countries are subject to GDPR and DMA, as are non-EU countries such as the UK and Switzerland.
+
+The SDK offers two alternative methods for gathering consent data:
 
 - **Through a Consent Management Platform (CMP):** If your app uses a CMP that complies with the IAB **Transparency and Consent Framework (TCF) v2.2/2.3**, the SDK can automatically retrieve consent details.
 

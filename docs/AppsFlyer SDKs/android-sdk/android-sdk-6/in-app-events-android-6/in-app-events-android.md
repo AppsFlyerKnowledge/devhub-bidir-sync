@@ -12,7 +12,22 @@ next:
 ---
 ## Overview
 
-For an introduction to in-app events for developers, see [In-app events](doc:in-app-events-sdk).
+In-app events provide insights into how users interact with your app. The AppsFlyer SDK lets you log these interactions.
+
+### Anatomy of an event
+
+In-app events consist of two parts:
+
+- **Event name**: the unique event identifier. It's usually how marketers see the event in the dashboard.
+- **Event values**: an object made up of key-value pairs called event parameters, which provide additional context about the event.
+
+Event names and parameters can be predefined or custom. Predefined events and parameters are exposed as SDK constants (see [Event constants](#event-constants) below), prefixed with `af_`. Use the constants instead of raw strings: it avoids naming mistakes, and changes to the underlying names stay transparent to you.
+
+Custom event names and parameters are user-defined and describe scenarios specific to your app. Don't prefix custom event names with `af_`, to avoid confusion with predefined events.
+
+**Valid custom event names:** up to 100 characters, non-English characters supported.
+
+**Valid custom event parameters:** up to 1000 characters (longer values may be truncated). Pricing and revenue values should use digits and decimals only (e.g. `5` or `5.2`), up to 5 digits after the decimal point.
 
 ## Before you begin
 
@@ -94,9 +109,22 @@ In the above `logEvent` invocation:
   - [AFInAppEventParameterName.PRICE](#af_price): The price that's associated with the event
   - [AFInAppEventParameterName.CONTENT_ID](#af_content_id): The identifier of the added item
 
+### Understanding event structure definitions
+
+Before implementing an event, it helps to have a clear event structure definition. For example, a definition for an `af_content_view` event on an eCommerce app:
+
+| Event name | Event parameters | Parameter values | Where/When |
+|---|---|---|---|
+| `af_content_view` | `af_price`, `af_content_type`, `af_content_id` | `af_price`: item price. `af_content_type`: item category. `af_content_id`: item SKU. | When a user navigates to an item view. |
+
+- The event name is the value you pass as the event name argument to `logEvent`.
+- The event parameters list what to pass alongside it.
+- Parameter values clarify what each parameter should contain.
+- Where/When describes the trigger point in your app.
+
 ### Implementing event structure definitions
 
-Based on the example definition provided in [Understanding event structure definitions](https://dev.appsflyer.com/hc/docs/in-app-events-sdk#understanding-event-structure-definitions), the event should be implemented as follows:
+Based on the example definition above, the event should be implemented as follows:
 
 ```java
 Map<String, Object> eventValues = new HashMap<String, Object>();
@@ -169,7 +197,12 @@ In the event that an error occurs when recording the in-app event, an error code
 
 ### Recording offline events
 
-The SDK can record events that occur when no internet connection is available. See [Offline in-app events](https://dev.appsflyer.com/hc/docs/in-app-events-sdk#offline-in-app-events) for details.
+The SDK can cache in-app events that occur when no internet connection is available:
+
+- It sends events to AppsFlyer and waits for a response.
+- If it doesn't receive a 200 response, the events are cached.
+- Once the next 200 response arrives, cached events are re-sent, one network request per event (unbatched).
+- The cache holds up to 40 events. Anything beyond that, until the next successful response, is discarded.
 
 ### Logging events before calling `start`
 

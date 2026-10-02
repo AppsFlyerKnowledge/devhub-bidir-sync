@@ -3,9 +3,25 @@ title: Preserve user privacy
 excerpt: Learn how to preserve user privacy in the iOS SDK.
 hidden: false
 ---
-## Getting Started on Privacy Preservation
+## Privacy-preserving methods: When, Who, and What to send
 
-For a general introduction to privacy-preserving methods in the AppsFlyer SDK, see [Preserving user privacy](https://dev.appsflyer.com/hc/docs/preserve-user-privacy-1) (under Getting started).
+The SDK lets you control three things about the data you send to AppsFlyer:
+
+- **When** you send user-level data
+- **Who** receives user-level data
+- **What** user-level data you send
+
+### When to send user-level data
+
+The SDK sends install and in-app event data to AppsFlyer as soon as `start` is called. Calling a privacy-preserving method before `start` can prevent AppsFlyer from properly attributing the install. If you want attribution to occur, call privacy-preserving methods only after `start`, once the install event has already been sent.
+
+### Who receives user-level data
+
+Your ad network and Self-Reporting Network (SRN) partners receive user-level data for attribution and optimization. Use a partner-sharing filter method, below, to limit which partners receive this data based on end-user preference.
+
+### What data to send
+
+Some methods below anonymize data by deleting or hashing all user-level identifiers. Others remove only specific identifiers.
 
 ## Use start to share only the install event
 

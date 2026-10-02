@@ -11,7 +11,11 @@ next:
   description: ''
 ---
 
-For a general introduction to DMA consent data, see [here](https://dev.appsflyer.com/hc/docs/send-consent-for-dma-compliance).
+As part of the EU Digital Markets Act (DMA), big tech companies must get consent from European end users before using personal data from third-party services for advertising. Google and Amazon require AppsFlyer customers to include specific consent fields when sending events from EU end users. The AppsFlyer SDK (v6.13.0+) can collect and send this consent data with each event.
+
+> 📘 Note
+>
+> All EU countries are subject to GDPR and DMA, as are non-EU countries such as the UK and Switzerland.
 
 The SDK offers two alternative methods for gathering consent data:
 

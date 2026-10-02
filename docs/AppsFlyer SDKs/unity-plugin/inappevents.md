@@ -21,7 +21,42 @@ In-App Events provide insight on what is happening in your app. It is recommende
 
 Recording in-app events is performed by calling `sendEvent` with event name and value parameters. See In-App Events [documentation](https://support.appsflyer.com/hc/en-us/articles/115005544169-Rich-in-app-events-for-Android-and-iOS#introduction-predefined-and-custom-events) for more details.
 
-Find more info about recording events [here](https://dev.appsflyer.com/hc/docs/in-app-events-sdk).
+### Anatomy of an event
+
+In-app events consist of two parts:
+
+- **Event name**: the unique event identifier. It's usually how marketers see the event in the dashboard.
+- **Event values**: an object made up of key-value pairs called event parameters, which provide additional context about the event.
+
+Event names and parameters can be predefined or custom. Predefined events and parameters are exposed as SDK constants (for example `AFInAppEvents.PURCHASE`), prefixed with `af_`. Use the constants instead of raw strings: it avoids naming mistakes, and changes to the underlying names stay transparent to you.
+
+Custom event names and parameters are user-defined and describe scenarios specific to your app. Don't prefix custom event names with `af_`, to avoid confusion with predefined events.
+
+**Valid custom event names:** up to 100 characters, non-English characters supported.
+
+**Valid custom event parameters:** up to 1000 characters (longer values may be truncated). Pricing and revenue values should use digits and decimals only (e.g. `5` or `5.2`), up to 5 digits after the decimal point.
+
+### Understanding event structure definitions
+
+Before implementing an event, it helps to have a clear event structure definition. For example, a definition for an `af_content_view` event on an eCommerce app:
+
+| Event name | Event parameters | Parameter values | Where/When |
+|---|---|---|---|
+| `af_content_view` | `af_price`, `af_content_type`, `af_content_id` | `af_price`: item price. `af_content_type`: item category. `af_content_id`: item SKU. | When a user navigates to an item view. |
+
+- The event name is the value you pass as `sendEvent`'s first argument.
+- The event parameters list what to pass in the values dictionary.
+- Parameter values clarify what each parameter should contain.
+- Where/When describes the trigger point in your app.
+
+### Recording offline events
+
+The SDK can cache in-app events that occur when no internet connection is available:
+
+- It sends events to AppsFlyer and waits for a response.
+- If it doesn't receive a 200 response, the events are cached.
+- Once the next 200 response arrives, cached events are re-sent, one network request per event (unbatched).
+- The cache holds up to 40 events. Anything beyond that, until the next successful response, is discarded.
 
 ## Send Event
 
