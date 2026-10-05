@@ -12,7 +12,7 @@ next:
 ---
 ROI360 automatically calculates net in-app purchase (IAP) and subscription revenue. It does this by deducting store commissions and local taxes from the gross amount.
 
-The default configuration reflects standard App Store and Google Play fees and tax rules. App Store defaults are region-specific. If your store commission differs (for example, Apple's Small Business Program charges 15 percent, or 12 percent in Greater China) or if you operate in a country with special tax treatment, use the Net Revenue API to override the defaults.
+The default configuration reflects standard App Store and Google Play fees and tax rules. App Store defaults are region-specific. If your store commission differs (for example, Apple's Small Business Program charges 15 percent, or 12 percent in China mainland (CN)) or if you operate in a country with special tax treatment, use the Net Revenue API to override the defaults.
 
 ROI360 applies the following default store commissions:
 
