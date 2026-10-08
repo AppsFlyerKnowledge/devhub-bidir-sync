@@ -1,0 +1,768 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "AdRevenue Account Integrations API (v2.0)",
+    "version": "2.0.0",
+    "description": "Create, update, list and delete the ad revenue partner integrations of your account, for one or more apps in a single call.\n\nEach integration is identified by an app and a partner network, and has an `integration_type` that sets how the partner reports ad revenue:\n\n| `integration_type` | Description | `credentials` | `source_event` |\n|---|---|---|---|\n| `aggregate_s2s` | Aggregate-level (S2S API) | Required | Required |\n| `device_s2s` | Device-level (S2S API) | Required | Not allowed |\n| `impression_sdk` | Impression-level (SDK) | Not allowed | Not allowed |\n| `impression_sdk_and_device_s2s` | Impression-level (SDK) with Device-level (S2S API) | Required | Not allowed |\n\nCreate, update and delete requests are atomic: either every integration in the request is applied, or none is.\n"
+  },
+  "paths": {
+    "/integrations": {
+      "post": {
+        "description": "Create or update ad revenue integrations for one or more apps and partner networks. Integrations that already exist for an app and network are replaced by the request. The request either succeeds as a whole or fails as a whole.",
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "Create or update integrations",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegrationsV2"
+              },
+              "examples": {
+                "all_integration_types": {
+                  "summary": "One integration of each type",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "ironsource",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "ad_revenue",
+                        "credentials": {
+                          "app_key": "YOUR_APP_KEY"
+                        }
+                      },
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "vungle",
+                        "integration_type": "device_s2s",
+                        "credentials": {
+                          "app_key": "YOUR_APP_KEY"
+                        }
+                      },
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "applovin",
+                        "integration_type": "impression_sdk"
+                      },
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "unity",
+                        "integration_type": "impression_sdk_and_device_s2s",
+                        "credentials": {
+                          "app_key": "YOUR_APP_KEY"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "description": "The integrations to create or update",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveIntegrationsV2SuccessResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveIntegrationsV2BadRequestResponse"
+                },
+                "examples": {
+                  "missing_required_fields": {
+                    "summary": "Required fields missing for the integration type (one line per violation)",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "error": {
+                        "code": "invalid_request",
+                        "message": "integrations[0].credentials is required for integration_type \"aggregate_s2s\"\nintegrations[0].source_event is required for integration_type \"aggregate_s2s\""
+                      }
+                    }
+                  },
+                  "field_not_supported": {
+                    "summary": "Field not supported for the integration type",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "error": {
+                        "code": "invalid_request",
+                        "message": "integrations[0].credentials is not supported for integration_type \"impression_sdk\""
+                      }
+                    }
+                  },
+                  "unsupported_integration_type": {
+                    "summary": "Unsupported integration_type",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "error": {
+                        "code": "invalid_request",
+                        "message": "integrations[0].integration_type \"attribution_user_level\" is not supported"
+                      }
+                    }
+                  },
+                  "unsupported_network": {
+                    "summary": "Unsupported network",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "error": {
+                        "code": "invalid_request",
+                        "message": "integration 0, appID='com.example.myapp', network='nosuchnetwork': unsupported network"
+                      }
+                    }
+                  },
+                  "missing_app_id": {
+                    "summary": "Required field missing",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "error": {
+                        "code": "invalid_request",
+                        "message": "integrations[0].app_id is required"
+                      }
+                    }
+                  },
+                  "duplicate_integration": {
+                    "summary": "Same app and network sent twice",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "error": {
+                        "code": "invalid_request",
+                        "message": "duplicate integration for app_id \"com.example.myapp\" and network \"ironsource\""
+                      }
+                    }
+                  },
+                  "malformed_body": {
+                    "summary": "Body is not valid JSON",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "error": {
+                        "code": "invalid_request",
+                        "message": "Malformed JSON body."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationsV2UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationsV2InternalErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/integrations/app/{app_ids}": {
+      "get": {
+        "description": "Retrieve the enabled ad revenue integrations of the given apps, or of every app of the account when `app_ids` is `all`. SDK and device-level integrations of the same app and network are returned as one `impression_sdk_and_device_s2s` integration. Credentials are not returned.",
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "Get integrations",
+        "parameters": [
+          {
+            "example": "com.example.app1,com.example.app2",
+            "description": "Comma-separated app IDs, or `all` for every app of the account",
+            "name": "app_ids",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetIntegrationsV2SuccessResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetIntegrationsV2BadRequestResponse"
+                },
+                "examples": {
+                  "blank_app_id": {
+                    "summary": "A blank app ID in the list",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "error": {
+                        "code": "invalid_request",
+                        "message": "app_ids[1] must not be blank"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationsV2UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationsV2InternalErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Disable the integrations of the given apps. Add `network` query parameters to delete only the integrations of those networks. The call is atomic: it deletes everything it names, or nothing.",
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "Delete integrations",
+        "parameters": [
+          {
+            "example": "com.example.app1,com.example.app2",
+            "description": "Comma-separated app IDs",
+            "name": "app_ids",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Networks to delete. Repeat the parameter once per network. Omit it to delete all the integrations of the apps.",
+            "name": "network",
+            "in": "query",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "example": [
+              "ironsource"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteIntegrationsV2SuccessResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteIntegrationsV2BadRequestResponse"
+                },
+                "examples": {
+                  "blank_network": {
+                    "summary": "A blank network",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "error": {
+                        "code": "invalid_request",
+                        "message": "network[0] must not be blank"
+                      }
+                    }
+                  },
+                  "blank_app_id": {
+                    "summary": "A blank app ID in the list",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "error": {
+                        "code": "invalid_request",
+                        "message": "app_ids[0] must not be blank\napp_ids[1] must not be blank"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationsV2UnauthorizedResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteIntegrationsV2NotFoundResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationsV2InternalErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "To call the API, get the API V2 authorization token from your AppsFlyer admin. They can retrieve it from the AppsFlyer platform (HQ)\n"
+      }
+    },
+    "schemas": {
+      "DeleteIntegrationsV2BadRequestError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "Code is always invalid_request for a 400.",
+            "type": "string",
+            "enum": [
+              "invalid_request"
+            ],
+            "example": "invalid_request"
+          },
+          "message": {
+            "description": "Message names every violation, one per line.",
+            "type": "string",
+            "example": "network[0] must not be blank"
+          }
+        }
+      },
+      "DeleteIntegrationsV2BadRequestResponse": {
+        "type": "object",
+        "required": [
+          "error",
+          "request_id"
+        ],
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/DeleteIntegrationsV2BadRequestError"
+          },
+          "request_id": {
+            "type": "string",
+            "example": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10"
+          }
+        }
+      },
+      "DeleteIntegrationsV2NotFoundError": {
+        "type": "object",
+        "properties": {
+          "app_ids": {
+            "description": "AppIDs are the requested apps that have no enabled integration.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "com.example.unknown"
+            ]
+          },
+          "code": {
+            "description": "Code is always not_found for a 404.",
+            "type": "string",
+            "enum": [
+              "not_found"
+            ],
+            "example": "not_found"
+          },
+          "message": {
+            "description": "Message says that nothing was deleted. The values that did not match are in app_ids and networks.",
+            "type": "string",
+            "example": "No enabled integration matched part of the request, so nothing was deleted."
+          },
+          "networks": {
+            "description": "Networks are the requested networks that have no enabled integration.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "unknownnetwork"
+            ]
+          }
+        }
+      },
+      "DeleteIntegrationsV2NotFoundResponse": {
+        "type": "object",
+        "required": [
+          "error",
+          "request_id"
+        ],
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/DeleteIntegrationsV2NotFoundError"
+          },
+          "request_id": {
+            "type": "string",
+            "example": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10"
+          }
+        }
+      },
+      "DeleteIntegrationsV2SuccessResponse": {
+        "type": "object",
+        "required": [
+          "deleted",
+          "request_id"
+        ],
+        "properties": {
+          "deleted": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeletedIntegration"
+            }
+          },
+          "request_id": {
+            "type": "string",
+            "example": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10"
+          }
+        }
+      },
+      "DeletedIntegration": {
+        "type": "object",
+        "properties": {
+          "app_id": {
+            "type": "string",
+            "example": "com.example.myapp"
+          },
+          "network": {
+            "type": "string",
+            "example": "ironsource"
+          }
+        }
+      },
+      "GetIntegrationsV2BadRequestError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "Code is always invalid_request for a 400.",
+            "type": "string",
+            "enum": [
+              "invalid_request"
+            ],
+            "example": "invalid_request"
+          },
+          "message": {
+            "description": "Message names every violation, one per line.",
+            "type": "string",
+            "example": "app_ids[1] must not be blank"
+          }
+        }
+      },
+      "GetIntegrationsV2BadRequestResponse": {
+        "type": "object",
+        "required": [
+          "error",
+          "request_id"
+        ],
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/GetIntegrationsV2BadRequestError"
+          },
+          "request_id": {
+            "type": "string",
+            "example": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10"
+          }
+        }
+      },
+      "GetIntegrationsV2SuccessResponse": {
+        "type": "object",
+        "required": [
+          "request_id",
+          "result"
+        ],
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "example": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10"
+          },
+          "result": {
+            "$ref": "#/components/schemas/IntegrationsV2Result"
+          }
+        }
+      },
+      "IntegrationV2": {
+        "type": "object",
+        "required": [
+          "app_id",
+          "integration_type",
+          "network"
+        ],
+        "properties": {
+          "app_id": {
+            "description": "AppID is the AppsFlyer app ID the integration belongs to.",
+            "type": "string",
+            "example": "com.example.myapp"
+          },
+          "credentials": {
+            "description": "Credentials are the partner credentials. Required for aggregate_s2s, device_s2s and\nimpression_sdk_and_device_s2s, and not allowed for impression_sdk.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "example": {
+              "app_key": "YOUR_APP_KEY"
+            }
+          },
+          "integration_type": {
+            "description": "IntegrationType selects how the partner reports ad revenue.",
+            "type": "string",
+            "enum": [
+              "aggregate_s2s",
+              "device_s2s",
+              "impression_sdk",
+              "impression_sdk_and_device_s2s"
+            ],
+            "example": "impression_sdk_and_device_s2s"
+          },
+          "network": {
+            "description": "Network is the partner network name.",
+            "type": "string",
+            "example": "ironsource"
+          },
+          "source_event": {
+            "description": "SourceEvent is the trigger event the revenue is attributed to. Required for aggregate_s2s only,\nand it must not end with \"_monetized\".",
+            "type": "string",
+            "example": "ad_revenue"
+          }
+        }
+      },
+      "IntegrationV2View": {
+        "type": "object",
+        "properties": {
+          "app_id": {
+            "type": "string",
+            "example": "com.example.myapp"
+          },
+          "integration_type": {
+            "type": "string",
+            "enum": [
+              "aggregate_s2s",
+              "device_s2s",
+              "impression_sdk",
+              "impression_sdk_and_device_s2s"
+            ],
+            "example": "impression_sdk_and_device_s2s"
+          },
+          "network": {
+            "type": "string",
+            "example": "ironsource"
+          },
+          "source_event": {
+            "type": "string",
+            "example": "ad_revenue"
+          }
+        }
+      },
+      "IntegrationsV2": {
+        "type": "object",
+        "properties": {
+          "integrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationV2"
+            }
+          }
+        }
+      },
+      "IntegrationsV2InternalError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "Code is always internal_error for a 500.",
+            "type": "string",
+            "enum": [
+              "internal_error"
+            ],
+            "example": "internal_error"
+          },
+          "message": {
+            "description": "Message is always Internal Server Error, without the cause.",
+            "type": "string",
+            "example": "Internal Server Error"
+          }
+        }
+      },
+      "IntegrationsV2InternalErrorResponse": {
+        "type": "object",
+        "required": [
+          "error",
+          "request_id"
+        ],
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/IntegrationsV2InternalError"
+          },
+          "request_id": {
+            "type": "string",
+            "example": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10"
+          }
+        }
+      },
+      "IntegrationsV2Result": {
+        "type": "object",
+        "properties": {
+          "integrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationV2View"
+            }
+          }
+        }
+      },
+      "IntegrationsV2UnauthorizedError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "Code is always unauthorized for a 403.",
+            "type": "string",
+            "enum": [
+              "unauthorized"
+            ],
+            "example": "unauthorized"
+          },
+          "message": {
+            "description": "Message is always Unauthorized, so that it does not reveal why.",
+            "type": "string",
+            "example": "Unauthorized"
+          }
+        }
+      },
+      "IntegrationsV2UnauthorizedResponse": {
+        "type": "object",
+        "required": [
+          "error",
+          "request_id"
+        ],
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/IntegrationsV2UnauthorizedError"
+          },
+          "request_id": {
+            "type": "string",
+            "example": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10"
+          }
+        }
+      },
+      "SaveIntegrationsV2BadRequestError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "Code is always invalid_request for a 400.",
+            "type": "string",
+            "enum": [
+              "invalid_request"
+            ],
+            "example": "invalid_request"
+          },
+          "message": {
+            "description": "Message names every violation, one per line, or says the body is malformed JSON.",
+            "type": "string",
+            "example": "integrations[0].credentials is required for integration_type \"aggregate_s2s\""
+          }
+        }
+      },
+      "SaveIntegrationsV2BadRequestResponse": {
+        "type": "object",
+        "required": [
+          "error",
+          "request_id"
+        ],
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/SaveIntegrationsV2BadRequestError"
+          },
+          "request_id": {
+            "type": "string",
+            "example": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10"
+          }
+        }
+      },
+      "SaveIntegrationsV2SuccessResponse": {
+        "type": "object",
+        "required": [
+          "request_id"
+        ],
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "example": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://hq1.appsflyer.com/api/adrevenue/v2.0",
+      "description": "v2.0"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}
