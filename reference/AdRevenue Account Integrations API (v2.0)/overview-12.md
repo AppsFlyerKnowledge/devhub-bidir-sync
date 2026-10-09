@@ -25,6 +25,14 @@ The `credentials` keys you must send depend on the partner network. See [Credent
 
 Partners connected through OAuth (for example Meta, Google Ad Manager, and Google AdMob aggregate) are configured in the AppsFlyer UI, not through this API.
 
+## Source event
+
+`aggregate_s2s` requires a `source_event`: the name of an in-app event of the app, for example `af_app_opened`. The ad revenue is recorded as a new event named `<source_event>_monetized`, for example `af_app_opened_monetized`.
+
+- Use the name of an in-app event that your app already sends to AppsFlyer. There is no fixed list of values.
+- Do not add the `_monetized` suffix yourself. A `source_event` that ends with `_monetized` is rejected.
+- Do not send `source_event` for the other integration types.
+
 ## Authentication
 
 Send the API V2 token as a bearer token in the `Authorization` header. Your AppsFlyer admin can retrieve the token from the AppsFlyer platform (HQ).

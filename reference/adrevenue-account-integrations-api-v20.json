@@ -28,7 +28,7 @@
                         "app_id": "com.example.myapp",
                         "network": "ironsource",
                         "integration_type": "aggregate_s2s",
-                        "source_event": "ad_revenue",
+                        "source_event": "af_app_opened",
                         "credentials": {
                           "username": "YOUR_USERNAME",
                           "secret_key": "YOUR_SECRET_KEY",
@@ -611,9 +611,9 @@
             "example": "ironsource"
           },
           "source_event": {
-            "description": "SourceEvent is the trigger event the revenue is attributed to. Required for aggregate_s2s only,\nand it must not end with \"_monetized\".",
+            "description": "The name of an in-app event of the app, for example `af_app_opened`. The ad revenue is recorded as the event `<source_event>_monetized`. Required for `aggregate_s2s` only. Must not end with `_monetized`.",
             "type": "string",
-            "example": "ad_revenue"
+            "example": "af_app_opened"
           }
         }
       },
@@ -640,7 +640,7 @@
           },
           "source_event": {
             "type": "string",
-            "example": "ad_revenue"
+            "example": "af_app_opened"
           }
         }
       },
