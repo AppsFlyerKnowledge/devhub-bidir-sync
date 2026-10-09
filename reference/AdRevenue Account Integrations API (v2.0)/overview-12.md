@@ -40,6 +40,7 @@ Send the API V2 token as a bearer token in the `Authorization` header. Your Apps
 ## Requests and responses
 
 - Create, update, and delete requests are **atomic**: either every integration in the request is applied, or none is.
+- Send up to 1000 integrations in a single create or update request. For larger sets, split them into several requests.
 - Every response includes a `request_id`. Include it when you contact support.
 - A failed request returns an `error` object with a `code` (`invalid_request`, `unauthorized`, `not_found`, or `internal_error`) and a `message`.
 
