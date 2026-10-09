@@ -30,28 +30,33 @@
                         "integration_type": "aggregate_s2s",
                         "source_event": "ad_revenue",
                         "credentials": {
-                          "app_key": "YOUR_APP_KEY"
+                          "username": "YOUR_USERNAME",
+                          "secret_key": "YOUR_SECRET_KEY",
+                          "network_app_id": "YOUR_NETWORK_APP_ID",
+                          "refresh_token": "YOUR_REFRESH_TOKEN"
                         }
                       },
                       {
                         "app_id": "com.example.myapp",
-                        "network": "vungle",
+                        "network": "tapjoy",
                         "integration_type": "device_s2s",
                         "credentials": {
-                          "app_key": "YOUR_APP_KEY"
+                          "network_app_id": "YOUR_NETWORK_APP_ID",
+                          "api_key": "YOUR_API_KEY"
                         }
                       },
                       {
                         "app_id": "com.example.myapp",
-                        "network": "applovin",
+                        "network": "applovinmax",
                         "integration_type": "impression_sdk"
                       },
                       {
                         "app_id": "com.example.myapp",
-                        "network": "unity",
+                        "network": "topon",
                         "integration_type": "impression_sdk_and_device_s2s",
                         "credentials": {
-                          "app_key": "YOUR_APP_KEY"
+                          "publisher_key": "YOUR_PUBLISHER_KEY",
+                          "network_app_id": "YOUR_NETWORK_APP_ID"
                         }
                       }
                     ]
@@ -563,7 +568,8 @@
               "type": "string"
             },
             "example": {
-              "app_key": "YOUR_APP_KEY"
+              "network_app_id": "YOUR_NETWORK_APP_ID",
+              "api_key": "YOUR_API_KEY"
             }
           },
           "integration_type": {
@@ -578,8 +584,30 @@
             "example": "impression_sdk_and_device_s2s"
           },
           "network": {
-            "description": "Network is the partner network name.",
+            "description": "The partner network. The integration types and `credentials` keys each network takes are listed on the \"Credentials by network\" page.",
             "type": "string",
+            "enum": [
+              "ironsource",
+              "applovinmax",
+              "fyber",
+              "topon",
+              "toponpte",
+              "tradplus",
+              "admost",
+              "appodeal",
+              "chartboost",
+              "custom_mediation",
+              "tapjoy",
+              "odeeo",
+              "yandex",
+              "googleadmob",
+              "applovin",
+              "vungle",
+              "mintegral",
+              "bytedance",
+              "bytedanceglobal",
+              "unityads"
+            ],
             "example": "ironsource"
           },
           "source_event": {

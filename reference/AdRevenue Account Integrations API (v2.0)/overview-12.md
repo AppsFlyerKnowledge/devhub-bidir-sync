@@ -21,6 +21,8 @@ For each app and partner, choose one **integration type**:
 | `impression_sdk`                | Impression-level (SDK)                               | Not allowed   | Not allowed    |
 | `impression_sdk_and_device_s2s` | Impression-level (SDK) with Device-level (S2S API)   | Required      | Not allowed    |
 
+The `credentials` keys you must send depend on the partner network. See [Credentials by network](doc:credentials-by-network).
+
 Partners connected through OAuth (for example Meta, Google Ad Manager, and Google AdMob aggregate) are configured in the AppsFlyer UI, not through this API.
 
 ## Authentication
