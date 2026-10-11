@@ -61,6 +61,329 @@
                       }
                     ]
                   }
+                },
+                "ironsource": {
+                  "summary": "ironsource (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "ironsource",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "username": "YOUR_USERNAME",
+                          "secret_key": "YOUR_SECRET_KEY",
+                          "network_app_id": "YOUR_NETWORK_APP_ID",
+                          "refresh_token": "YOUR_REFRESH_TOKEN"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "applovinmax": {
+                  "summary": "applovinmax (device_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "applovinmax",
+                        "integration_type": "device_s2s",
+                        "credentials": {
+                          "package_name": "YOUR_PACKAGE_NAME",
+                          "report_key": "YOUR_REPORT_KEY"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "fyber": {
+                  "summary": "fyber (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "fyber",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "network_app_id": "YOUR_NETWORK_APP_ID",
+                          "client_id": "YOUR_CLIENT_ID",
+                          "client_secret": "YOUR_CLIENT_SECRET"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "topon": {
+                  "summary": "topon (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "topon",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "publisher_key": "YOUR_PUBLISHER_KEY",
+                          "network_app_id": "YOUR_NETWORK_APP_ID"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "toponpte": {
+                  "summary": "toponpte (impression_sdk)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "toponpte",
+                        "integration_type": "impression_sdk"
+                      }
+                    ]
+                  }
+                },
+                "tradplus": {
+                  "summary": "tradplus (device_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "tradplus",
+                        "integration_type": "device_s2s",
+                        "credentials": {
+                          "api_key": "YOUR_API_KEY",
+                          "network_app_id": "YOUR_NETWORK_APP_ID"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "admost": {
+                  "summary": "admost (device_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "admost",
+                        "integration_type": "device_s2s",
+                        "credentials": {
+                          "network_app_id": "YOUR_NETWORK_APP_ID",
+                          "token": "YOUR_TOKEN"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "appodeal": {
+                  "summary": "appodeal (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "appodeal",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "api_key": "YOUR_API_KEY",
+                          "user_id": "YOUR_USER_ID",
+                          "app_key": "YOUR_APP_KEY",
+                          "network_app_id": "YOUR_NETWORK_APP_ID"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "chartboost": {
+                  "summary": "chartboost (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "chartboost",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "network_app_id": "YOUR_NETWORK_APP_ID",
+                          "user_id": "YOUR_USER_ID",
+                          "user_signature": "YOUR_USER_SIGNATURE"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "custom_mediation": {
+                  "summary": "custom_mediation (impression_sdk)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "custom_mediation",
+                        "integration_type": "impression_sdk"
+                      }
+                    ]
+                  }
+                },
+                "tapjoy": {
+                  "summary": "tapjoy (device_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "tapjoy",
+                        "integration_type": "device_s2s",
+                        "credentials": {
+                          "network_app_id": "YOUR_NETWORK_APP_ID",
+                          "api_key": "YOUR_API_KEY"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "odeeo": {
+                  "summary": "odeeo (device_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "odeeo",
+                        "integration_type": "device_s2s",
+                        "credentials": {
+                          "api_key": "YOUR_API_KEY"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "yandex": {
+                  "summary": "yandex (impression_sdk)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "yandex",
+                        "integration_type": "impression_sdk"
+                      }
+                    ]
+                  }
+                },
+                "googleadmob": {
+                  "summary": "googleadmob (impression_sdk)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "googleadmob",
+                        "integration_type": "impression_sdk"
+                      }
+                    ]
+                  }
+                },
+                "applovin": {
+                  "summary": "applovin (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "applovin",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "filter_package_name": "YOUR_FILTER_PACKAGE_NAME",
+                          "api_key": "YOUR_API_KEY"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "vungle": {
+                  "summary": "vungle (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "vungle",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "api_key": "YOUR_API_KEY",
+                          "application_id": "YOUR_APPLICATION_ID"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "mintegral": {
+                  "summary": "mintegral (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "mintegral",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "skey": "YOUR_SKEY",
+                          "secret": "YOUR_SECRET",
+                          "network_app_id": "YOUR_NETWORK_APP_ID"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "bytedance": {
+                  "summary": "bytedance (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "bytedance",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "network_app_id": "YOUR_NETWORK_APP_ID",
+                          "secure_key": "YOUR_SECURE_KEY",
+                          "account_id": "YOUR_ACCOUNT_ID"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "bytedanceglobal": {
+                  "summary": "bytedanceglobal (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "bytedanceglobal",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "network_app_id": "YOUR_NETWORK_APP_ID",
+                          "secure_key": "YOUR_SECURE_KEY",
+                          "account_id": "YOUR_ACCOUNT_ID"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "unityads": {
+                  "summary": "unityads (aggregate_s2s)",
+                  "value": {
+                    "integrations": [
+                      {
+                        "app_id": "com.example.myapp",
+                        "network": "unityads",
+                        "integration_type": "aggregate_s2s",
+                        "source_event": "af_app_opened",
+                        "credentials": {
+                          "api_key": "YOUR_API_KEY",
+                          "source_ids": "YOUR_SOURCE_IDS"
+                        }
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -562,11 +885,51 @@
             "example": "com.example.myapp"
           },
           "credentials": {
-            "description": "Credentials are the partner credentials. Required for aggregate_s2s, device_s2s and\nimpression_sdk_and_device_s2s, and not allowed for impression_sdk.",
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
+            "description": "Credentials are the partner credentials. Required for aggregate_s2s, device_s2s and impression_sdk_and_device_s2s, and not allowed for impression_sdk. The keys depend on the `network`; pick the matching object.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CredentialsIronsource"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsApplovinmax"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsFyber"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsTopon"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsTradplusTapjoy"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsAdmost"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsAppodeal"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsChartboost"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsOdeeo"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsApplovin"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsVungle"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsMintegral"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsBytedanceBytedanceglobal"
+              },
+              {
+                "$ref": "#/components/schemas/CredentialsUnityads"
+              }
+            ],
             "example": {
               "network_app_id": "YOUR_NETWORK_APP_ID",
               "api_key": "YOUR_API_KEY"
@@ -777,6 +1140,325 @@
           "request_id": {
             "type": "string",
             "example": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10"
+          }
+        }
+      },
+      "CredentialsIronsource": {
+        "title": "ironsource",
+        "description": "`credentials` for `ironsource`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "network_app_id",
+          "refresh_token",
+          "secret_key",
+          "username"
+        ],
+        "properties": {
+          "network_app_id": {
+            "type": "string",
+            "example": "YOUR_NETWORK_APP_ID"
+          },
+          "refresh_token": {
+            "type": "string",
+            "example": "YOUR_REFRESH_TOKEN"
+          },
+          "secret_key": {
+            "type": "string",
+            "example": "YOUR_SECRET_KEY"
+          },
+          "username": {
+            "type": "string",
+            "example": "YOUR_USERNAME"
+          }
+        }
+      },
+      "CredentialsApplovinmax": {
+        "title": "applovinmax",
+        "description": "`credentials` for `applovinmax`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "package_name",
+          "report_key"
+        ],
+        "properties": {
+          "package_name": {
+            "type": "string",
+            "example": "YOUR_PACKAGE_NAME"
+          },
+          "report_key": {
+            "type": "string",
+            "example": "YOUR_REPORT_KEY"
+          }
+        }
+      },
+      "CredentialsFyber": {
+        "title": "fyber",
+        "description": "`credentials` for `fyber`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "client_id",
+          "client_secret",
+          "network_app_id"
+        ],
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "example": "YOUR_CLIENT_ID"
+          },
+          "client_secret": {
+            "type": "string",
+            "example": "YOUR_CLIENT_SECRET"
+          },
+          "network_app_id": {
+            "type": "string",
+            "example": "YOUR_NETWORK_APP_ID"
+          }
+        }
+      },
+      "CredentialsTopon": {
+        "title": "topon",
+        "description": "`credentials` for `topon`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "network_app_id",
+          "publisher_key"
+        ],
+        "properties": {
+          "network_app_id": {
+            "type": "string",
+            "example": "YOUR_NETWORK_APP_ID"
+          },
+          "publisher_key": {
+            "type": "string",
+            "example": "YOUR_PUBLISHER_KEY"
+          }
+        }
+      },
+      "CredentialsTradplusTapjoy": {
+        "title": "tradplus / tapjoy",
+        "description": "`credentials` for `tradplus`, `tapjoy`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "api_key",
+          "network_app_id"
+        ],
+        "properties": {
+          "api_key": {
+            "type": "string",
+            "example": "YOUR_API_KEY"
+          },
+          "network_app_id": {
+            "type": "string",
+            "example": "YOUR_NETWORK_APP_ID"
+          }
+        }
+      },
+      "CredentialsAdmost": {
+        "title": "admost",
+        "description": "`credentials` for `admost`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "network_app_id",
+          "token"
+        ],
+        "properties": {
+          "network_app_id": {
+            "type": "string",
+            "example": "YOUR_NETWORK_APP_ID"
+          },
+          "token": {
+            "type": "string",
+            "example": "YOUR_TOKEN"
+          }
+        }
+      },
+      "CredentialsAppodeal": {
+        "title": "appodeal",
+        "description": "`credentials` for `appodeal`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "api_key",
+          "app_key",
+          "network_app_id",
+          "user_id"
+        ],
+        "properties": {
+          "api_key": {
+            "type": "string",
+            "example": "YOUR_API_KEY"
+          },
+          "app_key": {
+            "type": "string",
+            "example": "YOUR_APP_KEY"
+          },
+          "network_app_id": {
+            "type": "string",
+            "example": "YOUR_NETWORK_APP_ID"
+          },
+          "user_id": {
+            "type": "string",
+            "example": "YOUR_USER_ID"
+          }
+        }
+      },
+      "CredentialsChartboost": {
+        "title": "chartboost",
+        "description": "`credentials` for `chartboost`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "network_app_id",
+          "user_id",
+          "user_signature"
+        ],
+        "properties": {
+          "network_app_id": {
+            "type": "string",
+            "example": "YOUR_NETWORK_APP_ID"
+          },
+          "user_id": {
+            "type": "string",
+            "example": "YOUR_USER_ID"
+          },
+          "user_signature": {
+            "type": "string",
+            "example": "YOUR_USER_SIGNATURE"
+          }
+        }
+      },
+      "CredentialsOdeeo": {
+        "title": "odeeo",
+        "description": "`credentials` for `odeeo`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "api_key"
+        ],
+        "properties": {
+          "api_key": {
+            "type": "string",
+            "example": "YOUR_API_KEY"
+          }
+        }
+      },
+      "CredentialsApplovin": {
+        "title": "applovin",
+        "description": "`credentials` for `applovin`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "api_key",
+          "filter_package_name"
+        ],
+        "properties": {
+          "api_key": {
+            "type": "string",
+            "example": "YOUR_API_KEY"
+          },
+          "filter_package_name": {
+            "type": "string",
+            "example": "YOUR_FILTER_PACKAGE_NAME"
+          }
+        }
+      },
+      "CredentialsVungle": {
+        "title": "vungle",
+        "description": "`credentials` for `vungle`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "api_key",
+          "application_id"
+        ],
+        "properties": {
+          "api_key": {
+            "type": "string",
+            "example": "YOUR_API_KEY"
+          },
+          "application_id": {
+            "type": "string",
+            "example": "YOUR_APPLICATION_ID"
+          }
+        }
+      },
+      "CredentialsMintegral": {
+        "title": "mintegral",
+        "description": "`credentials` for `mintegral`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "network_app_id",
+          "secret",
+          "skey"
+        ],
+        "properties": {
+          "network_app_id": {
+            "type": "string",
+            "example": "YOUR_NETWORK_APP_ID"
+          },
+          "secret": {
+            "type": "string",
+            "example": "YOUR_SECRET"
+          },
+          "skey": {
+            "type": "string",
+            "example": "YOUR_SKEY"
+          }
+        }
+      },
+      "CredentialsBytedanceBytedanceglobal": {
+        "title": "bytedance / bytedanceglobal",
+        "description": "`credentials` for `bytedance`, `bytedanceglobal`.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "account_id",
+          "network_app_id",
+          "secure_key"
+        ],
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "example": "YOUR_ACCOUNT_ID"
+          },
+          "network_app_id": {
+            "type": "string",
+            "example": "YOUR_NETWORK_APP_ID"
+          },
+          "secure_key": {
+            "type": "string",
+            "example": "YOUR_SECURE_KEY"
+          }
+        }
+      },
+      "CredentialsUnityads": {
+        "title": "unityads",
+        "description": "`credentials` for `unityads`. `organization_id` is optional.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "api_key",
+          "source_ids"
+        ],
+        "properties": {
+          "api_key": {
+            "type": "string",
+            "example": "YOUR_API_KEY"
+          },
+          "source_ids": {
+            "type": "string",
+            "example": "YOUR_SOURCE_IDS"
+          },
+          "organization_id": {
+            "type": "string",
+            "example": "YOUR_ORGANIZATION_ID"
           }
         }
       }
