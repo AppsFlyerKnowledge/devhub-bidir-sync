@@ -10,17 +10,6 @@ metadata:
 next:
   description: ''
 ---
-## Version 7.0.3
-
-#### New Features
-
-- Added `googleAdManager` and `cloudX` as mediation partners for the `logAdRevenue` API.
-- Added the `af_net_revenue` in-app event parameter constant, formatted the same way as `af_revenue`.
-
-#### Technical Update
-
-- Reduced memory consumption across the SDK's networking and logging components.
-
 ## Version 7.0.1
 
 #### New Features
