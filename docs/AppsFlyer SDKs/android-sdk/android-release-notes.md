@@ -10,6 +10,18 @@ metadata:
 next:
   description: ''
 ---
+## Version 7.0.2
+
+#### New Features
+
+- Added `googleAdManager` and `cloudX` as new mediation partners in the `logAdRevenue` API's `MediationNetwork` enum.
+- Added the `af_net_revenue` in-app event parameter constant for net revenue reporting.
+
+#### Technical Update
+
+- Fixed a race condition in internal dependency resolution that could, in rare cases, produce duplicate singleton component instances.
+- Stability and performance improvements.
+
 ## Version 7.0.1
 
 #### New Features
