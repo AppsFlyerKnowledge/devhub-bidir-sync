@@ -1,7 +1,7 @@
 ---
 api:
-  file: adrevenue-account-integrations-api-v20.json
-  operationId: post_integrations
+  file: ad-revenue-integrations-api-v20.json
+  operationId: get_integrations-app-app-ids
 hidden: false
 metadata:
   title: ''

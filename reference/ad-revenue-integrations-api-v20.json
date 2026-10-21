@@ -1,14 +1,14 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "AdRevenue Account Integrations API (v2.0)",
+    "title": "Ad Revenue Integrations API (v2.0)",
     "version": "2.0.0",
-    "description": "Create, update, list and delete the ad revenue partner integrations of your account, for one or more apps in a single call.\n\nEach integration is identified by an app and a partner network, and has an `integration_type` that sets how the partner reports ad revenue:\n\n| `integration_type` | Description | `credentials` | `source_event` |\n|---|---|---|---|\n| `aggregate_s2s` | Aggregate-level (S2S API) | Required | Required |\n| `device_s2s` | Device-level (S2S API) | Required | Not allowed |\n| `impression_sdk` | Impression-level (SDK) | Not allowed | Not allowed |\n| `impression_sdk_and_device_s2s` | Impression-level (SDK) with Device-level (S2S API) | Required | Not allowed |\n\nCreate, update and delete requests are atomic: either every integration in the request is applied, or none is.\n"
+    "description": "Create, update, get and delete the ad revenue partner integrations of your account, for one or more apps in a single call.\n\nEach integration is identified by an app and a partner network, and has an `integration_type` that sets how the partner reports ad revenue:\n\n| `integration_type` | Description | `credentials` | `source_event` |\n|---|---|---|---|\n| `aggregate_s2s` | Aggregate-level (S2S API) | Required | Required |\n| `device_s2s` | Device-level (S2S API) | Required | Not allowed |\n| `impression_sdk` | Impression-level (SDK) | Not allowed | Not allowed |\n| `impression_sdk_and_device_s2s` | Impression-level (SDK) with Device-level (S2S API) | Required | Not allowed |\n\nCreate, update and delete requests are atomic: either every integration in the request is applied, or none is.\n"
   },
   "paths": {
     "/integrations": {
       "post": {
-        "description": "Create or update ad revenue integrations for one or more apps and partner networks. Integrations that already exist for an app and network are replaced by the request. The request either succeeds as a whole or fails as a whole.",
+        "description": "Create ad revenue integrations, or update existing ones, for one or more apps and partners.\n\nAn integration that already exists for the same app and network is fully replaced (integration type, credentials, and `source_event`).\n\nThe request is atomic: either every integration in it is applied, or none is. Send up to 1000 integrations per request.\n\nA new integration takes effect immediately. An update to an existing integration takes effect at 00:00 UTC the following day.\n\nFor the `credentials` keys of each partner, see [Partner credentials](doc:adrevenue-integrations-v2-credentials).",
         "tags": [
           "Integrations"
         ],
@@ -509,7 +509,7 @@
     },
     "/integrations/app/{app_ids}": {
       "get": {
-        "description": "Retrieve the enabled ad revenue integrations of the given apps, or of every app of the account when `app_ids` is `all`. SDK and device-level integrations of the same app and network are returned as one `impression_sdk_and_device_s2s` integration. Credentials are not returned.",
+        "description": "Get the ad revenue integrations of the given apps, or of all the apps in the account when `app_ids` is `all`.\n\nAn integration that uses both Impression-level via SDK and Device-level via S2S API is returned as one `impression_sdk_and_device_s2s` integration.\n\nCredentials are not returned.",
         "tags": [
           "Integrations"
         ],
@@ -533,6 +533,29 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GetIntegrationsV2SuccessResponse"
+                },
+                "examples": {
+                  "integrations": {
+                    "summary": "Integrations of an app",
+                    "value": {
+                      "request_id": "6f1c2b0e-8d3a-4f59-9c1e-2a7b5d4e8f10",
+                      "result": {
+                        "integrations": [
+                          {
+                            "app_id": "com.example.myapp",
+                            "network": "ironsource",
+                            "integration_type": "aggregate_s2s",
+                            "source_event": "af_app_opened"
+                          },
+                          {
+                            "app_id": "com.example.myapp",
+                            "network": "applovinmax",
+                            "integration_type": "impression_sdk_and_device_s2s"
+                          }
+                        ]
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -582,7 +605,7 @@
         }
       },
       "delete": {
-        "description": "Disable the integrations of the given apps. Add `network` query parameters to delete only the integrations of those networks. The call is atomic: it deletes everything it names, or nothing.",
+        "description": "Delete the ad revenue integrations of the given apps. To delete only some partners, add a `network` query parameter for each one. Without it, all the integrations of the apps are deleted.\n\nThe request is atomic: if any app or network in the request has no integration, the call returns `404` and nothing is deleted.\n\nThe deletion takes effect immediately.",
         "tags": [
           "Integrations"
         ],
@@ -947,7 +970,7 @@
             "example": "impression_sdk_and_device_s2s"
           },
           "network": {
-            "description": "The partner network. The integration types and `credentials` keys each network takes are listed on the \"Credentials by network\" page.",
+            "description": "The partner. For the `credentials` keys each partner needs, see [Partner credentials](doc:adrevenue-integrations-v2-credentials).",
             "type": "string",
             "enum": [
               "ironsource",
