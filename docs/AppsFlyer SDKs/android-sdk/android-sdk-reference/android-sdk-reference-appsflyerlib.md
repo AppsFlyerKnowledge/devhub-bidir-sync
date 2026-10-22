@@ -1660,8 +1660,6 @@ Sets the user's email. The SDK normalizes and SHA-256 hashes the value on-device
 
 **Payload field**: `email_hashed`
 
-**Normalization**: Lowercase; strip leading/trailing/internal whitespace; strip hidden/non-printable characters (for example, zero-width spaces, Unicode control characters). Normalize, then SHA-256, then hex encode.
-
 **Returns**
 
 `void`.
@@ -1718,8 +1716,6 @@ Sets the user's first name. The SDK normalizes and SHA-256 hashes the value on-d
 | `String` | `firstName` | Plain-text first name. |
 
 **Payload field**: `first_name_hashed`
-
-**Normalization**: Lowercase; special characters preserved and UTF-8 encoded. Normalize, then SHA-256 of the UTF-8 bytes, then hex encode.
 
 **Returns**  
 `void`.
