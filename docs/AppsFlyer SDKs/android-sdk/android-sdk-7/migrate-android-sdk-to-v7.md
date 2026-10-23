@@ -10,6 +10,8 @@ This guide walks you through migrating your Android app from AppsFlyer SDK 6 to 
 > 📘 Note
 >
 > The vast majority of `AppsFlyerLib` methods remain unchanged between SDK 6 and SDK 7. This guide covers only the changes you need to make. You don't need to rewrite your integration from scratch.
+>
+> However, one change is important: call `registerSessionReadyListener` before you call `start()`. Otherwise, the session doesn't start and the SDK doesn't send launch data. See [Add a session-ready listener](#3-add-a-session-ready-listener).
 
 ### SDK 6 support policy
 

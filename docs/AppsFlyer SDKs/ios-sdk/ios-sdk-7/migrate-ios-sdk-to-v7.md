@@ -10,6 +10,8 @@ This guide walks you through migrating your iOS app from AppsFlyer SDK 6 to SDK 
 > 📘 Note
 >
 > The vast majority of `AppsFlyerLib` methods remain unchanged between SDK 6 and SDK 7. This guide covers only the changes you need to make. You don't need to rewrite your integration from scratch.
+>
+> However, one change is important: implement your own ATT waiting logic before you call `start`. `waitForATTUserAuthorization` is deprecated and no longer manages ATT timing. Without your own logic, the SDK sends the initial install data without the IDFA before the user completes ATT authorization. See [Call start with the session readiness listener](#2-call-start-with-the-session-readiness-listener) and [Call start with preconditions](#call-start-with-preconditions).
 
 ### SDK 6 support policy
 
