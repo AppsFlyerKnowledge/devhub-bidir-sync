@@ -2,7 +2,7 @@
 title: Cross-promotion
 excerpt: Attribute clicks and impressions from cross-promotion campaigns between your own apps.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
@@ -20,7 +20,20 @@ For background on cross-promotion campaigns, see [Cross-promotion attribution fo
 
 Call [`AppsFlyerCrossPromotionHelper logAndOpenStore`](doc:ios-sdk-reference-appsflyercrosspromotionhelper#logandopenstore) when a user taps a cross-promotion ad. Use `StoreKit`'s `SKStoreProductViewController` to open the App Store while staying in the context of your app; the method falls back to an attribution link when `SKStoreProductViewController` isn't available.
 
-```objc
+```swift Swift
+let crossPromotedAppID = "123456789"
+let crossPromotedCampaign = "spring_sale_2026"
+
+func crossPromotion() {
+    let parameters = ["af_sub1": "val", "custom_param": "val2"]
+    AppsFlyerCrossPromotionHelper.logAndOpenStore(crossPromotedAppID,
+        campaign: crossPromotedCampaign,
+        parameters: parameters) { urlSession, clickURL in
+        // Handle the generated click URL if SKStoreProductViewController isn't available.
+    }
+}
+```
+```objc Objective-C
 static NSString *const kCrossPromotedAppId = @"123456789";
 static NSString *const kCrossPromotedCampaign = @"spring_sale_2026";
 
@@ -39,6 +52,18 @@ static NSString *const kCrossPromotedCampaign = @"spring_sale_2026";
 
 Call [`AppsFlyerCrossPromotionHelper logCrossPromoteImpression`](doc:ios-sdk-reference-appsflyercrosspromotionhelper#logcrosspromoteimpression) when a cross-promotion ad becomes visible.
 
+```swift Swift
+let crossPromotedAppID = "123456789"
+let crossPromotedCampaign = "spring_sale_2026"
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    let parameters = ["af_sub1": "val", "custom_param": "val2"]
+    AppsFlyerCrossPromotionHelper.logCrossPromoteImpression(crossPromotedAppID,
+        campaign: crossPromotedCampaign,
+        parameters: parameters)
+}
+```
 ```objc Objective-C
 static NSString *const kCrossPromotedAppId = @"123456789";
 static NSString *const kCrossPromotedCampaign = @"spring_sale_2026";
@@ -50,12 +75,6 @@ static NSString *const kCrossPromotedCampaign = @"spring_sale_2026";
                                                    campaign:kCrossPromotedCampaign
                                                  parameters:parameters];
 }
-```
-```swift Swift
-let appID = "123456789"
-let campaign = "spring_sale_2026"
-let parameters = ["af_sub1": "val", "custom_param": "val2"]
-AppsFlyerCrossPromotionHelper.logCrossPromoteImpression(appID, campaign: campaign, parameters: parameters)
 ```
 
 ## See also

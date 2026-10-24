@@ -53,7 +53,7 @@ Sends the click to AppsFlyer and opens the promoted app's Play Store listing. Le
 | `Context`             | `context`         | Application / Activity Context.   |
 | `String`              | `promoted_app_id` |                                   |
 | `String`              | `campaign`        | Name of cross-promotion campaign. |
-| `Map<String, String>` | `userParams`      | Optional.                         |
+| `Map<String, String>` | `userParams`      | Optional. Custom parameters that are added to the link. |
 
 **Returns**
 `void`.
@@ -78,7 +78,7 @@ public static void logCrossPromoteImpression(@NonNull Context context,
 | `Context`             | `context`    | Application / Activity Context.   |
 | `String`              | `appID`      |                                   |
 | `String`              | `campaign`   | Name of cross-promotion campaign. |
-| `Map<String, String>` | `userParams` | Optional.                         |
+| `Map<String, String>` | `userParams` | Optional. Custom parameters that are added to the link. |
 
 **Returns**
 `void`.

@@ -16,7 +16,10 @@ AppsFlyer allows you to log and attribute installs originating from cross-promot
 Go back to the [SDK reference index](doc:ios-sdk-reference).
 
 **Interface declaration**
-```objc
+```swift Swift
+class AppsFlyerCrossPromotionHelper
+```
+```objc Objective-C
 @interface AppsFlyerCrossPromotionHelper
 ```
 
@@ -26,33 +29,44 @@ To access `AppsFlyerCrossPromotionHelper`, import [`AppsFlyerLib`](doc:ios-sdk-r
 
 ### logCrossPromoteImpression
 **Method signature**
-```objc
+```swift Swift
+class func logCrossPromoteImpression(_ appID: String,
+                                     campaign: String,
+                                     parameters: [AnyHashable: Any]?)
+```
+```objc Objective-C
 (void)logCrossPromoteImpression:(id)appID
                          campaign:(id)campaign
                        parameters:(id)parameters;
 ```
 
 **Description**
-logs an impression as part of a cross-promotion campaign. Make sure to use the promoted App ID as it appears within the AppsFlyer dashboard.
+Logs an impression as part of a cross-promotion campaign. Make sure to use the promoted App ID as it appears within the AppsFlyer dashboard.
 
 **Input arguments**
 
 | Type | Name | Description |
 |:------|:-----|:-----|
-| `NSString` | `appID` | Promoted App ID |
-| `NSString` | `campaign` | Name of cross-promotion campaign |
-| `NSDictionary` | `parameters` | Additional parameters to log |
+| `NSString` | `appID` | Promoted App ID. |
+| `NSString` | `campaign` | Name of cross-promotion campaign. |
+| `NSDictionary` | `parameters` | Optional. Custom parameters that are added to the link. |
 
 **Returns**
 `void`.
 
 ### logAndOpenStore
 **Method signature**
-```objc
+```swift Swift
+class func logAndOpenStore(_ appID: String,
+                           campaign: String,
+                           parameters: [AnyHashable: Any]?,
+                           openStore: @escaping (URLSession, URL) -> Void)
+```
+```objc Objective-C
 (void)logAndOpenStore:(id)appID
                campaign:(id)campaign
              parameters:(id)parameters
-              openStore:(void (^)(int *, int *))openStoreBlock;
+              openStore:(void (^)(NSURLSession *urlSession, NSURL *clickURL))openStoreBlock;
 ```
 
 **Description**
@@ -64,8 +78,8 @@ You can utilize the StoreKit component to open the App Store while remaining in 
 |:------|:-----|:-----|
 | `NSString` | `appID` | Promoted App ID. |
 | `NSString` | `campaign` | Name of cross-promotion campaign. |
-| `NSDictionary` | `parameters` | Additional parameters to log. |
-| `void (^)(int *, int *)` | `openStoreBlock` | Contains promoted clickURL. |
-	
+| `NSDictionary` | `parameters` | Optional. Custom parameters that are added to the link. |
+| `void (^)(NSURLSession *, NSURL *)` | `openStoreBlock` | Contains the promoted click URL. |
+
 **Returns**
 `void`.
