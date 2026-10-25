@@ -23,11 +23,7 @@ The AppsFlyer Software Development Kits (SDKs) and plugins are your primary way 
 
 ## Pick your path
 
-[block:html]
-{
-  "html": "<div style=\"height: 24px\"></div>"
-}
-[/block]
+Start with the wizard or the MCP server to save time, or browse by platform for the full manual guides.
 
 ### SDK integration wizard
 
