@@ -23,6 +23,12 @@ The AppsFlyer Software Development Kits (SDKs) and plugins are your primary way 
 
 ## Pick your path
 
+[block:html]
+{
+  "html": "<div style=\"height: 24px\"></div>"
+}
+[/block]
+
 ### SDK integration wizard
 
 Answer a few questions about your app and platform, and [Developer Journey](https://dj.dev.appsflyer.com/?utm_source=devhub&utm_medium=dj-getting-started) generates the code for installation, integration, in-app events, and deep linking. Currently supports Android, iOS, React Native, and Flutter.
