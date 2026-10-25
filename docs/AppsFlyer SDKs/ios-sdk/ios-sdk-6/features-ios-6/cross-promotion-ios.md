@@ -2,7 +2,7 @@
 title: Cross-promotion
 excerpt: Attribute clicks and impressions from cross-promotion campaigns between your own apps.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
@@ -10,6 +10,8 @@ metadata:
 next:
   description: ''
 ---
+This guide covers iOS SDK 6.x. For SDK 7.0 and above, see [Cross-promotion for SDK 7](doc:cross-promotion-ios-7).
+
 Cross-promotion attribution uses AppsFlyer SDK methods instead of a standard attribution link: the SDK builds the link and calls it directly when a user taps or views a cross-promotion ad.
 
 [`AppsFlyerCrossPromotionHelper`](doc:ios-sdk-reference-appsflyercrosspromotionhelper) provides those methods: `logAndOpenStore` sends the click to AppsFlyer and opens the App Store listing, and `logCrossPromoteImpression` sends the impression to AppsFlyer.

@@ -2,7 +2,7 @@
 title: AppsFlyerCrossPromotionHelper
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
@@ -27,8 +27,10 @@ To access `AppsFlyerCrossPromotionHelper`, import [`AppsFlyerLib`](doc:ios-sdk-r
 
 ## Methods
 
+Signatures and argument names are shown for SDK 6.x, followed by the SDK 7.0 changes. For the full list of SDK 7.0 changes, see [Migrate iOS SDK to V7](doc:migrate-ios-sdk-to-v7).
+
 ### logCrossPromoteImpression
-**Method signature**
+**Method signature, SDK 6.x**
 ```swift Swift
 class func logCrossPromoteImpression(_ appID: String,
                                      campaign: String,
@@ -38,6 +40,18 @@ class func logCrossPromoteImpression(_ appID: String,
 (void)logCrossPromoteImpression:(id)appID
                          campaign:(id)campaign
                        parameters:(id)parameters;
+```
+
+**Method signature, SDK 7.0 and above**
+```swift Swift
+class func logCrossPromoteImpression(_ appId: String,
+                                     campaign: String,
+                                     userParams: [AnyHashable: Any]?)
+```
+```objc Objective-C
+(void)logCrossPromoteImpression:(id)appId
+                         campaign:(id)campaign
+                       userParams:(id)userParams;
 ```
 
 **Description**
@@ -51,11 +65,13 @@ Logs an impression as part of a cross-promotion campaign. Make sure to use the p
 | `NSString` | `campaign` | Name of cross-promotion campaign. |
 | `NSDictionary` | `parameters` | Optional. Custom parameters that are added to the link. |
 
+**Changed in v7.0:** `appID` is renamed `appId`, and `parameters` is renamed `userParams`. For code changes, see [Update CrossPromotionHelper parameter labels](doc:migrate-ios-sdk-to-v7#9-update-crosspromotionhelper-parameter-labels).
+
 **Returns**
 `void`.
 
 ### logAndOpenStore
-**Method signature**
+**Method signature, SDK 6.x**
 ```swift Swift
 class func logAndOpenStore(_ appID: String,
                            campaign: String,
@@ -66,6 +82,20 @@ class func logAndOpenStore(_ appID: String,
 (void)logAndOpenStore:(id)appID
                campaign:(id)campaign
              parameters:(id)parameters
+              openStore:(void (^)(NSURLSession *urlSession, NSURL *clickURL))openStoreBlock;
+```
+
+**Method signature, SDK 7.0 and above**
+```swift Swift
+class func logAndOpenStore(_ promotedAppId: String,
+                           campaign: String,
+                           userParams: [AnyHashable: Any]?,
+                           openStore: @escaping (URLSession, URL) -> Void)
+```
+```objc Objective-C
+(void)logAndOpenStore:(id)promotedAppId
+               campaign:(id)campaign
+             userParams:(id)userParams
               openStore:(void (^)(NSURLSession *urlSession, NSURL *clickURL))openStoreBlock;
 ```
 
@@ -80,6 +110,8 @@ You can utilize the StoreKit component to open the App Store while remaining in 
 | `NSString` | `campaign` | Name of cross-promotion campaign. |
 | `NSDictionary` | `parameters` | Optional. Custom parameters that are added to the link. |
 | `void (^)(NSURLSession *, NSURL *)` | `openStoreBlock` | Contains the promoted click URL. |
+
+**Changed in v7.0:** `appID` is renamed `promotedAppId`, and `parameters` is renamed `userParams`. For code changes, see [Update CrossPromotionHelper parameter labels](doc:migrate-ios-sdk-to-v7#9-update-crosspromotionhelper-parameter-labels).
 
 **Returns**
 `void`.
