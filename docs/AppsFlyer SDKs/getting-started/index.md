@@ -27,9 +27,13 @@ The AppsFlyer Software Development Kits (SDKs) and plugins are your primary way 
 
 Answer a few questions about your app and platform, and [Developer Journey](https://dj.dev.appsflyer.com/?utm_source=devhub&utm_medium=dj-getting-started) generates the code for installation, integration, in-app events, and deep linking. Currently supports Android, iOS, React Native, and Flutter.
 
+## OR
+
 ### Integrate with the AppsFlyer SDK MCP
 
 Use the AppsFlyer SDK MCP server with Cursor, GitHub Copilot, or Codex to offload most of the integration work. [See the AI integration guide](doc:integrate-sdk-with-ai). Currently supports Android and iOS.
+
+## OR
 
 ## Browse by platform
 
