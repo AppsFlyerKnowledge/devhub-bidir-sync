@@ -1,5 +1,5 @@
 ---
-title: 'Smart Banner: Web tool'
+title: Smart Banner migration guide v1 to v2
 excerpt: ''
 deprecated: false
 hidden: false

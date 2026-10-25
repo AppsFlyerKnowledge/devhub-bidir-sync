@@ -1,5 +1,5 @@
 ---
-title: Smart script for cross-platform
+title: Smart script for PC, console, and Steam
 deprecated: false
 hidden: false
 link:

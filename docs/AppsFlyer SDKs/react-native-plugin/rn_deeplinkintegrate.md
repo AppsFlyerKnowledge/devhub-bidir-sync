@@ -20,7 +20,7 @@ next:
 
 **Unified deep linking (UDL)** - an API which enables you to send new and existing users to a specific in-app activity as soon as the app is opened.
 
-For more info please check out the [OneLink™ Deep Linking Guide](https://support.appsflyer.com/hc/en-us/articles/208874366-OneLink-Deep-Linking-Guide#Intro) and the developer guide for [Android](https://dev.appsflyer.com/hc/docs/dl_android_overview_7) and [iOS](https://dev.appsflyer.com/hc/docs/dl_ios_overview_7).
+For more info please check out the [OneLink™ Deep Linking Guide](https://support.appsflyer.com/hc/en-us/articles/208874366-OneLink-Deep-Linking-Guide#Intro) and [developer guide](https://dev.appsflyer.com/hc/docs/dl_getting_started).
 
 ## Android Deeplink Setup
 
