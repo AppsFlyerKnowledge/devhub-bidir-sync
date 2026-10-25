@@ -31,7 +31,7 @@ Answer a few questions about your app and platform, and [Developer Journey](http
 
 [block:html]
 {
-  "html": "<h2 style=\"border-bottom: none; padding-bottom: 0; margin: 32px 0\">OR</h2>"
+  "html": "<div style=\"display:flex;align-items:center;gap:16px;margin:32px 0;color:#6b7280\"><div style=\"flex:1;height:1px;background:currentColor;opacity:.3\"></div><span style=\"font-size:14px;font-weight:600;letter-spacing:.08em\">OR</span><div style=\"flex:1;height:1px;background:currentColor;opacity:.3\"></div></div>"
 }
 [/block]
 
@@ -41,7 +41,7 @@ Use the AppsFlyer SDK MCP server with Cursor, GitHub Copilot, or Codex to offloa
 
 [block:html]
 {
-  "html": "<h2 style=\"border-bottom: none; padding-bottom: 0; margin: 32px 0\">OR</h2>"
+  "html": "<div style=\"display:flex;align-items:center;gap:16px;margin:32px 0;color:#6b7280\"><div style=\"flex:1;height:1px;background:currentColor;opacity:.3\"></div><span style=\"font-size:14px;font-weight:600;letter-spacing:.08em\">OR</span><div style=\"flex:1;height:1px;background:currentColor;opacity:.3\"></div></div>"
 }
 [/block]
 
