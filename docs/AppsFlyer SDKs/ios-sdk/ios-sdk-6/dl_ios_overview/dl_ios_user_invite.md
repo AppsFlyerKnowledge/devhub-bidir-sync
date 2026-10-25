@@ -13,7 +13,11 @@ next:
 ## Overview
 
 Implement and attribute user invite links for when existing users refer others to your app.  
-For an introduction, see [user invite](https://dev.appsflyer.com/hc/docs/dl_user_invite).
+Attributing user invites lets marketers gain insight into how much traffic your app gets from existing users inviting new users to join.  
+Logging the invitation as an in-app event results in:
+
+- An `af_invite` event that's visible in AppsFlyer dashboards and reports.
+- The `pid` (media source) parameter set with the default value `af_app_invites`. To change the value, add a custom parameter called `pid` with the value you want.
 
 Want to see a full example? check out the recipe:
 

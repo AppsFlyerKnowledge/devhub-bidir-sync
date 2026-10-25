@@ -1,21 +1,17 @@
 ---
 title: Android User Invite
-excerpt: ''
-deprecated: false
 hidden: false
-metadata:
-  title: ''
-  description: ''
-  robots: index
-next:
-  description: ''
 ---
 
 Overview
 --------
 
 Implement and attribute user invite links for when existing users refer others to your app.  
-For an introduction, see [user invite](https://dev.appsflyer.com/hc/docs/dl_user_invite).
+Attributing user invites lets marketers gain insight into how much traffic your app gets from existing users inviting new users to join.  
+Logging the invitation as an in-app event results in:
+
+- An `af_invite` event that's visible in AppsFlyer dashboards and reports.
+- The `pid` (media source) parameter set with the default value `af_app_invites`. To change the value, add a custom parameter called `pid` with the value you want.
 
 Want to see a full example? check out the recipe:
 
@@ -53,7 +49,6 @@ To enable users to invite their friends to your app, you need a way to generate 
 1. Make sure to import the following dependencies:
    ```java
    import com.appsflyer.AppsFlyerLib;
-   import com.appsflyer.CreateOneLinkHttpTask;
    import com.appsflyer.share.LinkGenerator;
    import com.appsflyer.share.ShareInviteHelper;
    ```
@@ -65,6 +60,7 @@ To enable users to invite their friends to your app, you need a way to generate 
    > 📘 Note
    > 
    > - Make sure to call `setAppInviteOneLink()` **before** calling `start`.
+   > - In SDK 7, setter values aren't persisted between sessions. Call `setAppInviteOneLink()` on every cold start.
    > - The OneLink template must be related to the app.
 
 3. Create a  [`LinkGenerator`](doc:android-sdk-reference-linkgenerator) using [`ShareInviteHelper.generateInviteUrl()`](doc:android-sdk-reference-shareinvitehelper#generateinviteurl).
@@ -83,7 +79,6 @@ To enable users to invite their friends to your app, you need a way to generate 
    - `deep_link_value`: The app experience the referred user should be deep linked into.
    - `deep_link_sub1`: Promo code received by the invitee.
    - `deep_link_sub2`: Referrer identifier. Can be used to reward the referrer.
-   - **Note**: If you have SDK V6.5.2 or lower, you need to encode any parameter values with special characters.
   
   
    > 📘 Note
@@ -120,11 +115,12 @@ To enable users to invite their friends to your app, you need a way to generate 
             
    };
    ```
-> 📘 Note
-> Since SDK v6.9.0 `LinkGenerator.ResponseListener` replaced `CreateOneLinkHttpTask.ResponseListener`  
+- `onResponse()` is called only when the OneLink short link is created successfully. It receives the short URL.
+- `onResponseError()` is called for all other outcomes, including network failures. Its parameter is the long-link fallback string. Your app decides whether to display or share it.
 
-- `onResponse()` is called when the user invite is created successfully.
-- `onResponseError()` is called when link generation fails.
+> 📘 Note
+>
+> `CreateOneLinkHttpTask.ResponseListener` is removed in SDK 7. Use `LinkGenerator.ResponseListener`. Both callbacks run on a worker thread, so post to the main thread before updating the UI.
 
 8. Pass `listener` to [`linkGenerator.generateLink()`](doc:android-sdk-reference-linkgenerator#generatelink-1):
    ```java
@@ -134,7 +130,7 @@ To enable users to invite their friends to your app, you need a way to generate 
 ### Set the shortlink ID
 
 <span class="annotation-optional">Optional</span>  
-The shortlink ID can be determined by the developer, by adding the parameter `af_custom_shortlink` to the `LinkGenerator` instance.
+The shortlink ID can be determined by the developer, by adding the paramter `af_custom_shortlink` to the `LinkGenerator` instance.
 
 ```java
 linkGenerator.addParameter("af_custom_shortlink", <value>);

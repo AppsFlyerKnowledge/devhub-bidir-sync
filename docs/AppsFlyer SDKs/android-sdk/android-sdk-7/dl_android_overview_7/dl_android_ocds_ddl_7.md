@@ -1,15 +1,8 @@
 ---
 title: Android Extended Deferred Deep Linking
-excerpt: ''
-deprecated: false
 hidden: false
-metadata:
-  title: ''
-  description: ''
-  robots: index
-next:
-  description: ''
 ---
+
 ## Overview
 
 Extended deferred deep linking allows deep linking for new users in certain scenarios:
@@ -21,13 +14,13 @@ Extended deferred deep linking allows deep linking for new users in certain scen
   The Main example for such scenario is clicking a link that doesn't contain `deep_link_value` or `deep_link_sub1-10` used for deep-linking, for example, old links created before `deep_link_value` existed that are still in use.
 
 To allow deferred deep linking when UDL returns `NOT_FOUND`, `onConversionDataSuccess` callback should check whether it should handle the deferred deep linking.  
-`onConversionDataSuccess` is part of the Get Conversion Data(GCD) API. Its main purpose is to [gather conversion data inside the device](https://dev.appsflyer.com/hc/docs/conversion-data).  
+`onConversionDataSuccess` is part of the Get Conversion Data(GCD) API. Its main purpose is to [gather conversion data inside the device](https://dev.appsflyer.com/hc/docs/conversion-data-android-7).  
 In the use case outlined here `onConversionDataSuccess` takes advantage of the fact that all deferred deep linking parameters are passed to the callback, on top of the conversion data. 
 
 ## Prerequisites
 
-- Implement [Unified Deep Linking](dl_android_unified_deep_linking) to handle both deferred deep linking and direct deep linking.
-- Implement `onConversionDataSuccess` to handle [deferred deep linking using the GCD API](dl_android_gcd_legacy).
+- Implement [Unified Deep Linking](dl_android_unified_deep_linking_7) to handle both deferred deep linking and direct deep linking.
+- Implement `onConversionDataSuccess` to handle deferred deep linking. See [Get conversion data](conversion-data-android-7).
 
 ## Implementation
 
@@ -40,7 +33,8 @@ In the use case outlined here `onConversionDataSuccess` takes advantage of the f
 ### Code dissect
 
 1. Implement the _Get Conversion Data API_ listener `AppsFlyerConversionListener`. 
-   > All methods of the listener must be implemented, even though `onAppOpenAttribution` and `onAttributionFailure` are mutually exclusive with UDL, and will not be called.
+   > Implement only `onConversionDataSuccess` and `onConversionDataFail`. `onAppOpenAttribution` and `onAttributionFailure` are removed in SDK 7.
+   > Import `AppsFlyerConversionListener` from `com.appsflyer.share`.
 2. Detect deferred deep linking scenarios by filtering-in the conversion data payload with:
    - `af_status == Non-organic`
    - `is_first_launch == true`
@@ -85,15 +79,6 @@ In the use case outlined here `onConversionDataSuccess` takes advantage of the f
             Log.d(LOG_TAG, "error getting conversion data: " + errorMessage);
         }
 
-        @Override
-        public void onAppOpenAttribution(Map<String, String> attributionData) {
-            Log.d(LOG_TAG, "onAppOpenAttribution: This is fake call.");
-        }
-
-        @Override
-        public void onAttributionFailure(String errorMessage) {
-            Log.d(LOG_TAG, "error onAttributionFailure : " + errorMessage);
-        }
     };
 ```
 
@@ -139,63 +124,3 @@ You can use an existing OneLink link or ask your marketer to create a new one fo
 4. UDL detects the deferred deep linking, matches the install to the click, and retrieves the OneLink parameters to `onDeepLinking` callback. **UDL will not find any parameters to route and exit**.
 5. `onConversionDataSuccess` callback is called with the conversion data, which holds both custom parameters and attribution data.
 6. `onConversionDataSuccess` sets the custom parameters to route the user inside the application.
-
-### Expected logs results
-
-> 📘 The following logs are available only when [debug mode is enabled](https://dev.appsflyer.com/hc/docs/integrate-android-sdk#enabling-debug-mode).
-
-- SDK initialized:
-  ```
-  D/AppsFlyer_6.9.0: Initializing AppsFlyer SDK: (v6.9.0.126)
-  ```
-
-- The following log refers to direct deep linking, and can be ignored in a deferred deep linking scenario:
-  ```
-  D/AppsFlyer_6.9.0: No deep link detected
-  ```
-
-- UDL API starts:  
-  ```
-  D/AppsFlyer_6.9.0: [DDL] start
-  ```
-
-- UDL sends a query to AppsFlyer to query a match with this install: 
-  ```
-  D/AppsFlyer_6.9.0: [DDL] Preparing request 1
-  ...
-  I/AppsFlyer_6.9.0: call = https://dlsdk.appsflyer.com/v1.0/android/com.appsflyer.onelink.appsflyeronelinkbasicapp?af_sig=<>&sdk_version=6.9; size = 239 bytes; body = {
-        ...
-        TRUNCATED
-        ...
-  }
-  ```
-
-- UDL got a response and calls `onDeepLinking` callback with `status=FOUND` and OneLink link data:
-  ```
-  D/AppsFlyer_6.9.0: [DDL] Calling onDeepLinking with:
-    {"deepLink":"{\"campaign_id\":\"\",\"af_sub3\":\"\",\"match_type\":\"probabilistic\",\"af_sub1\":\"\",\"deep_link_value\":\"\",\"campaign\":\"\",\"af_sub4\":\"\",\"timestamp\":\"2022-12-07T09:32:52.256\",\"click_http_referrer\":\"\",\"af_sub5\":\"\",\"media_source\":\"\",\"af_sub2\":\"\",\"is_deferred\":true}","status":"FOUND"}
-  ```
-
-- GCD is fetching the conversion data:
-
-```
-GET:https://gcdsdk.appsflyer.com/install_data/v4.0/com.appsflyer.onelink.appsflyeronelinkbasicapp?devkey=XXXXXXXXX&device_id=1670405582645-822555416155480367
-```
-
-
-
-- `onConversionDataSuccess` is called with conversion data as input:
-
-```
- D/AppsFlyer_6.9.0: [GCD-A02] Calling onConversionDataSuccess with:
-    {
-        ...
-        is_first_launch=true, 
-        ...
-        fruit_amount=56,
-        fruit_name=apples, 
-        ...
-        af_status=Non-organic,
-        ...
-    }
-```
