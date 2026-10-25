@@ -1,5 +1,5 @@
 ---
-title: Install Android SDK 7
+title: Import Android SDK 7
 hidden: false
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Sending events
+title: In-app events
 excerpt: Learn how to work with in-app events in the iOS SDK.
 hidden: false
 ---

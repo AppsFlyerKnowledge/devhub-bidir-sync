@@ -1,5 +1,5 @@
 ---
-title: Install iOS SDK 7
+title: Import iOS SDK 7
 hidden: false
 ---
 

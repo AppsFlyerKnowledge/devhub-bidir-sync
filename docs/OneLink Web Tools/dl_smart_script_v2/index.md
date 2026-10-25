@@ -1,12 +1,12 @@
 ---
-title: OneLink Smart Script V2
+title: 'Smart Script: Web tool'
 excerpt: ''
 deprecated: false
 hidden: false
 metadata:
   title: ''
   description: ''
-  robots: index
+  robots: noindex
 next:
   description: ''
 ---

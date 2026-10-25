@@ -1,5 +1,5 @@
 ---
-title: Sending events
+title: In-app events
 hidden: false
 ---
 ## Overview

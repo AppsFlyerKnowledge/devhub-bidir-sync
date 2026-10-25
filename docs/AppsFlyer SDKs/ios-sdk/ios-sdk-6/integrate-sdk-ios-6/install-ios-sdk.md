@@ -1,5 +1,5 @@
 ---
-title: Install SDK
+title: Import SDK
 excerpt: Learn how to download and install the iOS SDK.
 deprecated: false
 hidden: false
