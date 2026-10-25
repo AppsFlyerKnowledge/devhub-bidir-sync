@@ -27,22 +27,30 @@ The AppsFlyer Software Development Kits (SDKs) and plugins are your primary way 
 
 Answer a few questions about your app and platform, and [Developer Journey](https://dj.dev.appsflyer.com/?utm_source=devhub&utm_medium=dj-getting-started) generates the code for installation, integration, in-app events, and deep linking. Currently supports Android, iOS, React Native, and Flutter.
 
-<h2 style={{borderBottom: 'none', paddingBottom: 0, margin: '32px 0'}}>OR</h2>
+[block:html]
+{
+  "html": "<h2 style=\"border-bottom: none; padding-bottom: 0; margin: 32px 0\">OR</h2>"
+}
+[/block]
 
 ### Integrate with the AppsFlyer SDK MCP
 
 Use the AppsFlyer SDK MCP server with Cursor, GitHub Copilot, or Codex to offload most of the integration work. [See the AI integration guide](doc:integrate-sdk-with-ai). Currently supports Android and iOS.
 
-<h2 style={{borderBottom: 'none', paddingBottom: 0, margin: '32px 0'}}>OR</h2>
+[block:html]
+{
+  "html": "<h2 style=\"border-bottom: none; padding-bottom: 0; margin: 32px 0\">OR</h2>"
+}
+[/block]
 
-## Browse by platform
+### Browse by platform
 
-### Native SDKs
+#### Native SDKs
 
 - Android: [SDK 7](doc:android-sdk-7) — using SDK 6? See [SDK 6](doc:android-sdk-6)
 - iOS: [SDK 7](doc:ios-sdk-7) — using SDK 6? See [SDK 6](doc:ios-sdk-6)
 
-### Multi-platform plugins
+#### Multi-platform plugins
 
 - [React Native](doc:react-native-plugin)
 - [Unity](doc:unity-plugin)
@@ -53,7 +61,7 @@ Use the AppsFlyer SDK MCP server with Cursor, GitHub Copilot, or Codex to offloa
 - [Xamarin (iOS)](https://github.com/AppsFlyerSDK/XamariniOSBinding) (GitHub)
 - [Capacitor](https://github.com/AppsFlyerSDK/appsflyer-capacitor-plugin) (GitHub)
 
-### Game development
+#### Game development
 
 - [Unreal Engine](doc:unreal-engine-plugin)
 - [Cocos2d](https://github.com/AppsFlyerSDK/appsflyer-cocos2dx-plugin) (GitHub)
