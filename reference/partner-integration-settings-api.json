@@ -234,7 +234,7 @@
                 },
                 "Tiktok": {
                   "value": {
-                    "pid": "bytedanceglobal_int",
+                    "pid": "tiktokglobal_int",
                     "copy_from_app_id": "com.publisher.name",
                     "copy_to_app_id": "com.publisher.name2",
                     "general_params": {
