@@ -202,6 +202,8 @@ This version introduces important dependency updates that impact the Purchase Co
 
 ## Version 6.14.6
 
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
+
 #### Bug Fixes
 
 - Fixed an issue where the SDK was making redundant calls to the getConversionData API (GCD) when starting a new session; this does not impact measurement.
@@ -209,6 +211,8 @@ This version introduces important dependency updates that impact the Purchase Co
 <br />
 
 ## Version 6.14.5
+
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
 
 #### Bug Fixes
 
@@ -218,11 +222,15 @@ This version introduces important dependency updates that impact the Purchase Co
 
 ## Version 6.14.4
 
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
+
 #### Changed Features
 
 - Added a dedicated Privacy Manifest to Strict SDK, where the IDFA is not collected.
 
 ## Version 6.14.3
+
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
 
 #### Changed Features
 
@@ -230,11 +238,15 @@ This version introduces important dependency updates that impact the Purchase Co
 
 ## Version 6.14.2
 
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
+
 #### Changed Features
 
 - Re-added the MinimumOSVersion 100 for SPM builds for AppsFlyerLib-Static and AppsFlyerLib-Strict.
 
 ## Version 6.14.1
+
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
 
 #### New Features
 
@@ -248,6 +260,8 @@ This version introduces important dependency updates that impact the Purchase Co
 
 ## Version 6.14.0
 
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
+
 #### New Features
 
 - Added AppsFlyer SDK's Privacy Manifest. More information about it can be found [here](https://support.appsflyer.com/hc/en-us/articles/21677433322641-Privacy-Manifest).
@@ -258,6 +272,8 @@ This version introduces important dependency updates that impact the Purchase Co
   More information about SDK signing can be found [here](https://developer.apple.com/documentation/xcode/verifying-the-origin-of-your-xcframeworks).
 
 ## Version 6.13.2
+
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
 
 #### Bug Fixes
 
@@ -271,6 +287,8 @@ Please make sure to use that repository if you are integrating the SDK with SPM 
 
 ## Version 6.13.1
 
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
+
 #### Bug Fixes
 
 - Fixed an issue with sending consent data for non GDPR users in a CMP consent flow.
@@ -281,12 +299,16 @@ Note: When GDPR does apply for a user - the data will be sent correctly, so ther
 
 ## Version 6.13.0
 
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
+
 #### New Features
 
 - Added the ability to collect consent data from the user, that is required by Google for DMA compliance.
   The complete guide for sending user consent through the SDK can be found [here](https://dev.appsflyer.com/hc/docs/ios-send-consent-for-dma-compliance).
 
 ## Version 6.12.3
+
+<span style={{ color: "#D32F2F" }}>End of support: September 7, 2026</span>
 
 #### New Features
 

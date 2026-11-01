@@ -183,6 +183,8 @@ This version introduces important dependency updates that impact the Purchase Co
 
 ## Version 6.14.2
 
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
+
 #### Bug Fixes
 
 - Fixed an issue with fetching Meta Install Referrer on apps built with Unity.
@@ -190,11 +192,15 @@ This version introduces important dependency updates that impact the Purchase Co
 
 ## Version 6.14.1
 
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
+
 #### SDK Maintenance
 
 - Internal improvements for how the SDK uses threads to execute server requests.
 
 ## Version 6.14.0
+
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
 
 #### New Features
 
@@ -206,12 +212,16 @@ This version introduces important dependency updates that impact the Purchase Co
 
 ## Version 6.13.0
 
+<span style={{ color: "#D32F2F" }}>End of support: March 8, 2027</span>
+
 #### New Features
 
 - Added the ability to collect consent data from the user, that is required by Google for DMA compliance.
   The complete guide for sending user consent through the SDK can be found [here](https://dev.appsflyer.com/hc/docs/android-send-consent-for-dma-compliance).
 
 ## Version 6.12.5
+
+<span style={{ color: "#D32F2F" }}>End of support: September 7, 2026</span>
 
 #### New Features
 
