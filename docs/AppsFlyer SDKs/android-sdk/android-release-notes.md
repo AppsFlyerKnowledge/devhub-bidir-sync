@@ -10,6 +10,12 @@ metadata:
 next:
   description: ''
 ---
+## Version 7.0.4
+
+#### Changed Features
+
+- Updated the `setUserEmail` API to improve handling of Gmail email addresses.
+
 ## Version 7.0.2
 
 #### New Features
