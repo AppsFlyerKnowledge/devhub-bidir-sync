@@ -13,7 +13,7 @@ The following guide covers the configuration of the iOS SDK for processing incom
 There are 2 methods of implementing the integration:
 
 - By utilizing OneLink in the push payload (recommended method). [Step 3](#addpushnotificationdeeplinkpath-recommended) is required only if implementing this solution.
-- By using plain JSON in the push payload (legacy method).
+- By using plain JSON in the push payload.
 
 Choose the right method for you [based on how the marketer structures the push notification](https://support.appsflyer.com/hc/en-us/articles/207364076#1-creating-the-push-notification).
 

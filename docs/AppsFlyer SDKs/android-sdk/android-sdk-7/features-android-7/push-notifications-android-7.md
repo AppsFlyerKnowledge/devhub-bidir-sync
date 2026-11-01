@@ -9,7 +9,7 @@ The following guide covers the configuration of the Android SDK for processing i
 There are 2 methods of implementing the integration:
 
 - By utilizing OneLink in the push payload (recommended method).
-- By using plain JSON in the push payload (legacy method).
+- By using plain JSON in the push payload.
 
 Choose the right method for you [based on how the marketer structures the push notification](https://support.appsflyer.com/hc/en-us/articles/207364076#1-creating-the-push-notification).
 
@@ -42,11 +42,11 @@ When calling `addPushNotificationDeepLinkPath` the SDK verifies that:
 > 
 > `addPushNotificationDeepLinkPath` accepts an array of strings too, to allow you to extract the relevant key from nested JSON structures. For more information, see [`addPushNotificationDeepLinkPath`](doc:android-sdk-reference-appsflyerlib#addpushnotificationdeeplinkpath).
 
-## Integrating AppsFlyer with Android push notifications using JSON (legacy)
+## Integrating AppsFlyer with Android push notifications using JSON
 
-This is the [legacy method](https://support.appsflyer.com/hc/en-us/articles/207364076#using-json-legacy) for implementing push notification measurement in the Android SDK.
+This is the [JSON method](https://support.appsflyer.com/hc/en-us/articles/207364076#using-json) for implementing push notification measurement in the Android SDK. For new integrations, OneLink remains the recommended method.
 
-**To integrate AppsFlyer with Android push notifications using the legacy solution:**  
+**To integrate AppsFlyer with Android push notifications using JSON:**  
 In your deep-linked activity's `onCreate`, call `sendPushNotificationData`:
 
 ```java
