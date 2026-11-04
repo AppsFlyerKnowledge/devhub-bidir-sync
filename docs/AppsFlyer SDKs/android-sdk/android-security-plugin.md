@@ -27,6 +27,25 @@ Security Module v2.x.x is compatible only with AppsFlyer Android SDK version `6.
 ## Release Notes
 All notable changes to the AF Security SDK will be documented in this file.
 
+### [2.3.1] - 2026-10-07
+Fixed
+Improved native memory handling during application identity verification for better stability — Android
+
+### [2.3.0] - 2026-10-01
+
+#### Added
+Enhanced detection of compromised and automated device environments to strengthen fraud protection — Android
+Configurable security checks, allowing selected protections to be adjusted per build — Android
+
+#### Fixed
+Resolved an event validation issue affecting apps distributed through custom or out-of-store channels — Android
+
+#### Improved
+Strengthened iOS binary protection with advanced code transformation and string protection
+Reduced exposed symbols in the iOS framework while still supporting crash symbolication
+iOS framework now available through Swift Package Manager
+Improved overall build stability and reliability
+
 ### [2.2.2] - 2026-08-11
 
 #### Fixed
