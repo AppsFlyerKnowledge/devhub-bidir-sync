@@ -2,32 +2,27 @@
 title: Import iOS SDK 7
 hidden: false
 ---
-
 ## Download and install the SDK
 
 Download and install the iOS SDK with your package manager of choice.
 
-### Install using CocoaPods
+### Install using Swift Package Manager
 
-**Recommended**
+**Step 1: Navigate to Add Package Dependency**  
+In Xcode, go to **File > Add Packages**.
 
-**Step 1: Download CocoaPods**  
-[Download and install](https://guides.cocoapods.org/using/getting-started.html#installation) the latest version of CocoaPods.
+**Step 2: Add iOS SDK GitHub repository**  
+Enter the AppsFlyer SDK GitHub repository. You can select one of the following:
 
-**Step 2: Add dependencies**  
-Add the [latest version of `AppsFlyerFramework`](https://cocoapods.org/pods/AppsFlyerFramework) to your project's Podfile:
+- [Statically Linked Library](https://github.com/AppsFlyerSDK/AppsFlyerFramework-Static)
+- [Dynamically Linked Library](https://github.com/AppsFlyerSDK/AppsFlyerFramework-Dynamic) — **Note:** The use of this version is not supported for apps that can run on MacOS. Instead, use the Statically Linked library version.
+- [Strict (No IDFA Collection) Library](https://github.com/AppsFlyerSDK/AppsFlyerFramework-Strict)
 
-```ruby
-pod 'AppsFlyerFramework'
-```
+**Step 3: Select SDK version**  
+Select the desired SDK version in the version picker.
 
-**Step 3: Install dependencies**  
-In your terminal, navigate to your project's root folder and run `pod install`.
-
-**Step 4: Open Xcode workspace**  
-In Xcode, use the `.xcworkspace` file to open the project from this point forward, instead of the `.xcodeproj` file.
-
-If you are developing a tvOS app, CocoaPods automatically adds the relevant dependencies from `AppsFlyerFramework`.
+**Step 4: Add AppsFlyerLib to desired Target**  
+Add `AppsFlyerLib` to your app target.
 
 ### Install using Carthage
 
@@ -51,23 +46,25 @@ Currently doesn't support tvOS apps.
 >
 > To learn more, see [Carthage docs](https://github.com/Carthage/Carthage#build-static-frameworks-to-speed-up-your-apps-launch-times).
 
-### Install using Swift Package Manager
+### Install using CocoaPods
 
-**Step 1: Navigate to Add Package Dependency**  
-In Xcode, go to **File > Add Packages**.
+**Step 1: Download CocoaPods**  
+[Download and install](https://guides.cocoapods.org/using/getting-started.html#installation) the latest version of CocoaPods.
 
-**Step 2: Add iOS SDK GitHub repository**  
-Enter the AppsFlyer SDK GitHub repository. You can select one of the following:
+**Step 2: Add dependencies**  
+Add the [latest version of `AppsFlyerFramework`](https://cocoapods.org/pods/AppsFlyerFramework) to your project's Podfile:
 
-- [Statically Linked Library](https://github.com/AppsFlyerSDK/AppsFlyerFramework-Static)
-- [Dynamically Linked Library](https://github.com/AppsFlyerSDK/AppsFlyerFramework-Dynamic) — **Note:** The use of this version is not supported for apps that can run on MacOS. Instead, use the Statically Linked library version.
-- [Strict (No IDFA Collection) Library](https://github.com/AppsFlyerSDK/AppsFlyerFramework-Strict)
+```ruby
+pod 'AppsFlyerFramework'
+```
 
-**Step 3: Select SDK version**  
-Select the desired SDK version in the version picker.
+**Step 3: Install dependencies**  
+In your terminal, navigate to your project's root folder and run `pod install`.
 
-**Step 4: Add AppsFlyerLib to desired Target**  
-Add `AppsFlyerLib` to your app target.
+**Step 4: Open Xcode workspace**  
+In Xcode, use the `.xcworkspace` file to open the project from this point forward, instead of the `.xcodeproj` file.
+
+If you are developing a tvOS app, CocoaPods automatically adds the relevant dependencies from `AppsFlyerFramework`.
 
 ### Manual install
 
