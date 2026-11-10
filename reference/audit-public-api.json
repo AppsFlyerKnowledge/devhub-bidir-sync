@@ -37,7 +37,7 @@
           {
             "name": "offset",
             "in": "query",
-            "description": "The offset to start reading from\n",
+            "description": "The offset to start reading from\n\nThe maximum total results per date range is 10,000 audit logs. To retrieve more, narrow the range by adding a time to `from_date` and `to_date`.\n",
             "required": true,
             "schema": {
               "type": "integer",
