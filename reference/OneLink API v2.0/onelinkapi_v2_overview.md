@@ -12,13 +12,6 @@ next:
 ---
 OneLink Rest API enables programmatic creation, management, and retrieval of short links used for redirection, deep linking, and measurement across different platforms and channels. 
 
-> 📘 Note
-> 
-> - The current OneLink API version is v2.0, which replaces v1. The v1 developer
-> documentation is available [here](https://dev.appsflyer.com/hc/reference/onelinkapi_overview). 
-> - OneLink API v1 will sunset on June 1, 2026. Make sure to migrate all OneLink API flows before this
-date. To migrate from v1 to v2.0, use the [migration guide](https://dev.appsflyer.com/hc/reference/migrate_to_onelink_api_v2).
-
 **API Limitations:**
 
 | Limits | Remarks |
@@ -32,4 +25,3 @@ date. To migrate from v1 to v2.0, use the [migration guide](https://dev.appsflye
 | **Special characters** | There is no need to encode the payload parameters (key and values), with the exception of the following characters: `<`, `>`. Failure to encode them may break the link’s functionality. However, the following special characters are not allowed in parameter keys and values (not applicable to redirect and af_dp parameters): ;, *, !, @, #, ?, $, ^, :, %26, ~, `, =, +, ’, >, <, /, {, }, %, )|
 | **TTL (Time To Live)** | Default TTL is 31 days. TTL is extended by the specified duration on each click or update. The maximum optional TTL is 730 days, and it can be set per link using the TTL body parameter in POST and PUT requests: `ttl={value}` (e.g., `ttl=7d`, `ttl=12h`). To prevent automatic extension, use `renew_ttl=false`. Default is true. Expired links default to the OneLink template base configuration behavior, but attribution does not work. It can take up to 48 hours for links to be deleted post-expiration date. |
 | **URL ID** | The `shortlink_id` can be set or edited to textually identify the link's purpose or unique setup. For example, [https://myapp.onelink.me/abc123/apples](https://myapp.onelink.me/abc123/apples). The URL ID must not exceed 50 characters and can be a combination of letters and numbers. The default ID is 8 characters. If a custom ID already exists, the API returns a 409 error. The failed call still counts toward the monthly quota. |
-
