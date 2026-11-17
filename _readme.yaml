@@ -1,0 +1,27 @@
+navigation:
+  - kind: home
+    name: Home
+    icon: far fa-house
+  - kind: guide
+    directory: docs
+    name: Guides
+    icon: far fa-book-open
+  - kind: recipes
+    directory: recipes
+    name: Recipes
+    icon: far fa-flask
+  - kind: reference
+    directory: reference
+    name: API reference
+    icon: far fa-code-simple
+  - kind: changelog
+    name: Changelog
+    hidden: true
+    icon: far fa-bullhorn
+  - kind: discuss
+    name: Discussions
+    hidden: true
+    icon: far fa-comments
+  - kind: url
+    url: https://dj.dev.appsflyer.com/?utm_source=devhub&utm_medium=dj-getting-started
+    name: 🚀 Developer Journey
