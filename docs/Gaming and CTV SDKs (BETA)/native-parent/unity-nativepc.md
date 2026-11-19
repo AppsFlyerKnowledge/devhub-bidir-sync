@@ -171,7 +171,7 @@ Debug.Log("olderDate:" + (olderDate ? "true" : "false"));
 // example usage with skipFirst -
 // skipping if the install date is NOT older than the given date
 bool IsInstallOlderThanDate = afm.IsInstallOlderThanDate("2023-02-11T10:00:00+00:00");
-afm.Start(!IsInstallOlderThanDate);
+afm.Start(IsInstallOlderThanDate(date));
 ```
 
 ### SetCustomerUserId
@@ -270,4 +270,5 @@ AppsflyerModule afm = new AppsflyerModule(<< DEV_KEY >>, << APP_ID >>, this);
 ## Resetting the attribution
 
 [Delete the PlayerPrefs data the registry/preferences folder](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html), or use [PlayerPrefs.DeleteAll()](https://docs.unity3d.com/2020.1/Documentation/ScriptReference/PlayerPrefs.DeleteAll.html) when testing the attribution in the UnityEditor.
+
 ![AF guid & counter in the Windows Registry](https://files.readme.io/51b1681-image.png)
