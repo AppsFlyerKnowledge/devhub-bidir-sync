@@ -1,21 +1,21 @@
 ---
 title: Migrate to OneLink API v.2.0
-excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
+link:
+  new_tab: false
 metadata:
   title: ''
   description: ''
   robots: index
-next:
-  description: ''
+table_of_contents: false
 ---
 
 Use this document to understand what has changed in V2.0 and how to transition to the new version effectively:
 
-- **[V1 to V2.0 version comparison](#onelink-api-version-1-and-version-2-side-by-side-comparison)**. This section outlines the changes and new features in V2.0
+- [V1 to V2.0 version comparison](#onelink-api-version-1-and-version-2-side-by-side-comparison). This section outlines the changes and new features in V2.0
 
-- **[Recommended migration plan](#recommended-migration-plan)**. This section provides a recommended multi-step migration plan and tips to support a phased rollout of the new version.
+- [Recommended migration plan](#recommended-migration-plan). This section provides a recommended multi-step migration plan and tips to support a phased rollout of the new version.
 
 ## OneLink API Version 1 and Version 2 Side by side comparison
 
