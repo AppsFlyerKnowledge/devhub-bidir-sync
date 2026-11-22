@@ -26,7 +26,6 @@ public void onNewToken(String s) {
     // the rest of the code that makes use of the token goes in this method as well
 }
 ```
-<br>
 **Note:** The code above is for firebase-messaging versions below 25.1.0. Firebase deprecated onNewToken() in 25.1.0. If your app uses 25.1.0 or above, follow Apps using Firebase Messaging 25.1.0 or above.
 
 ### Apps not using FCM
