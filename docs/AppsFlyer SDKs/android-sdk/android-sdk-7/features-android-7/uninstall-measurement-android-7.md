@@ -103,32 +103,32 @@ The built-in `FirebaseMessagingServiceListener` works with firebase-messaging ve
 
 ## Apps using Firebase Messaging 25.1.0 or above
 In firebase-messaging 25.1.0 and above, Firebase calls `onRegistered()` instead of `onNewToken()`, and passes the Firebase installation ID (FID). Send this value to AppsFlyer with `updateServerUninstallToken()`. AppsFlyer uninstall measurement accepts the FID in the same way as the FCM token. The SDK's built-in `FirebaseMessagingServiceListener` doesn't support this flow. If you added it to your manifest, remove it. To integrate uninstall measurement:
-- Make sure your app uses firebase-messaging 25.1.0 or above.
-- If your manifest contains the `com.appsflyer.FirebaseMessagingServiceListener` service, remove it.
-- In your own class that extends `FirebaseMessagingService`, override `onRegistered()` and call `updateServerUninstallToken: Java`
+1. Make sure your app uses firebase-messaging 25.1.0 or above.
+1. If your manifest contains the `com.appsflyer.FirebaseMessagingServiceListener` service, remove it.
+1. In your own class that extends `FirebaseMessagingService`, override `onRegistered()` and call `updateServerUninstallToken: Java`
 ```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
-@Override
-public void onRegistered(String installationId) {
-// Sending the installation ID to AppsFlyer
-AppsFlyerLib.getInstance().updateServerUninstallToken(getApplicationContext(), installationId);
-// the rest of the code that makes use of the identifier goes in this method as well
-}
+    @Override
+    public void onRegistered(String installationId) {
+        // Sending the installation ID to AppsFlyer
+        AppsFlyerLib.getInstance().updateServerUninstallToken(getApplicationContext(), installationId);
+        // the rest of the code that makes use of the identifier goes in this method as well
+    }
 }
 ```
 Register the service in your `AndroidManifest.xml: XML`
 ```
 xml
 <application>
-<!-- ... -->
-<service
-android:name=".MyFirebaseMessagingService"
-android:exported="false">
-<intent-filter>
-<action android:name="com.google.firebase.MESSAGING_EVENT"/>
-</intent-filter>
-</service>
-<!-- ... -->
+    <!-- ... -->
+    <service
+        android:name=".MyFirebaseMessagingService"
+        android:exported="false">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+        </intent-filter>
+    </service>
+    <!-- ... -->
 </application>
 ```
 **Note:** 
