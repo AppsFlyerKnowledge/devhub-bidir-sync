@@ -106,12 +106,14 @@ The testing procedure described is valid for apps available via Google Play Stor
 3. Wait for the uninstall to appear in the dashboard. This can take up to 48 hours.
 
 ## Considerations
-* The uninstall event registers within 24 hours as uninstall measurement is processed [daily](https://support.appsflyer.com/hc/en-us/articles/360000310629-Data-freshness-and-time-zone-support#data-freshness-types).
+
+* The uninstall event registers within 24 hours, as uninstall measurement is processed [daily](https://support.appsflyer.com/hc/en-us/articles/360000310629-Data-freshness-and-time-zone-support#data-freshness-types).
 * If the app is reinstalled during this time, **no uninstall event is recorded**.
 
 ## Overriding FCM's `onMessageReceived`
-Overriding FCM's `onMessageReceived` method and implementing your own logic
-in it might cause uninstall push notifications to not be silent. This can impact the user experience. To prevent this, verify that the message contains `af-uninstall-tracking`. See the following example:
+
+Overriding FCM's `onMessageReceived` method and implementing your own logic<br />in it might cause uninstall push notifications to not be silent. This can impact the user experience. To prevent this, verify that the message contains `af-uinstall-tracking`. See the following example:
+
 ``` java
 @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
