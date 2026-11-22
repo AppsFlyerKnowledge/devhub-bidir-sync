@@ -12,6 +12,7 @@ This document covers integration of uninstall measurement for the following scen
 * Apps using Firebase Messaging 25.1.0 or above.
 
 The latest FCM client version can be found [here](https://firebase.google.com/docs/cloud-messaging/android/client).
+
 **Note:** Using Firebase Messaging 25.1.0 or above? From firebase-messaging 25.1.0, Firebase registers apps with a Firebase installation ID (FID) instead of the FCM registration token. AppsFlyer uninstall measurement supports the FID in the same way as the FCM token. In these versions you can't use the SDK's built-in FirebaseMessagingServiceListener. Instead, override onRegistered() in your own FirebaseMessagingService and call updateServerUninstallToken(). See Apps using Firebase Messaging 25.1.0 or above.
 
 ### Apps using FCM
