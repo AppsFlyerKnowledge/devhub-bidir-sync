@@ -68,7 +68,7 @@ public void onNewToken(String s) {
   ]
 }
 [/block]
-5. The built-in `FirebaseMessagingServiceListener` works with firebase-messaging versions below 25.1.0 only. For 25.1.0 or above, see Apps using Firebase Messaging 25.1.0 or above. If you use FCM only to measure uninstalls in AppsFlyer**, use `appsFlyer.FirebaseMessagingServiceListener` service, embedded in the SDK. This extends the `FirebaseMessagingService` class, used to receive the FCM Device Token and calls `updateServerUninstallToken`. To add `appsFlyer.FirebaseMessagingServiceListener` service to the app:
+5. The built-in `FirebaseMessagingServiceListener` works with firebase-messaging versions below 25.1.0 only. For 25.1.0 or above, see Apps using Firebase Messaging 25.1.0 or above. If you use FCM only to measure uninstalls in AppsFlyer, use `appsFlyer.FirebaseMessagingServiceListener` service, embedded in the SDK. This extends the `FirebaseMessagingService` class, used to receive the FCM Device Token and calls `updateServerUninstallToken`. To add `appsFlyer.FirebaseMessagingServiceListener` service to the app:
     ```xml
     <application
        <!-- ... -->
