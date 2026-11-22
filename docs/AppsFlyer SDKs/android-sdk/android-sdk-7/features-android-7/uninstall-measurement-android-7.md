@@ -102,9 +102,7 @@ The built-in `FirebaseMessagingServiceListener` works with firebase-messaging ve
 [/block]
 
 ## Apps using Firebase Messaging 25.1.0 or above
-In firebase-messaging 25.1.0 and above, Firebase calls `onRegistered()` instead of `onNewToken()`, and passes the Firebase installation ID (FID). Send this value to AppsFlyer with `updateServerUninstallToken()`. AppsFlyer uninstall measurement accepts the FID in the same way as the FCM token.
-The SDK's built-in `FirebaseMessagingServiceListener` doesn't support this flow. If you added it to your manifest, remove it.
-To integrate uninstall measurement:
+In firebase-messaging 25.1.0 and above, Firebase calls `onRegistered()` instead of `onNewToken()`, and passes the Firebase installation ID (FID). Send this value to AppsFlyer with `updateServerUninstallToken()`. AppsFlyer uninstall measurement accepts the FID in the same way as the FCM token. The SDK's built-in `FirebaseMessagingServiceListener` doesn't support this flow. If you added it to your manifest, remove it. To integrate uninstall measurement:
 - Make sure your app uses firebase-messaging 25.1.0 or above.
 - If your manifest contains the `com.appsflyer.FirebaseMessagingServiceListener` service, remove it.
 - In your own class that extends `FirebaseMessagingService`, override `onRegistered()` and call `updateServerUninstallToken: Java`
