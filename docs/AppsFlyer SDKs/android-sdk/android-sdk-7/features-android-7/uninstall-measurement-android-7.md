@@ -91,7 +91,6 @@ public void onNewToken(String s) {
         // the rest of the code that makes use of the token goes in this method as well
     }
     ```
-<br>
 The built-in `FirebaseMessagingServiceListener` works with firebase-messaging versions below 25.1.0 only. For 25.1.0 or above, see Apps using Firebase Messaging 25.1.0 or above.
 
 [block:callout]
