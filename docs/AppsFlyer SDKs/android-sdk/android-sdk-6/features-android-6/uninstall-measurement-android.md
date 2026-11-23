@@ -17,8 +17,11 @@ Set up uninstall measurement in Android apps using AppsFlyer SDK and Firebase Cl
 This document covers integration of uninstall measurement for the following scenarios:
 * Apps that already use FCM
 * Apps that don't use FCM.
+* Apps using Firebase Messaging 25.1.0 or above.
 
 The latest FCM client version can be found [here](https://firebase.google.com/docs/cloud-messaging/android/client).
+
+**Note:** Using Firebase Messaging 25.1.0 or above? From firebase-messaging 25.1.0, Firebase registers apps with a Firebase installation ID (FID) instead of the FCM registration token. AppsFlyer uninstall measurement supports the FID in the same way as the FCM token. In these versions you can't use the SDK's built-in `FirebaseMessagingServiceListener`. Instead, override `onRegistered()` in your own `FirebaseMessagingService` and call `updateServerUninstallToken()`. See Apps using Firebase Messaging 25.1.0 or above.
 
 ### Apps using FCM
 **To add uninstall measurement to an existing FCM integration:**
@@ -32,6 +35,7 @@ public void onNewToken(String s) {
     // the rest of the code that makes use of the token goes in this method as well
 }
 ```
+**Note:** The code above is for firebase-messaging versions below 25.1.0. Firebase deprecated `onNewToken()` in 25.1.0. If your app uses 25.1.0 or above, follow Apps using Firebase Messaging 25.1.0 or above.
 
 ### Apps not using FCM
 **To integrate uninstall measurement:**
@@ -56,7 +60,7 @@ public void onNewToken(String s) {
         // ...
     }
    ```
-   **Note:** If you receive a "**Could not find method implementation()...**" error, make sure you have the latest Google Repository in the Android SDK Manager.
+**Note:** If you receive a "**Could not find method implementation()...**" error, make sure you have the latest Google Repository in the Android SDK Manager.
 [block:image]
 {
   "images": [
@@ -72,7 +76,7 @@ public void onNewToken(String s) {
   ]
 }
 [/block]
-5. **If you use FCM only to measure uninstalls in AppsFlyer**, use `appsFlyer.FirebaseMessagingServiceListener` service, embedded in the SDK. This extends the `FirebaseMessagingService` class, used to receive the FCM Device Token and calls `updateServerUninstallToken`. To add `appsFlyer.FirebaseMessagingServiceListener` service to the app:
+5. The built-in `FirebaseMessagingServiceListener` works with firebase-messaging versions below 25.1.0 only. For 25.1.0 or above, see Apps using Firebase Messaging 25.1.0 or above. **If you use FCM only to measure uninstalls in AppsFlyer**, use `appsFlyer.FirebaseMessagingServiceListener` service, embedded in the SDK. This extends the `FirebaseMessagingService` class, used to receive the FCM Device Token and calls `updateServerUninstallToken`. To add `appsFlyer.FirebaseMessagingServiceListener` service to the app:
     ```xml
     <application
        <!-- ... -->
@@ -95,6 +99,8 @@ public void onNewToken(String s) {
         // the rest of the code that makes use of the token goes in this method as well
     }
     ```
+The built-in `FirebaseMessagingServiceListener` works with firebase-messaging versions below 25.1.0 only. For 25.1.0 or above, see Apps using Firebase Messaging 25.1.0 or above.
+
 [block:callout]
 {
   "type": "info",
@@ -102,6 +108,40 @@ public void onNewToken(String s) {
   "body": "If you use Proguard, make sure to add the following rule:\n```java\n-dontwarn com.appsflyer.**\n-keep public class com.google.firebase.messaging.FirebaseMessagingService {\n    public *;\n}\n```"
 }
 [/block]
+
+## Apps using Firebase Messaging 25.1.0 or above
+In firebase-messaging 25.1.0 and above, Firebase calls `onRegistered()` instead of `onNewToken()`, and passes the Firebase installation ID (FID). Send this value to AppsFlyer with `updateServerUninstallToken()`. AppsFlyer uninstall measurement accepts the FID in the same way as the FCM token. The SDK's built-in `FirebaseMessagingServiceListener` doesn't support this flow. If you added it to your manifest, remove it. To integrate uninstall measurement:
+1. Make sure your app uses firebase-messaging 25.1.0 or above.
+1. If your manifest contains the `com.appsflyer.FirebaseMessagingServiceListener` service, remove it.
+1. In your own class that extends `FirebaseMessagingService`, override `onRegistered()` and call `updateServerUninstallToken: Java`
+```java
+public class MyFirebaseMessagingService extends FirebaseMessagingService {
+    @Override
+    public void onRegistered(String installationId) {
+        // Sending the installation ID to AppsFlyer
+        AppsFlyerLib.getInstance().updateServerUninstallToken(getApplicationContext(), installationId);
+        // the rest of the code that makes use of the identifier goes in this method as well
+    }
+}
+```
+Register the service in your `AndroidManifest.xml: XML`
+```
+xml
+<application>
+    <!-- ... -->
+    <service
+        android:name=".MyFirebaseMessagingService"
+        android:exported="false">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+        </intent-filter>
+    </service>
+    <!-- ... -->
+</application>
+```
+**Note:** 
+- If your app already has its own `FirebaseMessagingService`, add the updateServerUninstallToken call to its onRegistered() method. Move any other token-handling code from `onNewToken()` into `onRegistered()` as well, because Firebase no longer calls `onNewToken()` in these versions.
+- firebase-messaging 25.0.0 and above require Android API level 23 or higher.
 
 ## Testing Android uninstall measurement
 The testing procedure described is valid for apps available via Google Play Store, pending, direct download, and via alternative app stores.
