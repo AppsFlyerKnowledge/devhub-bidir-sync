@@ -15,13 +15,15 @@ Set up uninstall measurement in Android apps using AppsFlyer SDK and Firebase Cl
 
 ## Integrating uninstall measurement for Android
 This document covers integration of uninstall measurement for the following scenarios:
-* Apps that already use FCM
-* Apps that don't use FCM.
-* Apps using Firebase Messaging 25.1.0 or above.
+
+- Apps using FCM
+  - Apps using Firebase-messaging versions below 25.1.0.
+  - Apps using Firebase Messaging 25.1.0 or above.
+- Apps not using FCM
 
 The latest FCM client version can be found [here](https://firebase.google.com/docs/cloud-messaging/android/client).
 
-**Note:** Using Firebase Messaging 25.1.0 or above? From firebase-messaging 25.1.0, Firebase registers apps with a Firebase installation ID (FID) instead of the FCM registration token. AppsFlyer uninstall measurement supports the FID in the same way as the FCM token. In these versions you can't use the SDK's built-in `FirebaseMessagingServiceListener`. Instead, override `onRegistered()` in your own `FirebaseMessagingService` and call `updateServerUninstallToken()`. See Apps using Firebase Messaging 25.1.0 or above.
+**Note:** Using Firebase Messaging 25.1.0 or above? From firebase-messaging 25.1.0, Firebase registers apps with a Firebase installation ID (FID) instead of the FCM registration token. AppsFlyer uninstall measurement supports the FID in the same way as the FCM token. In these versions you can't use the SDK's built-in `FirebaseMessagingServiceListener`. Instead, override `onRegistered()` in your own `FirebaseMessagingService` and call `updateServerUninstallToken()`. See [Apps using Firebase Messaging 25.1.0 or above](https://dev.appsflyer.com/hc/v0.1_MKSD-392/docs/uninstall-measurement-android-7#apps-using-firebase-messaging-2510-or-above).
 
 ### Apps using FCM
 **To add uninstall measurement to an existing FCM integration:**
@@ -35,7 +37,7 @@ public void onNewToken(String s) {
     // the rest of the code that makes use of the token goes in this method as well
 }
 ```
-**Note:** The code above is for firebase-messaging versions below 25.1.0. Firebase deprecated `onNewToken()` in 25.1.0. If your app uses 25.1.0 or above, follow Apps using Firebase Messaging 25.1.0 or above.
+**Note:** The code above is for firebase-messaging versions below 25.1.0. Firebase deprecated `onNewToken()` in 25.1.0. If your app uses 25.1.0 or above, follow [Apps using Firebase Messaging 25.1.0 or above](https://dev.appsflyer.com/hc/v0.1_MKSD-392/docs/uninstall-measurement-android-7#apps-using-firebase-messaging-2510-or-above).
 
 ### Apps not using FCM
 **To integrate uninstall measurement:**
@@ -76,7 +78,7 @@ public void onNewToken(String s) {
   ]
 }
 [/block]
-5. The built-in `FirebaseMessagingServiceListener` works with firebase-messaging versions below 25.1.0 only. For 25.1.0 or above, see Apps using Firebase Messaging 25.1.0 or above. **If you use FCM only to measure uninstalls in AppsFlyer**, use `appsFlyer.FirebaseMessagingServiceListener` service, embedded in the SDK. This extends the `FirebaseMessagingService` class, used to receive the FCM Device Token and calls `updateServerUninstallToken`. To add `appsFlyer.FirebaseMessagingServiceListener` service to the app:
+5. The built-in `FirebaseMessagingServiceListener` works with firebase-messaging versions below 25.1.0 only. For 25.1.0 or above, see [Apps using Firebase Messaging 25.1.0 or above](https://dev.appsflyer.com/hc/v0.1_MKSD-392/docs/uninstall-measurement-android-7#apps-using-firebase-messaging-2510-or-above). **If you use FCM only to measure uninstalls in AppsFlyer**, use `appsFlyer.FirebaseMessagingServiceListener` service, embedded in the SDK. This extends the `FirebaseMessagingService` class, used to receive the FCM Device Token and calls `updateServerUninstallToken`. To add `appsFlyer.FirebaseMessagingServiceListener` service to the app:
     ```xml
     <application
        <!-- ... -->
@@ -99,7 +101,7 @@ public void onNewToken(String s) {
         // the rest of the code that makes use of the token goes in this method as well
     }
     ```
-The built-in `FirebaseMessagingServiceListener` works with firebase-messaging versions below 25.1.0 only. For 25.1.0 or above, see Apps using Firebase Messaging 25.1.0 or above.
+The built-in `FirebaseMessagingServiceListener` works with firebase-messaging versions below 25.1.0 only. For 25.1.0 or above, see [Apps using Firebase Messaging 25.1.0 or above](https://dev.appsflyer.com/hc/v0.1_MKSD-392/docs/uninstall-measurement-android-7#apps-using-firebase-messaging-2510-or-above).
 
 [block:callout]
 {
