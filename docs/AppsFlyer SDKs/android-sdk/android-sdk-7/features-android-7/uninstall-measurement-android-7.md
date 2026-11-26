@@ -150,8 +150,9 @@ The testing procedure described is valid for apps available via Google Play Stor
 * If the app is reinstalled during this time, **no uninstall event is recorded**.
 
 ## Overriding FCM's `onMessageReceived`
-Overriding FCM's `onMessageReceived` method and implementing your own logic
-in it might cause uninstall push notifications to not be silent. This can impact the user experience. To prevent this, verify that the message contains `af-uninstall-tracking`. See the following example:
+
+Overriding FCM's `onMessageReceived` method and implementing your own logic<br />in it might cause uninstall push notifications to not be silent. This can impact the user experience. To prevent this, verify that the message contains `af-uinstall-tracking`. See the following example:
+
 ``` java
 @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
